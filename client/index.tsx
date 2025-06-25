@@ -15,11 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
      * TODO: replace domain, clientId, and audience
      */
     <Auth0Provider
-      domain=""
-      clientId=""
+      domain="https://kahikatea-2025-eric.au.auth0.com"
+      clientId="oKHovt103LrHhYztiNGN5VNeIM1HqvaB"
       authorizationParams={{
         redirect_uri: window.location.origin,
-        audience: '',
+        audience: 'https://ridi/api',
       }}
     >
       <QueryClientProvider client={queryClient}>
