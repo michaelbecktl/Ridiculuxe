@@ -1,10 +1,10 @@
 import request from 'superagent'
 import { ProductQuantity } from '../../models/product'
 
-const rootURL = new URL(`/api/v1/product/`, document.baseURI)
+const rootURL = new URL(`/api/v1/product`, document.baseURI)
 
-export async function getProductById(id: number) {
-  const response = await request.get(`${rootURL}/${id}`)
+export async function getProductById(name: string) {
+  const response = await request.get(`${rootURL}/${name}`)
   if (!response) {
     throw new Error('Could not retrieve product')
   } else {
@@ -13,8 +13,8 @@ export async function getProductById(id: number) {
 }
 
 export async function soldProduct(data: ProductQuantity) {
-  const { id, quantity } = data
-  const response = await request.patch(`${rootURL}/${id}`).send({ quantity })
+  const { name, quantity } = data
+  const response = await request.patch(`${rootURL}/${name}`).send({ quantity })
   if (!response) {
     throw new Error('Error updating product')
   } else {

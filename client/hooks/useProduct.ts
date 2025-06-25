@@ -6,14 +6,14 @@ import {
 } from '@tanstack/react-query'
 import * as API from '../apis/product'
 
-export async function useProduct(id: number) {
+export function useProduct(name: string) {
   const query = useQuery({
     queryKey: ['product'],
-    queryFn: () => API.getProductById(id),
+    queryFn: () => API.getProductById(name),
   })
   return {
     ...query,
-    sold: useSoldProduct(),
+    soldProduct: useSoldProduct(),
   }
 }
 
