@@ -21,13 +21,12 @@ export function useProductMutation<TData = unknown, TVariables = unknown>(
   mutationFn: MutationFunction<TData, TVariables>,
 ) {
   const queryClient = useQueryClient()
-  const mutation = useMutation({
+  return useMutation({
     mutationFn,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['product'] })
     },
   })
-  return mutation
 }
 
 export async function useSoldProduct() {
