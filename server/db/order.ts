@@ -1,4 +1,5 @@
-import { knex } from './connection'
+
+import db from './connection.ts'
 
 interface NewOrder {
   product_id: number
@@ -10,7 +11,7 @@ interface NewOrder {
 }
 
 export async function createOrder(order: NewOrder) {
-  const [id] = await knex('orders').insert({
+  const [id] = await db('orders').insert({
     product_id: order.product_id,
     name: order.name,
     email: order.email,
