@@ -1,16 +1,8 @@
 import { useParams } from 'react-router-dom'
 import { useProduct } from '../hooks/useProduct'
 import { useState } from 'react'
-
-// const productData = {
-//   id: 1,
-//   name: 'LuxTech Jacket',
-//   description: 'The ultimate jacket for all your needs',
-//   price: 399.9,
-//   image:
-//     'https://api.time.com/wp-content/uploads/2015/03/screen-shot-2015-03-12-at-12-01-22-pm.png?w=1080&quality=85',
-//   stock: 11,
-// }
+import { useCart } from '../hooks/useCart'
+import { Product } from '../../models/ridiculuxe'
 
 function ProductPurchase() {
   const params = useParams()
@@ -19,10 +11,12 @@ function ProductPurchase() {
 
   const [quantity, setQuantity] = useState('1')
 
+  const cart = useCart('1') // NOT COMPLETE, USING HARD-CODED USER //
+
   if (product.isPending) return <></>
   if (product.isError) return <p>An error has occured</p>
 
-  const productData = product.data
+  const productData = product.data as Product
   const isOOS = productData.stock < 1
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
@@ -30,6 +24,24 @@ function ProductPurchase() {
     if (Number(event.target.value) < 0) setQuantity('0')
     if (Number(event.target.value) > productData.stock)
       setQuantity(productData.stock.toString())
+  }
+
+  async function handleAdd() {
+    const addProduct = {
+      userId: '1',
+      productId: productData.id.toString(),
+      quantity: Number(quantity),
+    }
+    cart.addToCart.mutate(addProduct)
+  }
+
+  async function handleBuy() {
+    const addProduct = {
+      userId: '1',
+      productId: productData.id.toString(),
+      quantity: Number(quantity),
+    }
+    cart.buyNow.mutate(addProduct)
   }
 
   return (
@@ -57,8 +69,12 @@ function ProductPurchase() {
         onChange={handleChange}
         disabled={isOOS}
       />
-      <button disabled={isOOS}>Buy Now</button>
-      <button disabled={isOOS}>Add To Cart</button>
+      <button disabled={isOOS} onClick={handleBuy}>
+        Buy Now
+      </button>
+      <button disabled={isOOS} onClick={handleAdd}>
+        Add To Cart
+      </button>
     </>
   )
 }

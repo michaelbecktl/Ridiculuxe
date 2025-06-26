@@ -25,21 +25,19 @@ export async function addToCart(update: CartData) {
     .first()
 
   if (!existing) {
-    const cart = await db('cart')
+    return await db('cart')
       .insert(formatted)
       .where('user_id', formatted.user_id)
-    return cart
   }
 
   if (existing) {
     const { quantity } = existing
     const newQuantity = quantity + formatted.quantity
 
-    const cart = await db('cart')
+    return await db('cart')
       .where('user_id', formatted.user_id)
       .where('product_id', formatted.product_id)
       .update('quantity', newQuantity)
-    return cart
   }
 }
 

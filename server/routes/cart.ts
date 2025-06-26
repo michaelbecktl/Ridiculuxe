@@ -21,9 +21,9 @@ router.post('/:id', async (req, res) => {
     const userId = req.params.id
     const { productId, quantity } = req.body
     await db.addToCart({ userId, productId, quantity })
-    const newCart = await db.getCartByUser(userId)
-    if (!newCart) res.status(404).json('No shopping cart found with this ID')
-    else res.json(newCart)
+    const cartData = await db.getCartByUser(userId)
+    if (!cartData) res.status(404).json('No shopping cart found with this ID')
+    else res.json(cartData)
   } catch (error) {
     console.log(error)
     res.status(500).json({ message: 'Something went wrong' })

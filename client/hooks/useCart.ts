@@ -5,6 +5,8 @@ import {
   useQueryClient,
 } from '@tanstack/react-query'
 import * as API from '../apis/cart'
+import { useNavigate } from 'react-router-dom'
+import { CartData } from '../../models/ridiculuxe'
 
 export function useCart(id: string) {
   const query = useQuery({
@@ -17,6 +19,7 @@ export function useCart(id: string) {
     addToCart: useAddToCart(),
     updateCart: useUpdateCart(),
     deleteFromCart: useDeleteFromCart(),
+    buyNow: useBuyNow(),
   }
 }
 
@@ -32,6 +35,19 @@ export function useCartMutations<TData = unknown, TVariables = unknown>(
 
 export function useAddToCart() {
   return useCartMutations(API.addToCart)
+}
+
+export function useBuyNow() {
+  const queryClient = useQueryClient()
+  const navigate = useNavigate()
+
+  return useMutation({
+    mutationFn: (addProduct: CartData) => API.addToCart(addProduct),
+    onSuccess: () => {
+      ;(queryClient.invalidateQueries({ queryKey: ['cart'] }),
+        navigate('/checkout'))
+    },
+  })
 }
 
 export function useDeleteFromCart() {
