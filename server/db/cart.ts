@@ -1,11 +1,12 @@
 import {
   AllCartData,
+  Cart,
   CartData,
   DeleteCartItem,
 } from '../../models/ridiculuxe.ts'
 import db from './connection.ts'
 
-export async function getCartByUser(id: string) {
+export async function getCartByUser(id: string): Promise<Cart[]> {
   const cart = await db('cart')
     .where('user_id', id)
     .select('id', 'user_id as userId', 'product_id as productId', 'quantity')

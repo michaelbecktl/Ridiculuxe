@@ -65,5 +65,3 @@ export interface newUser {
   address2: string
   address3: string
 }
-
-export type FetchPrice = (price: number) => number
