@@ -7,14 +7,14 @@ import { Product } from '../../models/ridiculuxe'
 function ProductPurchase() {
   const params = useParams()
   const name = params.name as string
+
   const product = useProduct(name)
+  const cart = useCart('1') // NOT COMPLETE, USING HARD-CODED USER //
 
   const [quantity, setQuantity] = useState('1')
 
-  const cart = useCart('1') // NOT COMPLETE, USING HARD-CODED USER //
-
-  if (product.isPending) return <></>
-  if (product.isError) return <p>An error has occured</p>
+  if (product.isPending || cart.isPending) return <>Loading</>
+  if (product.isError || cart.isError) return <p>An error has occured</p>
 
   const productData = product.data as Product
   const isOOS = productData.stock < 1
