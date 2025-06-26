@@ -9,7 +9,7 @@ import * as API from '../apis/product'
 export function useProduct(name: string) {
   const query = useQuery({
     queryKey: ['product'],
-    queryFn: () => API.getProductById(name),
+    queryFn: () => API.getProductByName(name),
   })
   return {
     ...query,

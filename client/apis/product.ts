@@ -3,8 +3,17 @@ import { Product, ProductQuantity } from '../../models/ridiculuxe'
 
 const rootURL = new URL(`/api/v1/product`, document.baseURI)
 
-export async function getProductById(name: string): Promise<Product> {
-  const response = await request.get(`${rootURL}/${name}`)
+export async function getProductByName(name: string): Promise<Product> {
+  const response = await request.get(`${rootURL}/name/${name}`)
+  if (!response) {
+    throw new Error('Could not retrieve product')
+  } else {
+    return response.body
+  }
+}
+
+export async function getProductById(id: string): Promise<Product> {
+  const response = await request.get(`${rootURL}/id/${id}`)
   if (!response) {
     throw new Error('Could not retrieve product')
   } else {
@@ -13,8 +22,10 @@ export async function getProductById(name: string): Promise<Product> {
 }
 
 export async function soldProduct(data: ProductQuantity) {
-  const { name, quantity } = data
-  const response = await request.patch(`${rootURL}/${name}`).send({ quantity })
+  const { id, quantity } = data
+  const response = await request
+    .patch(`${rootURL}/stock/${id}`)
+    .send({ quantity })
   if (!response) {
     throw new Error('Error updating product')
   } else {

@@ -7,6 +7,8 @@ function Registration() {
   const query = useUser()
   const navigate = useNavigate()
 
+  console.log(query.data)
+
   useEffect(() => {
     if (query.data) {
       navigate('/')
