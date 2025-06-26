@@ -1,11 +1,13 @@
 import { createRoutesFromElements, Route } from 'react-router-dom'
-import App from './components/App.tsx'
+import Layout from './components/Layout.tsx'
+import Homepage from './components/Homepage.tsx'
+import ProductPurchase from './pages/ProductPurchase.tsx'
 import CheckoutForm from './components/CheckoutForm.tsx'
 
 export default createRoutesFromElements(
-  <>
-    <Route index element={<App />} />
+  <Route path="/" element={<Layout />}>
+    <Route index element={<Homepage />} />
+    <Route path="shop/:name" element={<ProductPurchase />} />
     <Route path="checkout" element={<CheckoutForm />} />
-    
-  </>,
+  </Route>,
 )
