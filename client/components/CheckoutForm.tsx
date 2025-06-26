@@ -1,7 +1,8 @@
 import React, {useState,useEffect} from 'react'
 import {useParams,useNavigate} from 'react-router-dom'
 
-// import CartProductElements from './CartProductElements'
+import { useCartProducts } from '../hooks/useCart'
+import { useUser } from '../hooks/useUser';
 
 interface Product{ 
   id:number; 
@@ -9,8 +10,6 @@ interface Product{
   price:number; 
   image:string; 
   stock:number}
-
-  // const userId = '1'
 
 function CheckoutForm(){
   const {id} = useParams<{id:string}>()
@@ -24,6 +23,11 @@ function CheckoutForm(){
   const [address2,setAddress2] = useState('')
   const [address3,setAddress3] = useState('')
   const [submitting,setSubmitting] = useState(false)
+
+
+  const userId = useUser()
+const { cart, products } = useCartProducts(1)
+
 
 
   useEffect(() => {
@@ -41,6 +45,15 @@ function CheckoutForm(){
     }
     fetchProduct()
   },[id])
+
+if(products.pending) {
+  return <p>Loading...</p>
+}
+console.log(userId.data?.id)
+console.log(cart.data)
+console.log(products.data)
+
+
 
   async function handleSubmit(e:React.FormEvent){
     e.preventDefault()
@@ -75,7 +88,7 @@ function CheckoutForm(){
     <div>
       <h1>Checkout</h1>
 
-      <CartProductElements />
+      
 
       {product && <>
         <img src={product.image} alt={product.title} style={{width:'100%',height:'300px',objectFit:'cover'}}/>

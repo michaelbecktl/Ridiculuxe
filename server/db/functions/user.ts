@@ -24,7 +24,7 @@ export async function getUserProfile(id: number) {
 
 export async function getUserProfileByAuth(id: string) {
   const result = await db('user')
-    .select('name', 'email', 'address1', 'address2', 'address3')
+    .select('name', 'email', 'address1', 'address2', 'address3', 'id')
     .where('auth0_id', id)
     .first()
   return result
