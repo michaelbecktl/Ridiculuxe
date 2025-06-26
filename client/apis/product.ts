@@ -1,9 +1,9 @@
 import request from 'superagent'
-import { ProductQuantity } from '../../models/ridiculuxe'
+import { Product, ProductQuantity } from '../../models/ridiculuxe'
 
 const rootURL = new URL(`/api/v1/product`, document.baseURI)
 
-export async function getProductById(name: string) {
+export async function getProductById(name: string): Promise<Product> {
   const response = await request.get(`${rootURL}/${name}`)
   if (!response) {
     throw new Error('Could not retrieve product')
