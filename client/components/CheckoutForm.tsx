@@ -43,17 +43,18 @@ function CheckoutForm(){
     e.preventDefault()
     setSubmitting(true)
     try{
-      const res = await fetch('/api/v1/checkout',{
-        method:'POST',
-        headers:{'Content-Type':'application/json'},
+      // const res = await fetch('/api/v1/checkout/${product?.id}', {
+        const res = await fetch(`/api/v1/checkout`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           product_id: product?.id,
           name,
           email,
           address1,
           address2,
-          address3
-        })
+          address3,
+        }),
       })
       if(!res.ok) throw new Error('Checkout failed')
       navigate('/confirmation',{state:{productTitle: product?.title}})

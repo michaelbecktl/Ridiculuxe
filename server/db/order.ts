@@ -11,13 +11,15 @@ interface NewOrder {
 }
 
 export async function createOrder(order: NewOrder) {
-  const [id] = await db('orders').insert({
-    product_id: order.product_id,
-    name: order.name,
-    email: order.email,
-    address1: order.address1,
-    address2: order.address2,
-    address3: order.address3,
-  })
+  const [id] = await db('orders')
+    .insert({
+      product_id: order.product_id,
+      name: order.name,
+      email: order.email,
+      address1: order.address1,
+      address2: order.address2,
+      address3: order.address3,
+    })
+    
   return id
 }
