@@ -13,7 +13,7 @@ function ProductPurchase() {
 
   const [quantity, setQuantity] = useState('1')
 
-  if (product.isPending || cart.isPending) return <></>
+  if (product.isPending || cart.isPending) return <>Loading</>
   if (product.isError || cart.isError) return <p>An error has occured</p>
 
   const productData = product.data as Product
