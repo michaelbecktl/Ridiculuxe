@@ -1,6 +1,8 @@
 import React, {useState,useEffect} from 'react'
 import {useParams,useNavigate} from 'react-router-dom'
 
+import CartProductElements from './CartProductElements'
+
 interface Product{ 
   id:number; 
   title:string; 
@@ -72,6 +74,9 @@ function CheckoutForm(){
   return (
     <div>
       <h1>Checkout</h1>
+
+      <CartProductElements />
+
       {product && <>
         <img src={product.image} alt={product.title} style={{width:'100%',height:'300px',objectFit:'cover'}}/>
         <h2>{product.title}</h2>
@@ -79,7 +84,7 @@ function CheckoutForm(){
         <p>
   {product.stock > 5
     ? `In Stock: ${product.stock}`
-    : product.stock > 0
+    : product.stock > 0 
     ? `Low Stock: ${product.stock}`
     : 'Sold Out'}
 </p>
