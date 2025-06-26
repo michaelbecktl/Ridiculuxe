@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react'
 import {useParams,useNavigate} from 'react-router-dom'
 
-import CartProductElements from './CartProductElements'
+// import CartProductElements from './CartProductElements'
 
 interface Product{ 
   id:number; 
