@@ -43,7 +43,7 @@ export default function CreateUser() {
   return (
     <div className="create user form div">
       <form onSubmit={handleSubmit} className="create user form">
-        <label htmlFor="name" className="create user form header">
+        <label htmlFor="name" className="create_user_form_header">
           Name:{' '}
         </label>
         <input
@@ -53,7 +53,7 @@ export default function CreateUser() {
           onChange={handleChange}
           className="create user form text"
         />
-        <label htmlFor="email" className="create user form header">
+        <label htmlFor="email" className="create_user_form_header">
           Email:{' '}
         </label>
         <input
@@ -63,7 +63,7 @@ export default function CreateUser() {
           onChange={handleChange}
           className="create user form text"
         />
-        <label htmlFor="address1" className="create user form header">
+        <label htmlFor="address1" className="create_user_form_header">
           Street Address:{' '}
         </label>
         <input
@@ -73,7 +73,7 @@ export default function CreateUser() {
           onChange={handleChange}
           className="create user form text"
         />
-        <label htmlFor="address2" className="create user form header">
+        <label htmlFor="address2" className="create_user_form_header">
           Town/City:{' '}
         </label>
         <input
@@ -83,7 +83,7 @@ export default function CreateUser() {
           onChange={handleChange}
           className="create user form text"
         />
-        <label htmlFor="address3" className="create user form header">
+        <label htmlFor="address3" className="create_user_form_header">
           Postal code:{' '}
         </label>
         <input

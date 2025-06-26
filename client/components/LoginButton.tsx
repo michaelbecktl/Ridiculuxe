@@ -9,7 +9,11 @@ export default function LoginButton() {
   }
 
   const handleSignIn = () => {
-    loginWithRedirect()
+    loginWithRedirect({
+      authorizationParams: {
+        redirectUri: `${window.location.origin}/register`,
+      },
+    })
   }
 
   return (
