@@ -11,7 +11,7 @@ server.use(express.json())
 
 server.use('/api/v1/product', productRoutes)
 server.use('/api/v1/cart', cartRoutes)
-server.use('/api/v1/user', userRoutes)
+server.use('/api/v1/users', userRoutes)
 
 if (process.env.NODE_ENV === 'production') {
   server.use(express.static(Path.resolve('public')))
