@@ -3,8 +3,8 @@ import {
   Cart,
   CartData,
   DeleteCartItem,
-} from '../../models/ridiculuxe.ts'
-import db from './connection.ts'
+} from '../../../models/ridiculuxe.ts'
+import db from '../connection.ts'
 
 export async function getCartByUser(id: string): Promise<Cart[]> {
   const cart = await db('cart')
