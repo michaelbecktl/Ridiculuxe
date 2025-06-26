@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom'
 import { CartData } from '../../models/ridiculuxe'
 
 export function useCart(id: string) {
+  // Hook to get all items in shopping cart given current user's ID as an argument
   const query = useQuery({
     queryKey: ['cart'],
     queryFn: () => API.getCartByUser(id),
@@ -16,10 +17,10 @@ export function useCart(id: string) {
 
   return {
     ...query,
-    addToCart: useAddToCart(),
-    updateCart: useUpdateCart(),
-    deleteFromCart: useDeleteFromCart(),
-    buyNow: useBuyNow(),
+    addToCart: useAddToCart(), // Add a specific product to user's shopping cart, given argument { userId, productId, quantity }
+    updateCart: useUpdateCart(), // To update ALL quantities of product currently in shopping card, given argument { userId, cart: [{ userId, productId, quantity }] }
+    deleteFromCart: useDeleteFromCart(), // To delete one specific product completely from user's shopping cart, given argument { userId, productId }
+    buyNow: useBuyNow(), // Same as addToCart mutation, but navigates user immediately to the shopping cart checkout page
   }
 }
 
