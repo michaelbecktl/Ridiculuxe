@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.header {
+  @apply fixed top-0 flex w-full justify-between bg-[#569bdb]/50;
+  padding: 20px 80px;
+}
+
+.footer {
+  @apply fixed bottom-0 flex w-full justify-center bg-[#569bdb]/50 p-[20px];
+}
+
+.homepageProduct {
+  @apply m-0 flex h-dvh w-dvw flex-col items-center justify-center;
+
+  * {
+    @apply m-10;
+  }
+}
