@@ -1,12 +1,14 @@
 import {
   MutationFunction,
   useMutation,
+  useQueries,
   useQuery,
   useQueryClient,
 } from '@tanstack/react-query'
 import * as API from '../apis/cart'
 import { useNavigate } from 'react-router-dom'
-import { CartData } from '../../models/ridiculuxe'
+import { Cart, CartData } from '../../models/ridiculuxe'
+import { getProductById } from '../apis/product'
 
 export function useCart(id: string) {
   // Hook to get all items in shopping cart given current user's ID as an argument
@@ -57,4 +59,20 @@ export function useDeleteFromCart() {
 
 export function useUpdateCart() {
   return useCartMutations(API.updateCart)
+}
+
+export function useCartProducts(userId: string) {
+  const cart = useCart(userId)
+
+  const productIds = cart.data?.map((item: Cart) => item.productId)
+
+  const products = useQueries({
+    queries: productIds.map((id: string) => ({
+      queryKey: ['cartproduct', id],
+      queryFn: () => getProductById(id),
+      enabled: !!id,
+    })),
+  })
+
+  return { cart, products: products }
 }
