@@ -1,6 +1,6 @@
 export interface CartData {
-  user_id: string
-  product_id: string
+  userId: string
+  productId: string
   quantity: number
 }
 
@@ -9,7 +9,7 @@ export interface Cart extends CartData {
 }
 
 export interface OrderData {
-  auth0_id: string
+  auth0Id: string
   name: string
   email: string
   address1: string
@@ -34,7 +34,7 @@ export interface Product extends ProductData {
 }
 
 export interface UserData {
-  auth0_id: string
+  auth0Id: string
   name: string
   email: string
   address1: string
