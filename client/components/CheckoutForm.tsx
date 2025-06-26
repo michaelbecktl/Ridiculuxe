@@ -8,6 +8,8 @@ interface Product{
   image:string; 
   stock:number}
 
+  // const userId = '1'
+
 function CheckoutForm(){
   const {id} = useParams<{id:string}>()
   const navigate = useNavigate()
@@ -21,7 +23,6 @@ function CheckoutForm(){
   const [address3,setAddress3] = useState('')
   const [submitting,setSubmitting] = useState(false)
 
- 
 
   useEffect(() => {
     async function fetchProduct(){

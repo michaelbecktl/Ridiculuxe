@@ -1,7 +1,7 @@
 import express, { Request, Response } from 'express'
 import * as db from '../db/order'
 
-// import { NewOrder } from '../db/order'
+
 
 const router = express.Router()
 
