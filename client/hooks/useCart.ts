@@ -64,7 +64,7 @@ export function useUpdateCart() {
 export function useCartProducts(userId: string) {
   const cart = useCart(userId)
 
-  const productIds = cart.data?.map((item: Cart) => item.productId)
+  const productIds = cart.data?.map((item: Cart) => item.productId) ?? []
 
   const products = useQueries({
     queries: productIds.map((id: string) => ({
@@ -72,6 +72,12 @@ export function useCartProducts(userId: string) {
       queryFn: () => getProductById(id),
       enabled: !!id,
     })),
+    combine: (results) => {
+      return {
+        data: results.map((result) => result.data),
+        pending: results.some((result) => result.isPending),
+      }
+    },
   })
 
   return { cart, products: products }
