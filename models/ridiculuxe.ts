@@ -8,6 +8,15 @@ export interface Cart extends CartData {
   id: number
 }
 
+export interface AllCartData {
+  cart: CartData[]
+  userId: string
+}
+export interface DeleteCartItem {
+  userId: string
+  productId: string
+}
+
 export interface OrderData {
   auth0Id: string
   name: string
@@ -32,7 +41,10 @@ export interface ProductData {
 export interface Product extends ProductData {
   id: number
 }
-
+export interface ProductQuantity {
+  name: string
+  quantity: number
+}
 export interface UserData {
   auth0Id: string
   name: string

@@ -20,8 +20,8 @@ export async function seed(knex) {
   await knex('product').insert([
     {
       id: 1,
-      name: 'LuxTech Jacket',
-      description: 'The ultimate jacket for all your needs',
+      name: 'LuxTech Glasses',
+      description: 'The ultimate glasses for all your needs',
       price: 399.9,
       image:
         'https://api.time.com/wp-content/uploads/2015/03/screen-shot-2015-03-12-at-12-01-22-pm.png?w=1080&quality=85',
