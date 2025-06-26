@@ -12,7 +12,7 @@ export async function getUser({
   return await request
     .get(`${rootURL}/users`)
     .set('Authorization', `Bearer ${token}`)
-    .then((res) => (res.body.username ? res.body.username : null))
+    .then((res) => (res.body.name ? res.body.name : null))
     .catch(logError)
 }
 
