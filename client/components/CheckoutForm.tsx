@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from 'react'
-import {useParams,useNavigate} from 'react-router-dom'
+import React, {useState} from 'react'
+import {useNavigate} from 'react-router-dom'
 
 import { useCartProducts } from '../hooks/useCart'
 import { useUser } from '../hooks/useUser';
@@ -12,11 +12,9 @@ interface Product{
   stock:number}
 
 function CheckoutForm(){
-  const {id} = useParams<{id:string}>()
+  // const {id} = useParams<{id:string}>()
   const navigate = useNavigate()
-//
-  // const [product,setProduct] = useState<Product|null>(null)
-//
+
   const [error,setError] = useState('')
   const [name,setName] = useState('')
   const [email,setEmail] = useState('')
@@ -25,31 +23,11 @@ function CheckoutForm(){
   const [address3,setAddress3] = useState('')
   const [submitting,setSubmitting] = useState(false)
 
-  
+  const [success, setSuccess] = useState(false)
 
   const userId = useUser()
 const { cart, products } = useCartProducts('1')
 
-
-
-  // useEffect(() => {
-  //   async function fetchProduct(){
-  //     try{
-  //       const res = await fetch(`/api/v1/products/${id}`)
-  //       if(!res.ok) throw new Error('Failed to load product')
-  //       const data = await res.json()
-  //       setProduct(data)
-  //     }catch(err){
-  //       setError((err as Error).message)
-  //     }finally{
-  //       setLoading(false)
-  //     }
-  //   }
-  //   fetchProduct()
-  // },[id])
-
-
-  
 
 if(products.pending) {
   return <p>Loading...</p>
@@ -63,8 +41,11 @@ console.log(products.data)
   async function handleSubmit(e:React.FormEvent){
     e.preventDefault()
     setSubmitting(true)
+    setSuccess(false)
     try{
-      // const res = await fetch('/api/v1/checkout/${product?.id}', {
+
+      const product = productsData[0]
+
         const res = await fetch(`/api/v1/checkout`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -86,10 +67,6 @@ console.log(products.data)
     }
   }
 
-  
-  
-     
-
   if(error) return <p style={{color:'red'}}>Error: {error}</p>
   const productsData = products.data as Product[]
 
@@ -98,19 +75,23 @@ console.log(products.data)
       <h1>Checkout</h1>
 
 
-      {products && <> {productsData.map((product) => {
-        return (<>
-        <img src={product.image} alt={product.title} style={{width:'100%',height:'300px',objectFit:'cover'}}/>
-        <h2>{product.title}</h2>
-        <p>Price: ${product.price.toLocaleString()}</p>
-        <p>
-  {product.stock > 5
-    ? `In Stock: ${product.stock}`
-    : product.stock > 0 
-    ? `Low Stock: ${product.stock}`
-    : 'Sold Out'}
-</p></>)})}
-      </>} 
+      {products && productsData.map((product) => (
+  <div key={product.id}>
+    <img src={product.image} alt={product.title} style={{width:'100%', height:'300px', objectFit:'cover'}} />
+    <h2>{product.title}</h2>
+    <p>Price: ${product.price.toLocaleString()}</p>
+    <p>
+      {product.stock > 5
+        ? `In Stock: ${product.stock}`
+        : product.stock > 0
+        ? `Low Stock: ${product.stock}`
+        : 'Sold Out'}
+    </p>
+  </div>
+))}
+
+{error && <p style={{ color: 'red' }}>Error: {error}</p>}
+{success && <p style={{ color: 'green' }}>Order placed successfully!</p>}
 
       <form onSubmit={handleSubmit}>
         <div><label htmlFor="name">Name:</label><br/>
@@ -136,5 +117,3 @@ console.log(products.data)
   )
 }
 export default CheckoutForm
-
-//gg
