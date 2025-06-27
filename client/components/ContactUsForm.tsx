@@ -87,7 +87,7 @@ function ContactUsForm() {
               <textarea
                 id="message"
                 value={form.message}
-                className="mb-2 h-[128px] w-[100%] p-2 "
+                className="mb-2 h-[128px] w-[100%] resize-none p-2"
                 required
                 onChange={handleChange}
               />
