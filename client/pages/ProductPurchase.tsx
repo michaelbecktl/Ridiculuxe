@@ -3,6 +3,7 @@ import { useProduct } from '../hooks/useProduct'
 import { useState } from 'react'
 import { useCart } from '../hooks/useCart'
 import { Product } from '../../models/ridiculuxe'
+import { useUser } from '../hooks/useUser'
 
 function ProductPurchase() {
   const params = useParams()
@@ -11,7 +12,9 @@ function ProductPurchase() {
 
   const [quantity, setQuantity] = useState('1')
 
-  const cart = useCart('1') // NOT COMPLETE, USING HARD-CODED USER //
+  const user = useUser()
+  const userId = user.data?.id.toString()
+  const cart = useCart(userId)
 
   if (product.isPending) return <></>
   if (product.isError) return <p>An error has occured</p>
@@ -28,7 +31,7 @@ function ProductPurchase() {
 
   async function handleAdd() {
     const addProduct = {
-      userId: '1',
+      userId: userId,
       productId: productData.id.toString(),
       quantity: Number(quantity),
     }
@@ -37,7 +40,7 @@ function ProductPurchase() {
 
   async function handleBuy() {
     const addProduct = {
-      userId: '1',
+      userId: userId,
       productId: productData.id.toString(),
       quantity: Number(quantity),
     }
@@ -50,15 +53,15 @@ function ProductPurchase() {
         <img src={productData.image} alt={productData.name} />
         <h1>{productData.name}</h1>
         <p>{productData.description}</p>
-        <p>{productData.price}</p>
+        <p>NZD {productData.price}</p>
         {productData.stock < 1 ? (
-          <p>Out of stock</p>
+          <p>Out Of Stock</p>
         ) : productData.stock > 10 ? (
-          <p>Available</p>
+          <p>In Stock</p>
         ) : productData.stock > 1 ? (
-          <p>{productData.stock} units left</p>
+          <p>{productData.stock} Units Left</p>
         ) : (
-          <p>1 unit left</p>
+          <p style={{ color: 'red' }}>1 Unit Left</p>
         )}
       </div>
       <label htmlFor="quantity">Quantity</label>
