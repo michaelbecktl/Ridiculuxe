@@ -36,7 +36,19 @@ console.log(userId.data?.id)
 console.log(cart.data)
 console.log(products.data)
 
+const productsData = products.data as Product[]
+const cartItems = cart.data as { product_id: number; quantity: number }[]
 
+const productWithQuantities = productsData.map((product) => {
+  const cartItem = cartItems.find((item) => item.product_id === product.id)
+  const quantity = cartItem ? cartItem.quantity : 1
+  return { ...product, quantity }
+})
+
+const totalPrice = productWithQuantities.reduce(
+  (sum, product) => sum + product.price * product.quantity,
+  0
+)
 
   async function handleSubmit(e:React.FormEvent){
     e.preventDefault()
@@ -59,27 +71,48 @@ console.log(products.data)
           }),
         })
       if(!res.ok) throw new Error('Checkout failed')
-      navigate('/confirmation',{state:{productTitle: product.title}})
+
+      navigate('/confirmation', {
+        state: {
+          productTitle: product.title,
+          customerName: name,
+          address1,
+          address2,
+          address3,
+          orderItems: productsData.map((product) => ({
+            id: product.id,
+            title: product.title,
+            image: product.image,
+            price: product.price,
+            quantity: 0,
+          })),
+        },
+      })
     }catch(err){
       setError((err as Error).message)
     }finally{
       setSubmitting(false)
     }
   }
+       
+  
 
   if(error) return <p style={{color:'red'}}>Error: {error}</p>
-  const productsData = products.data as Product[]
+
 
   return (
     <div>
       <h1>Checkout</h1>
 
 
-      {products && productsData.map((product) => (
+      {productWithQuantities.map((product) => (
   <div key={product.id}>
     <img src={product.image} alt={product.title} style={{width:'100%', height:'300px', objectFit:'cover'}} />
     <h2>{product.title}</h2>
     <p>Price: ${product.price.toLocaleString()}</p>
+
+    <p>Quantity: {product.quantity}</p>
+    <p>Item Total: ${(product.price * product.quantity).toLocaleString()}</p>
     <p>
       {product.stock > 5
         ? `In Stock: ${product.stock}`
@@ -92,6 +125,8 @@ console.log(products.data)
 
 {error && <p style={{ color: 'red' }}>Error: {error}</p>}
 {success && <p style={{ color: 'green' }}>Order placed successfully!</p>}
+
+<h3>Total: ${totalPrice.toLocaleString()}</h3>
 
       <form onSubmit={handleSubmit}>
         <div><label htmlFor="name">Name:</label><br/>
