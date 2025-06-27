@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom'
 import { useProduct } from '../hooks/useProduct'
 import { useState } from 'react'
 import { useCart } from '../hooks/useCart'
-import { Product } from '../../models/ridiculuxe'
+import { CartData, Product } from '../../models/ridiculuxe'
 import { useUser } from '../hooks/useUser'
 
 function ProductPurchase() {
@@ -29,13 +29,31 @@ function ProductPurchase() {
       setQuantity(productData.stock.toString())
   }
 
+  // Logic for Non-Registered Users //
+  let temporaryCart: CartData[] = []
+  const localCart = localStorage.getItem('cart')
+  console.log(localCart)
+  if (localCart) temporaryCart = JSON.parse(localCart) as CartData[]
+
   async function handleAdd() {
     const addProduct = {
       userId: userId,
       productId: productData.id.toString(),
       quantity: Number(quantity),
     }
-    cart.addToCart.mutate(addProduct)
+    if (!userId) {
+      const existsLocally = temporaryCart.find(
+        (item) => item.productId === addProduct.productId,
+      )
+      existsLocally
+        ? temporaryCart.map((item) => {
+            if (item.productId === addProduct.productId)
+              item.quantity += addProduct.quantity
+          })
+        : temporaryCart.push(addProduct)
+      localStorage.setItem('cart', JSON.stringify(temporaryCart))
+    }
+    if (userId) cart.addToCart.mutate(addProduct)
   }
 
   async function handleBuy() {
