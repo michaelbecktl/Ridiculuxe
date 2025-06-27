@@ -26,7 +26,7 @@ function CheckoutForm(){
   const [success, setSuccess] = useState(false)
 
   const userId = useUser()
-const { cart, products } = useCartProducts('1')
+const { cart, products } = useCartProducts(userId.data?.id || '')
 
 
 if(products.pending) {
@@ -79,12 +79,12 @@ const totalPrice = productWithQuantities.reduce(
           address1,
           address2,
           address3,
-          orderItems: productsData.map((product) => ({
+          orderItems: productWithQuantities.map((product) => ({
             id: product.id,
             title: product.title,
             image: product.image,
             price: product.price,
-            quantity: 0,
+            quantity: product.quantity,
           })),
         },
       })
