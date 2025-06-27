@@ -15,11 +15,7 @@ router.post('/', async (req: Request, res: Response) => {
   }
 
   try {
-    // const { product_id, name, email, address1, address2,  address3 }= req.body
-
-    // if (!product_id || !name || !email || !address1) {
-    //   return res.status(400).json({ error: 'Please fill all required fields' })
-    // }
+    
 
     const newOrderId = await db.createOrder({
       product_id,
