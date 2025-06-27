@@ -1,5 +1,5 @@
 export interface CartData {
-  userId: string
+  userId: string | undefined
   productId: string
   quantity: number
 }

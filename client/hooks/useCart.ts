@@ -10,11 +10,14 @@ import { useNavigate } from 'react-router-dom'
 import { Cart, CartData } from '../../models/ridiculuxe'
 import { getProductById } from '../apis/product'
 
-export function useCart(id: string) {
+export function useCart(id: string | undefined) {
   // Hook to get all items in shopping cart given current user's ID as an argument
   const query = useQuery({
     queryKey: ['cart'],
-    queryFn: () => API.getCartByUser(id),
+    queryFn: () => {
+      if (id) return API.getCartByUser(id)
+    },
+    enabled: !!id,
   })
 
   return {
