@@ -31,7 +31,7 @@ const { cart, products } = useCartProducts('1')
 
 
 if(products.pending) {
-  return <p>Loading...</p>
+  return <p>Loading...your cart</p>
 }
 console.log(userId.data?.id)
 console.log(cart.data)
@@ -61,7 +61,17 @@ const productsData = products.data as Product[]
           }),
         })
       if(!res.ok) throw new Error('Checkout failed')
-      navigate('/confirmation',{state:{productTitle: product.title}})
+      navigate('/confirmation',{
+    state:{
+      name,
+      productTitle: product.title,
+      purchasedItems: productsData.map((product) => ({
+        id: product.id,
+        title: product.title,
+        quantity: cart.data?.find((cart: { productId: string; }) => cart.productId === product.id.toString())?.quantity || 1,
+        price: product.price,
+      }))
+    }})
     }catch(err){
       setError((err as Error).message)
     }finally{
@@ -75,44 +85,91 @@ const productsData = products.data as Product[]
   return (
     <div>
       <h1>Checkout</h1>
-
+      <h2> Item in your cart</h2>
 
       {productsData.map((product) => (
-  <div key={product.id}>
-    <img src={product.image} alt={product.title} style={{width:'100%', height:'300px', objectFit:'cover'}} />
-    <h2>{product.title}</h2>
-    <p>Price: ${product.price.toLocaleString()}</p>
-    {/* <p>
+        <div key={product.id}>
+          <img
+            src={product.image}
+            alt={product.title}
+            style={{ width: '25%', height: '200px', objectFit: 'cover' }}
+          />
+          <h2>Product Name{product.title}</h2>
+          <p>Price: ${product.price.toLocaleString()}</p>
+          <p>Quantity</p>
+          Shipping: FREE
+          <p>Order total(GST included): NZ$</p>
+          {/* <p>
       {product.stock > 5
         ? `In Stock: ${product.stock}`
         : product.stock > 0
         ? `Low Stock: ${product.stock}`
         : 'Sold Out'}
     </p> */}
-  </div>
-))}
+        </div>
+      ))}
 
-{error && <p style={{ color: 'red' }}>Error: {error}</p>}
-{success && <p style={{ color: 'green' }}>Order placed successfully!</p>}
+      {error && <p style={{ color: 'red' }}>Error: {error}</p>}
+      {success && <p style={{ color: 'green' }}>Order placed successfully!</p>}
 
       <form onSubmit={handleSubmit}>
-        <div><label htmlFor="name">Name:</label><br/>
-          <input id="name" type="text" required value={name} onChange={e=>setName(e.target.value)} />
-        </div>
-        <div><label htmlFor="email">Email:</label><br/>
-          <input id="email" type="email" required value={email} onChange={e=>setEmail(e.target.value)} />
-        </div>
-        <div><label htmlFor="address1">Address 1:</label><br/>
-          <input id="address1" type="text" required value={address1} onChange={e=>setAddress1(e.target.value)} />
-        </div>
-        <div><label htmlFor="address2">Address 2 :</label><br/>
-          <input id="address2" type="text" value={address2} onChange={e=>setAddress2(e.target.value)} />
-        </div>
-        <div><label htmlFor="address3">Address 3 (optional):</label><br/>
-          <input id="address3" type="text" value={address3} onChange={e=>setAddress3(e.target.value)} />
+        <div>
+          <label htmlFor="name">Name</label>
+          <br />
+          <input
+            id="name"
+            type="text"
+            required
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
         </div>
         <div>
-          <button type="submit" disabled={submitting}>{submitting?'Placing Order...':'Place Order'}</button>
+          <label htmlFor="email">Email</label>
+          <br />
+          <input
+            id="email"
+            type="email"
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+        <div>
+          <label htmlFor="address1">Address </label>
+          <br />
+          <input
+            id="address1"
+            type="text"
+            required
+            value={address1}
+            onChange={(e) => setAddress1(e.target.value)}
+          />
+        </div>
+        <div>
+          <label htmlFor="address2">City</label>
+          <br />
+          <input
+            id="address2"
+            type="text"
+            value={address2}
+            onChange={(e) => setAddress2(e.target.value)}
+          />
+        </div>
+        <div>
+          <label htmlFor="address3">Country</label>
+          <br />
+          <input
+            id="address3"
+            type="text"
+            value={address3}
+            onChange={(e) => setAddress3(e.target.value)}
+          />
+        </div>
+        <div>
+          <button type="submit" disabled={submitting}>
+            {submitting ? 'Placing Order...' : 'Place Order'}
+          </button>
         </div>
       </form>
     </div>
