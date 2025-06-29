@@ -5,6 +5,17 @@ import { useCart } from '../hooks/useCart'
 import { CartData, Product } from '../../models/ridiculuxe'
 import { useUser } from '../hooks/useUser'
 
+import { useNavigate } from 'react-router-dom'
+
+interface ProductPurchase {
+  id: number
+  title: string
+  price: number
+  image: string
+  quantity: number
+  stock: number
+}
+
 function ProductPurchase() {
   const params = useParams()
   const name = params.name as string
@@ -15,6 +26,8 @@ function ProductPurchase() {
   const user = useUser()
   const userId = user.data?.id.toString()
   const cart = useCart(userId)
+
+  const navigate = useNavigate()
 
   if (product.isPending) return <></>
   if (product.isError) return <p>An error has occured</p>
@@ -62,8 +75,26 @@ function ProductPurchase() {
       productId: productData.id.toString(),
       quantity: Number(quantity),
     }
+    if (userId) {
     cart.buyNow.mutate(addProduct)
   }
+
+  navigate('/checkout', {
+    state: {
+      name: productData.name,
+      purchasedItems: [
+        {
+          id: productData.id,
+          title: productData.name,
+          quantity: Number(quantity),
+          price: productData.price,
+          image: productData.image,
+        
+        },
+      ],
+    },
+  })
+}
 
   return (
     <>
@@ -71,7 +102,7 @@ function ProductPurchase() {
         <img src={productData.image} alt={productData.name} />
         <h1>{productData.name}</h1>
         <p>{productData.description}</p>
-        <p>NZD {productData.price}</p>
+        <p>NZ$ {productData.price}</p>
         {productData.stock < 1 ? (
           <p>Out Of Stock</p>
         ) : productData.stock > 10 ? (
