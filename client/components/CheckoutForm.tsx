@@ -4,7 +4,7 @@ import {useLocation, useNavigate} from 'react-router-dom'
 import { useCartProducts } from '../hooks/useCart'
 import { useUser } from '../hooks/useUser';
 
-interface Product {
+interface ProductPurchase {
   id: number
   title: string
   price: number
@@ -19,9 +19,10 @@ function CheckoutForm(){
   const navigate = useNavigate()
   const location = useLocation()
 
-  const purchasedItems: Product[] = location.state?.purchasedItems || []
-  const buyerName = location.state?.name || ''
-//
+  const purchasedItems: ProductPurchase[] = location.state?.purchasedItems || []
+  console.log('purchasedItems', purchasedItems)
+  // const buyerName = location.state?.name || ''
+
   const [error,setError] = useState('')
   const [name,setName] = useState('')
   const [email,setEmail] = useState('')
@@ -43,8 +44,8 @@ console.log(cart.data)
 console.log(products.data)
 
 
-const productsData = products.data as Product[]
-  const product = productsData[0] 
+// const productsData = products.data as Product[]
+//   const product = productsData[0] 
 
   async function handleSubmit(e:React.FormEvent){
     e.preventDefault()
@@ -63,6 +64,8 @@ for (const product of purchasedItems) {
             address1,
             address2,
             address3,
+            
+            
           }),
         })
       if(!res.ok) throw new Error('Checkout failed')
@@ -71,6 +74,7 @@ for (const product of purchasedItems) {
     state:{
       name,
       purchasedItems,
+      
       },
     })
     }catch(err){
@@ -89,7 +93,7 @@ for (const product of purchasedItems) {
       <h1>Checkout</h1>
       <h2> Item in your cart</h2>
 
-      {productsData.map((product) => (
+      {purchasedItems.map((product) => (
         <div key={product.id}>
           <img
             src={product.image}
@@ -98,7 +102,7 @@ for (const product of purchasedItems) {
           />
           <h2>Product Name{product.title}</h2>
           <p>Price: ${product.price}</p>
-          <p>Quantity {product.quantity}</p>
+          <p>Quantity: {product.quantity}</p>
           Shipping: FREE
           <p>Order total(GST included): NZ$ ${totalPrice.toFixed(2)}</p>
           {/* <p>

@@ -7,6 +7,15 @@ import { useUser } from '../hooks/useUser'
 
 import { useNavigate } from 'react-router-dom'
 
+interface ProductPurchase {
+  id: number
+  title: string
+  price: number
+  image: string
+  quantity: number
+  stock: number
+}
+
 function ProductPurchase() {
   const params = useParams()
   const name = params.name as string
@@ -80,6 +89,8 @@ function ProductPurchase() {
           title: productData.name,
           quantity: Number(quantity),
           price: productData.price,
+          image: productData.image,
+        
         },
       ],
     },
