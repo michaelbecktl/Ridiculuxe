@@ -90,7 +90,7 @@ for (const product of purchasedItems) {
 
   return (
     <div>
-      <h1>Checkout</h1>
+      <h1>Review & Pay</h1>
       <h2> Item in your cart</h2>
 
       {purchasedItems.map((product) => (
@@ -99,25 +99,23 @@ for (const product of purchasedItems) {
             src={product.image}
             alt={product.title}
             style={{ width: '25%', height: '200px', objectFit: 'cover' }}
-          />
+          /> 
+         
           <h2>Product Name{product.title}</h2>
           <p>Price: ${product.price}</p>
           <p>Quantity: {product.quantity}</p>
-          Shipping: FREE
-          <p>Order total(GST included): NZ$ ${totalPrice.toFixed(2)}</p>
-          {/* <p>
-      {product.stock > 5
-        ? `In Stock: ${product.stock}`
-        : product.stock > 0
-        ? `Low Stock: ${product.stock}`
-        : 'Sold Out'}
-    </p> */}
+          <p>
+  Shipping: <span style={{ color: 'green' }}>Free</span>
+</p>
+          <p>Total(GST included): NZ$ ${totalPrice.toFixed(2)}</p>
+        
         </div>
       ))}
 
       {error && <p style={{ color: 'red' }}>Error: {error}</p>}
       {success && <p style={{ color: 'green' }}>Order placed successfully!</p>}
 
+      <h2>Ship to </h2>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name">Name</label>

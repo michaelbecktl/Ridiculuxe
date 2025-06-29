@@ -28,8 +28,8 @@ function Confirmation() {
       <ul style={{ listStyle: 'none', padding: 0 }}>
         {purchasedItems.map((item) => (
           <li key={item.id}>
-            {item.title || 'No'} Quantity:{item.quantity} = $
-            {item.price * item.quantity}
+            {item.title || 'N/A'} Quantity:{item.quantity} = $
+            {item.price}
           </li>
         ))}
       </ul>
