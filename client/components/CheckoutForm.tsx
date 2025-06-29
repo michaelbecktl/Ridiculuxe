@@ -1,21 +1,27 @@
 import React, {useState} from 'react'
-import {useNavigate} from 'react-router-dom'
+import {useLocation, useNavigate} from 'react-router-dom'
 
 import { useCartProducts } from '../hooks/useCart'
 import { useUser } from '../hooks/useUser';
 
-interface Product{ 
-  id:number; 
-  title:string; 
-  price:number; 
-  image:string; 
-  stock:number}
+interface Product {
+  id: number
+  title: string
+  price: number
+  image: string
+  quantity: number
+  stock: number
+}
 
 function CheckoutForm(){
   
   // const {id} = useParams<{id:string}>()
   const navigate = useNavigate()
+  const location = useLocation()
 
+  const purchasedItems: Product[] = location.state?.purchasedItems || []
+  const buyerName = location.state?.name || ''
+//
   const [error,setError] = useState('')
   const [name,setName] = useState('')
   const [email,setEmail] = useState('')
@@ -23,7 +29,6 @@ function CheckoutForm(){
   const [address2,setAddress2] = useState('')
   const [address3,setAddress3] = useState('')
   const [submitting,setSubmitting] = useState(false)
-
   const [success, setSuccess] = useState(false)
 
   const userId = useUser()
@@ -47,7 +52,7 @@ const productsData = products.data as Product[]
     setSuccess(false)
     try{
 
-
+for (const product of purchasedItems) {
         const res = await fetch(`/api/v1/checkout`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -61,26 +66,23 @@ const productsData = products.data as Product[]
           }),
         })
       if(!res.ok) throw new Error('Checkout failed')
+      }
       navigate('/confirmation',{
     state:{
       name,
-      productTitle: product.title,
-      purchasedItems: productsData.map((product) => ({
-        id: product.id,
-        title: product.title,
-        quantity: cart.data?.find((cart: { productId: string; }) => cart.productId === product.id.toString())?.quantity || 1,
-        price: product.price,
-      }))
-    }})
+      purchasedItems,
+      },
+    })
     }catch(err){
       setError((err as Error).message)
     }finally{
       setSubmitting(false)
     }
   }
-
-  if(error) return <p style={{color:'red'}}>Error: {error}</p>
   
+  const totalPrice = purchasedItems.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0)
 
   return (
     <div>
@@ -95,10 +97,10 @@ const productsData = products.data as Product[]
             style={{ width: '25%', height: '200px', objectFit: 'cover' }}
           />
           <h2>Product Name{product.title}</h2>
-          <p>Price: ${product.price.toLocaleString()}</p>
-          <p>Quantity</p>
+          <p>Price: ${product.price}</p>
+          <p>Quantity {product.quantity}</p>
           Shipping: FREE
-          <p>Order total(GST included): NZ$</p>
+          <p>Order total(GST included): NZ$ ${totalPrice.toFixed(2)}</p>
           {/* <p>
       {product.stock > 5
         ? `In Stock: ${product.stock}`
