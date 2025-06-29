@@ -102,7 +102,7 @@ function ProductPurchase() {
         <img src={productData.image} alt={productData.name} />
         <h1>{productData.name}</h1>
         <p>{productData.description}</p>
-        <p>NZD {productData.price}</p>
+        <p>NZ$ {productData.price}</p>
         {productData.stock < 1 ? (
           <p>Out Of Stock</p>
         ) : productData.stock > 10 ? (
