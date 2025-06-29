@@ -78,7 +78,6 @@ function ProductPurchase() {
     if (userId) {
     cart.buyNow.mutate(addProduct)
   }
-//
 
   navigate('/checkout', {
     state: {

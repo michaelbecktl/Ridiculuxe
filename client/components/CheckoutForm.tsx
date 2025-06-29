@@ -101,13 +101,14 @@ for (const product of purchasedItems) {
             style={{ width: '25%', height: '200px', objectFit: 'cover' }}
           /> 
          
-          <h2>Product Name{product.title}</h2>
+          <h2>{product.title}</h2>
+         
           <p>Price: ${product.price}</p>
           <p>Quantity: {product.quantity}</p>
           <p>
   Shipping: <span style={{ color: 'green' }}>Free</span>
 </p>
-          <p>Total(GST included): NZ$ ${totalPrice.toFixed(2)}</p>
+          <p>Total (GST included): NZ$ ${totalPrice.toFixed(2)}</p>
         
         </div>
       ))}
@@ -118,10 +119,10 @@ for (const product of purchasedItems) {
       <h2>Ship to </h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="name">Name</label>
+          <label htmlFor="fullname">Full Name</label>
           <br />
           <input
-            id="name"
+            id="fullname"
             type="text"
             required
             value={name}
