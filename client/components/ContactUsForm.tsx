@@ -27,8 +27,8 @@ function ContactUsForm() {
     <>
       {showForm ? (
         <>
-          <div className="w-[40%] self-start text-left">
-            <form onSubmit={handleSubmit}>
+          <div className="w-[40%]  self-start text-left">
+            <form onSubmit={handleSubmit} className="mx-auto my-5 w-[90%]">
               <label htmlFor="name" className="text-xs">
                 Full Name
               </label>
@@ -96,14 +96,16 @@ function ContactUsForm() {
           </div>
         </>
       ) : (
-        <div className="w-[50%]">
-          <h1>Email sent!</h1>
-          <p>
-            Thanks for contacting us! Our customer service team will be with you
-            as soon as possible. If you did not get a response from our team
-            within 3-5 working days, please don't hesitate to reach out to us
-            again.
-          </p>
+        <div className="relative h-[425px] w-[40%] justify-items-center text-justify">
+          <div className="absolute top-[50%] -translate-y-1/2">
+            <h1 className="text-center text-xl">Email Sent!</h1>
+            <p>
+              Thanks for contacting us! Our customer service team will be with
+              you as soon as possible. If you did not get a response from our
+              team within 3-5 working days, please don't hesitate to reach out
+              to us again.
+            </p>
+          </div>
         </div>
       )}
     </>
