@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import LoginButton from './LoginButton'
+import DarkMode from './DarkMode'
 
 export default function Header() {
   return (
@@ -8,6 +9,7 @@ export default function Header() {
       <Link to="/aboutus">About Us</Link>
       <Link to="/contact">Contact Us</Link>
       <LoginButton />
+      <DarkMode />
     </header>
   )
 }
