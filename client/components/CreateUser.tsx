@@ -52,6 +52,7 @@ export default function CreateUser() {
           value={newName}
           onChange={handleChange}
           className="create user form text"
+          required
         />
         <label htmlFor="email" className="create_user_form_header">
           Email:{' '}
@@ -62,6 +63,7 @@ export default function CreateUser() {
           value={newEmail}
           onChange={handleChange}
           className="create user form text"
+          required
         />
         <label htmlFor="address1" className="create_user_form_header">
           Street Address:{' '}
@@ -72,6 +74,7 @@ export default function CreateUser() {
           value={newAddress1}
           onChange={handleChange}
           className="create user form text"
+          required
         />
         <label htmlFor="address2" className="create_user_form_header">
           Town/City:{' '}
@@ -82,6 +85,7 @@ export default function CreateUser() {
           value={newAddress2}
           onChange={handleChange}
           className="create user form text"
+          required
         />
         <label htmlFor="address3" className="create_user_form_header">
           Postal code:{' '}
@@ -92,6 +96,7 @@ export default function CreateUser() {
           value={newAddress3}
           onChange={handleChange}
           className="create user form text"
+          required
         />
         <br />
         <button type="submit">Submit New User</button>
