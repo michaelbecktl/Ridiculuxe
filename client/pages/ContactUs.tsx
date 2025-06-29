@@ -2,13 +2,15 @@ import { useState } from 'react'
 import ContactUsForm from '../components/ContactUsForm'
 
 function ContactUs() {
+  type sectionKey = 'shipping' | 'missing' | 'overseas'
+
   const [show, setShow] = useState({
     shipping: 'hidden',
     missing: 'hidden',
     overseas: 'hidden',
   })
 
-  const styleSettings = ['max-h-0']
+  const styleSettings = ['0px']
 
   const [style, setStyle] = useState({
     shipping: styleSettings[0],
@@ -17,18 +19,19 @@ function ContactUs() {
   })
 
   function handleClick(e: React.MouseEvent<HTMLButtonElement>) {
-    const key = e.currentTarget.id
+    const key = e.currentTarget.id as sectionKey
     setShow((prev) => ({ ...prev, [key]: prev[key] === '' ? 'hidden' : '' }))
-    const sectionHeight = e.currentTarget.scrollHeight
-    console.log(sectionHeight)
+    const section = e.currentTarget.parentElement?.nextElementSibling
+    const sectionHeight = section?.scrollHeight
     setStyle((prev) => ({
       ...prev,
       [key]:
         prev[key] === styleSettings[0]
-          ? `max-h-${sectionHeight * 2}`
+          ? `${sectionHeight! * 2}px`
           : styleSettings[0],
     }))
   }
+
   return (
     <>
       <div className="justify-items-center">
@@ -47,7 +50,8 @@ function ContactUs() {
             <h2>How long will it take for my order to arrive?</h2>
           </div>
           <div
-            className={`${style.shipping} ease m-3 h-auto overflow-hidden px-8 transition-all duration-500`}
+            className={`m-3 h-auto overflow-hidden px-8 transition-all duration-500 ease-in-out`}
+            style={{ maxHeight: style.shipping }}
           >
             An order usually takes about 3-5 working days to reach your
             doorstep. In the event a customization was requested of a product,
@@ -61,7 +65,8 @@ function ContactUs() {
             <h2>I still did not receive my order.</h2>
           </div>
           <div
-            className={`${style.missing} ease m-3 h-auto overflow-hidden px-8 transition-all duration-500`}
+            className={`m-3 h-auto overflow-hidden px-8 transition-all duration-500 ease-in-out`}
+            style={{ maxHeight: style.missing }}
           >
             <h3>Check delivery details</h3>
             <ul className="list-disc">
@@ -84,7 +89,8 @@ function ContactUs() {
             <h2>Is shipping available for locations outside of New Zealand?</h2>
           </div>
           <div
-            className={`${style.overseas} ease m-3 h-auto overflow-hidden px-8 transition-all duration-500`}
+            className={`m-3 h-auto overflow-hidden px-8 transition-all duration-500 ease-in-out`}
+            style={{ maxHeight: style.overseas }}
           >
             Unfortunately, our product is still only available in New Zealand.
             We have plans to expand our operations and coverage internationally,
