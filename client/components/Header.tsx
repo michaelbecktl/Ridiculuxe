@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import LoginButton from './LoginButton'
+import DarkMode from './DarkMode'
 import { IfAuthenticated } from './Authenticated'
 
 export default function Header() {
@@ -12,6 +13,7 @@ export default function Header() {
         <Link to="/profile">Profile</Link>
       </IfAuthenticated>
       <LoginButton />
+      <DarkMode />
     </header>
   )
 }
