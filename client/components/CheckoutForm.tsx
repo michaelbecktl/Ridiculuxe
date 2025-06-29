@@ -71,12 +71,15 @@ for (const product of purchasedItems) {
       if(!res.ok) throw new Error('Checkout failed')
       }
       navigate('/confirmation',{
-    state:{
-      name,
-      purchasedItems,
-      
-      },
-    })
+        state:{
+          name,
+          email,
+          address1,
+          address2,
+          address3,
+          purchasedItems,
+        },
+      })
     }catch(err){
       setError((err as Error).message)
     }finally{
