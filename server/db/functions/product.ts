@@ -1,6 +1,10 @@
 import { Product } from '../../../models/ridiculuxe.ts'
 import db from '../connection.ts'
 
+export async function getAllProducts() {
+  return await db('product').select()
+}
+
 export async function getProductByName(name: string): Promise<Product> {
   const product = await db('product').where('name', name).select().first()
   return product
