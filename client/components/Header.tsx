@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import LoginButton from './LoginButton'
+import { IfAuthenticated } from './Authenticated'
 
 export default function Header() {
   return (
@@ -7,6 +8,9 @@ export default function Header() {
       <h1>Ridiculuxe</h1>
       <Link to="/aboutus">About Us</Link>
       <Link to="/contact">Contact Us</Link>
+      <IfAuthenticated>
+        <Link to="/profile">Profile</Link>
+      </IfAuthenticated>
       <LoginButton />
     </header>
   )
