@@ -3,6 +3,15 @@ import { Product, ProductQuantity } from '../../models/ridiculuxe'
 
 const rootURL = new URL(`/api/v1/product`, document.baseURI)
 
+export async function getAllProducts(): Promise<Product[]> {
+  const response = await request.get(`${rootURL}`)
+  if (!response) {
+    throw new Error('Could not retrieve product')
+  } else {
+    return response.body
+  }
+}
+
 export async function getProductByName(name: string): Promise<Product> {
   const response = await request.get(`${rootURL}/name/${name}`)
   if (!response) {

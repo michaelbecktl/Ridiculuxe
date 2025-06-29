@@ -32,3 +32,13 @@ export function useProductMutation<TData = unknown, TVariables = unknown>(
 export async function useSoldProduct() {
   return useProductMutation(API.soldProduct)
 }
+
+export function useAllProducts() {
+  const query = useQuery({
+    queryKey: ['product'],
+    queryFn: () => API.getAllProducts(),
+  })
+  return {
+    ...query,
+  }
+}
