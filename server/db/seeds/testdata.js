@@ -3,7 +3,10 @@
  * @returns { Promise<void> }
  */
 export async function seed(knex) {
+  await knex('order').del()
+  await knex('product').del()
   await knex('user').del()
+
   await knex('user').insert([
     {
       id: 1,
@@ -16,7 +19,6 @@ export async function seed(knex) {
     },
   ])
 
-  await knex('product').del()
   await knex('product').insert([
     {
       id: 1,
@@ -29,7 +31,6 @@ export async function seed(knex) {
     },
   ])
 
-  await knex('order').del()
   await knex('order').insert([
     {
       id: 1,
