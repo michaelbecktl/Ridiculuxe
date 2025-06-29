@@ -4,6 +4,18 @@ import * as db from '../db/functions/product.ts'
 
 const router = Router()
 
+router.get('/', async (req, res) => {
+  try {
+    const products = await db.getAllProducts()
+    res.json(products)
+  } catch (error) {
+    console.log(error)
+    res
+      .status(500)
+      .json({ message: 'Something went wrong with getAllProducts' })
+  }
+})
+
 router.get('/name/:name', async (req, res) => {
   try {
     const { name } = req.params
