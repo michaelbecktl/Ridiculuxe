@@ -6,6 +6,7 @@ export default function Header() {
     <header className="header">
       <h1>Ridiculuxe</h1>
       <Link to="/aboutus">About Us</Link>
+      <Link to="/contact">Contact Us</Link>
       <LoginButton />
     </header>
   )
