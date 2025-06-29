@@ -10,7 +10,6 @@ interface Product {
 function Confirmation() {
   const location = useLocation()
   const name = location.state?.name || ''
-  const email = location.state?.email || ''
   const address1 = location.state?.address1 || ''
   const address2 = location.state?.address2 || ''
   const address3 = location.state?.address3 || ''
