@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { useProduct } from '../hooks/useProduct'
 import { useState } from 'react'
 import { useCart } from '../hooks/useCart'
@@ -66,35 +66,53 @@ function ProductPurchase() {
 
   return (
     <>
-      <div>
-        <img src={productData.image} alt={productData.name} />
-        <h1>{productData.name}</h1>
-        <p>{productData.description}</p>
-        <p>NZD {productData.price}</p>
-        {productData.stock < 1 ? (
-          <p>Out Of Stock</p>
-        ) : productData.stock > 10 ? (
-          <p>In Stock</p>
-        ) : productData.stock > 1 ? (
-          <p>{productData.stock} Units Left</p>
-        ) : (
-          <p style={{ color: 'red' }}>1 Unit Left</p>
-        )}
+      <div className="mx-32 my-16 flex">
+        <div>
+          <Link to={`${productData.name}`}>
+            <h1 className="my-4 text-6xl decoration-from-font hover:underline">
+              {productData.name}
+            </h1>
+          </Link>
+          <span className="mr-4">{productData.description}</span>
+          <Link to={`${productData.name}`}>
+            <span className="mr-2 decoration-from-font hover:underline">
+              Learn More
+            </span>
+            <span>&gt;</span>
+          </Link>
+          <img
+            src={productData.image}
+            alt={productData.name}
+            className="my-4 max-w-xl"
+          />
+        </div>
+        <div className="m-16">
+          <p className="text-4xl">NZD {productData.price}</p>
+          {productData.stock < 1 ? (
+            <p>Out Of Stock</p>
+          ) : productData.stock > 10 ? (
+            <p>In Stock</p>
+          ) : productData.stock > 1 ? (
+            <p>{productData.stock} Units Left</p>
+          ) : (
+            <p style={{ color: 'red' }}>1 Unit Left</p>
+          )}
+          <label htmlFor="quantity">Quantity</label>
+          <input
+            id="quantity"
+            type="number"
+            value={isOOS ? '' : quantity}
+            onChange={handleChange}
+            disabled={isOOS}
+          />
+          <button disabled={isOOS} onClick={handleBuy}>
+            Buy Now
+          </button>
+          <button disabled={isOOS} onClick={handleAdd}>
+            Add To Cart
+          </button>
+        </div>
       </div>
-      <label htmlFor="quantity">Quantity</label>
-      <input
-        id="quantity"
-        type="number"
-        value={isOOS ? '' : quantity}
-        onChange={handleChange}
-        disabled={isOOS}
-      />
-      <button disabled={isOOS} onClick={handleBuy}>
-        Buy Now
-      </button>
-      <button disabled={isOOS} onClick={handleAdd}>
-        Add To Cart
-      </button>
     </>
   )
 }
