@@ -48,10 +48,9 @@ function Confirmation() {
       <div className="shipping-section">
         <h3>Shipping Details</h3>
         <div className="address-box">
-          <p>Name:{name}</p>
-          <p>Address:{address1}</p>
-          <p>{address2}</p>
-          <p>{address3}</p>
+          <p><strong>Name:</strong>   {name}</p>
+          <p><strong>Address:</strong>    {address1}</p>
+          <p>{address2}   {address3}</p>
         </div>
       </div>
     </div>
