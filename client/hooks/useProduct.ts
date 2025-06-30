@@ -35,7 +35,7 @@ export async function useSoldProduct() {
 
 export function useAllProducts() {
   const query = useQuery({
-    queryKey: ['product'],
+    queryKey: ['products'],
     queryFn: () => API.getAllProducts(),
   })
   return {
