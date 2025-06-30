@@ -40,7 +40,7 @@ router.get('/id/:id', async (req, res) => {
   }
 })
 
-router.delete('/stock/:id', async (req, res) => {
+router.patch('/stock/:id', async (req, res) => {
   try {
     const { id } = req.params
     const { quantity } = req.body

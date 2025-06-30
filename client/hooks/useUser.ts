@@ -17,7 +17,6 @@ export function useUser() {
     refetchOnWindowFocus: false,
     retry: false,
   })
-
   return {
     ...query,
     add: useAddUser(),

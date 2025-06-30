@@ -37,8 +37,22 @@ export async function updateCart(update: AllCartData) {
 export async function deleteFromCart(update: DeleteCartItem) {
   const { userId, productId } = update
   const response = await request
-    .delete(`${rootURL}/${userId}`)
+    .delete(`${rootURL}/remove/${userId}`)
     .send({ productId })
+  if (!response) {
+    throw new Error('Could not delete product from shopping cart')
+  } else {
+    return response.body
+  }
+}
+
+interface DeleteCart {
+  userId: string
+}
+
+export async function deleteCart(update: DeleteCart) {
+  const { userId } = update
+  const response = await request.delete(`${rootURL}/destroy/${userId}`)
   if (!response) {
     throw new Error('Could not delete product from shopping cart')
   } else {
