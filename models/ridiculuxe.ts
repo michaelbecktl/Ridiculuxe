@@ -18,12 +18,11 @@ export interface DeleteCartItem {
 }
 
 export interface OrderData {
-  auth0Id: string
   name: string
   email: string
   address1: string
-  address2: string
-  address3: string
+  address2: string | null
+  address3: string | null
 }
 
 export interface Order extends OrderData {
@@ -42,7 +41,7 @@ export interface Product extends ProductData {
   id: number
 }
 export interface ProductQuantity {
-  id: string
+  productId: string
   quantity: number
 }
 export interface UserData {
@@ -64,4 +63,10 @@ export interface newUser {
   address1: string
   address2: string
   address3: string
+}
+
+export interface OrderProduct {
+  productId: string
+  orderId: number
+  quantity: number
 }

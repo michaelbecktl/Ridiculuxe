@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { useProduct } from '../hooks/useProduct'
 import { useState } from 'react'
 import { useCart } from '../hooks/useCart'
@@ -66,9 +66,14 @@ function ProductPurchase() {
 
   return (
     <>
-      <div>
+      <div className="my-[100px]">
+        <Link to={`/${productData.name}`}>
+          <h1 className="inline text-6xl hover:decoration-solid">
+            {productData.name}
+          </h1>
+        </Link>
         <img src={productData.image} alt={productData.name} />
-        <h1>{productData.name}</h1>
+
         <p>{productData.description}</p>
         <p>NZD {productData.price}</p>
         {productData.stock < 1 ? (

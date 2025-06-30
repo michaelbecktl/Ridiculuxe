@@ -7,6 +7,10 @@ body {
   @apply bg-plain1;
 }
 
+a {
+  @apply m-0;
+}
+
 .header {
   @apply bg-plain4/50 fixed top-0 flex w-full justify-between;
   padding: 20px 80px;
@@ -18,10 +22,6 @@ body {
 
 .homepageProduct {
   @apply m-0 flex h-dvh w-dvw flex-col items-center justify-center;
-
-  * {
-    @apply m-10;
-  }
 }
 
 :root {
@@ -74,6 +74,7 @@ body {
   transform: scale(1.1);
 }
 
+
 /* vvv----------------------------------------------------- Checkout page   ------------------------------------------vvv */
 /* ------------------ Checkout page LIGHT MODE  ------------------ */
 .checkout-container {
@@ -91,6 +92,9 @@ body {
   text-align: center;
   margin-bottom: 1.5rem;
 }
+
+/* confirmation page  */
+
 
 .section-heading {
   font-size: 1.5rem;
@@ -315,7 +319,11 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 50rem;
+
   padding: 7rem;
+
+  padding: 1rem;
+
 }
 
 @keyframes spinOnce {
@@ -433,6 +441,7 @@ ul {
   color: #424242;
 }
 
+
 /* vvv------------------confirmation page DARK MODE  ------------------vvv */
 
 .darkMode .confirmation-container {
@@ -538,3 +547,4 @@ ul {
   text-shadow: 0 0 3px rgba(252, 21, 239, 0.3);
   margin-top: 3rem;
 }
+

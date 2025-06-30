@@ -61,3 +61,11 @@ export async function deleteFromCart(update: DeleteCartItem) {
     .delete()
   return cart
 }
+interface DeleteCart {
+  userId: string
+}
+
+export async function deleteCart(update: DeleteCart) {
+  const cart = await db('cart').where('user_id', update.userId).delete()
+  return cart
+}
