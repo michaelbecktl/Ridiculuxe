@@ -103,7 +103,7 @@ body {
   width: 100%;
   transform: perspective(1000px) rotateX(1deg);
   transition: transform 0.3s ease;
-  animation: spinOnce 1s ease-in-out;
+  animation: spinOnce 0.5s ease-in-out;
 }
 
 .confirmation-card:hover {
@@ -200,7 +200,6 @@ ul {
   color: #424242;
 }
 
-
 /* ------------------confirmation page DARK MODE  ------------------ */
 
 .darkMode .confirmation-container {
@@ -223,7 +222,7 @@ ul {
 
 .darkMode .confirmation-card:hover {
   transform: perspective(1000px) rotateX(1deg) scale(1.02);
-  box-shadow: 0 0 20px #0AEAF1, 0 0 40px #3227A7;
+  box-shadow: 0px 0 20px #0AEAF1, 0 0 40px #3227A7;
 }
 
 .darkMode .confirmation-header {
