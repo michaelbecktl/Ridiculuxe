@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 
 import { useCartProducts } from '../hooks/useCart'
 import { IfAuthenticated, IfNotAuthenticated } from './Authenticated'
-import { CartData } from '../../models/ridiculuxe'
+import { CartData, ProductQuantity } from '../../models/ridiculuxe'
 import { useQueries } from '@tanstack/react-query'
 import { getProductById } from '../apis/product'
 import { User } from '@auth0/auth0-react'
@@ -67,7 +67,7 @@ function CheckoutForm() {
     address2: cart.user?.address2,
     address3: cart.user?.address3,
   }
-
+  console.log(cart.data)
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setSelectedDetails(e.target.value)
 
@@ -94,6 +94,12 @@ function CheckoutForm() {
         body: JSON.stringify(postBody),
       })
       if (!res.ok) throw new Error('Checkout failed')
+      cart.data.map(async (item: ProductQuantity) =>
+        (await useProducts.soldProduct).mutate({
+          productId: item.productId,
+          quantity: item.quantity,
+        }),
+      )
       cart.destroy.mutate({ userId: cart.user.id.toString() })
 
       navigate('/confirmation', {

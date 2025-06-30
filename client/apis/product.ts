@@ -1,5 +1,5 @@
 import request from 'superagent'
-import { CartData, Product } from '../../models/ridiculuxe'
+import { CartData, Product, ProductQuantity } from '../../models/ridiculuxe'
 
 const rootURL = new URL(`/api/v1/product`, document.baseURI)
 
@@ -30,7 +30,7 @@ export async function getProductById(id: string): Promise<Product> {
   }
 }
 
-export async function soldProduct(data: CartData) {
+export async function soldProduct(data: ProductQuantity) {
   const { productId, quantity } = data
   const response = await request
     .patch(`${rootURL}/stock/${productId}`)
