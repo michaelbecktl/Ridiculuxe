@@ -7,6 +7,10 @@ body {
   @apply bg-plain1;
 }
 
+a {
+  @apply m-0;
+}
+
 .header {
   @apply bg-plain4/50 fixed top-0 flex w-full justify-between;
   padding: 20px 80px;
@@ -18,10 +22,6 @@ body {
 
 .homepageProduct {
   @apply m-0 flex h-dvh w-dvw flex-col items-center justify-center;
-
-  * {
-    @apply m-10;
-  }
 }
 
 :root {
@@ -72,14 +72,13 @@ body {
   transform: scale(1.1);
 }
 
-
 /* confirmation page  */
 
 .confirmation-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 50rem; 
+  min-height: 50rem;
   padding: 1rem;
 }
 
@@ -145,7 +144,7 @@ body {
 .total-section h3,
 .shipping-section h3 {
   font-size: 1.2rem;
-  margin-bottom:1rem;
+  margin-bottom: 1rem;
   color: #424242;
   border-bottom: 10px solid #e0e0e0;
   padding-bottom: 0.3rem;
@@ -180,7 +179,7 @@ ul {
 }
 
 .free {
-  color: #424242; 
+  color: #424242;
   font-weight: bold;
 }
 
