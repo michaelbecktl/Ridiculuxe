@@ -1,6 +1,5 @@
 import { useAllProducts } from '../hooks/useProduct'
 import Footer from './Footer'
-import Header from './Header'
 
 export default function Homepage() {
   const { data: products, isPending, isError } = useAllProducts()
@@ -10,7 +9,6 @@ export default function Homepage() {
 
   return (
     <div>
-      <Header />
       {products.map((e) => (
         <div key={e.id} className="homepageProduct">
           <p>Name: {e.name}</p>
