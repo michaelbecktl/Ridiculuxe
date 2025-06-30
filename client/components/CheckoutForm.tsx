@@ -110,12 +110,13 @@ function CheckoutForm() {
 
       navigate('/confirmation', {
         state: {
-          name,
-          email,
-          address1,
-          address2,
-          address3,
+          name: selectedDetails === 'existing' ? userShippingDetails.name : name,
+          email: selectedDetails === 'existing' ? userShippingDetails.email : email,
+          address1: selectedDetails === 'existing' ? userShippingDetails.address1: address1,
+          address2: selectedDetails === 'existing' ? userShippingDetails.address2: address2,
+          address3: selectedDetails === 'existing' ? userShippingDetails.address3: address3,
           purchasedItems,
+          
         },
       })
     } catch (err) {
@@ -158,7 +159,7 @@ function CheckoutForm() {
 
       navigate('/confirmation', {
         state: {
-          name,
+          name, 
           email,
           address1,
           address2,
@@ -331,7 +332,6 @@ function CheckoutForm() {
         <h2>Ship to </h2>
         <form onSubmit={handleSubmitGuest}>
           <div>
-
             <label htmlFor="fullname">Full Name</label>
             <br />
             <input
@@ -340,11 +340,9 @@ function CheckoutForm() {
               required
               value={name}
               onChange={(e) => setName(e.target.value)}
-
             />
           </div>
           <div>
-
             <label htmlFor="email">Email</label>
             <br />
             <input
@@ -353,12 +351,10 @@ function CheckoutForm() {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-
             />
           </div>
           <div>
             <label htmlFor="address1">Address Line 1</label>
-
             <br />
             <input
               id="address1"
@@ -366,44 +362,36 @@ function CheckoutForm() {
               required
               value={address1}
               onChange={(e) => setAddress1(e.target.value)}
-
             />
           </div>
           <div>
             <label htmlFor="address2">Address Line 2</label>
-
             <br />
             <input
               id="address2"
               type="text"
               value={address2}
               onChange={(e) => setAddress2(e.target.value)}
-
             />
           </div>
           <div>
             <label htmlFor="address3">Address Line 3</label>
-
             <br />
             <input
               id="address3"
               type="text"
               value={address3}
               onChange={(e) => setAddress3(e.target.value)}
-
             />
           </div>
           <div>
             <button type="submit" disabled={submitting}>
-
               {submitting ? 'Placing Order...' : 'Place Order'}
             </button>
           </div>
         </form>
-
       </IfNotAuthenticated>
     </div>
   )
 }
 export default CheckoutForm
-

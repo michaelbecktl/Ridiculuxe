@@ -15,7 +15,6 @@ function Confirmation() {
   const address3 = location.state?.address3 || ''
 
   const purchasedItems: Product[] = location.state?.purchasedItems || []
-// const name = location.state?.name || ''
   const totalPrice = purchasedItems.reduce(
     (sum, item) => sum + item.price * item.quantity, 0)
 
@@ -23,7 +22,7 @@ function Confirmation() {
     <div className="confirmation-container">
     <div className="confirmation-card">
       <h1 className="confirmation-header">Ridiculuxe Order Confirmation!</h1>
-      <p className="greeting">Hey, <span>{name}</span></p>
+      <p className="greeting">Hey, <span>{name} </span></p>
       <h2 className="thank-you">Thank you for shopping with us.</h2>
       <p className="message">We have received your order. You’ll receive a notification once it has been dispatched.</p>
 
