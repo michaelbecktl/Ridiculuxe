@@ -18,7 +18,6 @@ export interface DeleteCartItem {
 }
 
 export interface OrderData {
-  auth0Id: string
   name: string
   email: string
   address1: string
@@ -64,4 +63,10 @@ export interface newUser {
   address1: string
   address2: string
   address3: string
+}
+
+export interface OrderProduct {
+  productId: string
+  orderId: number
+  quantity: number
 }

@@ -6,7 +6,6 @@ import { IfAuthenticated, IfNotAuthenticated } from './Authenticated'
 import { CartData, ProductQuantity } from '../../models/ridiculuxe'
 import { useQueries } from '@tanstack/react-query'
 import { getProductById } from '../apis/product'
-import { User } from '@auth0/auth0-react'
 import { useProduct } from '../hooks/useProduct'
 
 interface ProductPurchase {
@@ -94,6 +93,10 @@ function CheckoutForm() {
         body: JSON.stringify(postBody),
       })
       if (!res.ok) throw new Error('Checkout failed')
+
+      const { newOrderId } = res.body
+      console.log(newOrderId)
+
       cart.data.map(async (item: ProductQuantity) =>
         (await useProducts.soldProduct).mutate({
           productId: item.productId,
