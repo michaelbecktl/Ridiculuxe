@@ -21,8 +21,8 @@ export interface OrderData {
   name: string
   email: string
   address1: string
-  address2: string
-  address3: string
+  address2: string | null
+  address3: string | null
 }
 
 export interface Order extends OrderData {

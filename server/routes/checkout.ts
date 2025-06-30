@@ -3,7 +3,7 @@ import * as db from '../db/order'
 
 const router = express.Router()
 
-router.get('/order/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
     const { id } = req.params
     const result = await db.getOrder(id)
@@ -31,19 +31,7 @@ router.post('/', async (req: Request, res: Response) => {
       address2,
       address3,
     })
-    console.log('newOrderId', newOrderId)
-    res.json(newOrderId).status(201)
-  } catch (err) {
-    console.error(err)
-    res.status(500).json({ error: 'Something went wrong. Please try again' })
-  }
-})
-
-router.get('/orderproduct', async (req, res) => {
-  try {
-    const result = await db.createOrderProduct(req.body)
-    if (!result) res.status(404).json(`Unable to create product row`)
-    res.json(result)
+    res.json(newOrderId)
   } catch (err) {
     console.error(err)
     res.status(500).json({ error: 'Something went wrong. Please try again' })
