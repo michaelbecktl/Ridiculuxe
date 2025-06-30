@@ -1,5 +1,5 @@
 import request from 'superagent'
-import { CartData, Product, ProductQuantity } from '../../models/ridiculuxe'
+import { Product, ProductQuantity } from '../../models/ridiculuxe'
 
 const rootURL = new URL(`/api/v1/product`, document.baseURI)
 

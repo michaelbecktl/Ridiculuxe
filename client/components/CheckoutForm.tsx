@@ -6,8 +6,8 @@ import { IfAuthenticated, IfNotAuthenticated } from './Authenticated'
 import { CartData, ProductQuantity } from '../../models/ridiculuxe'
 import { useQueries } from '@tanstack/react-query'
 import { getProductById } from '../apis/product'
-import { User } from '@auth0/auth0-react'
 import { useProduct } from '../hooks/useProduct'
+import { useOrder, useOrderProducts } from '../hooks/useOrder'
 
 interface ProductPurchase {
   id: number
@@ -23,6 +23,8 @@ function CheckoutForm() {
   const navigate = useNavigate()
   const location = useLocation()
   const useProducts = useProduct()
+  const order = useOrder()
+  const orderProducts = useOrderProducts()
 
   const purchasedItems: ProductPurchase[] = location.state?.purchasedItems || []
   // const buyerName = location.state?.name || ''
@@ -60,14 +62,13 @@ function CheckoutForm() {
   if (products.pending || localQuery.pending) return <p>Loading cart...</p>
 
   const userShippingDetails = {
-    user_id: cart.user?.id,
+    id: cart.user?.id,
     name: cart.user?.name,
     email: cart.user?.email,
     address1: cart.user?.address1,
     address2: cart.user?.address2,
     address3: cart.user?.address3,
   }
-  console.log(cart.data)
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setSelectedDetails(e.target.value)
 
@@ -81,26 +82,31 @@ function CheckoutForm() {
         selectedDetails === 'existing'
           ? userShippingDetails
           : {
-              user_id: cart.user?.id,
+              id: cart.user?.id,
               name: name,
               email: email,
               address1: address1,
               address2: address2,
               address3: address3,
             }
-      const res = await fetch(`/api/v1/checkout`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(postBody),
-      })
-      if (!res.ok) throw new Error('Checkout failed')
+      const orderId = await order.addOrder.mutateAsync(postBody)
+
       cart.data.map(async (item: ProductQuantity) =>
-        (await useProducts.soldProduct).mutate({
+        orderProducts.mutateAsync({
+          orderId: orderId,
+          productId: item.productId,
+          quantity: item.quantity,
+        }),
+      )
+
+      cart.data.map(async (item: ProductQuantity) =>
+        (await useProducts.soldProduct).mutateAsync({
           productId: item.productId,
           quantity: item.quantity,
         }),
       )
       cart.destroy.mutate({ userId: cart.user.id.toString() })
+      localStorage.setItem('orderId', JSON.stringify(orderId))
 
       navigate('/confirmation', {
         state: {
@@ -128,23 +134,27 @@ function CheckoutForm() {
 
     try {
       const postBody = {
-        user_id: null,
+        id: null,
         name: name,
         email: email,
         address1: address1,
         address2: address2,
         address3: address3,
       }
-      const res = await fetch(`/api/v1/checkout`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(postBody),
-      })
-      if (!res.ok) throw new Error('Checkout failed')
+      const orderId = await order.addOrder.mutateAsync(postBody)
+
+      localCartContent.map(async (item: ProductQuantity) =>
+        orderProducts.mutateAsync({
+          orderId: orderId,
+          productId: item.productId,
+          quantity: item.quantity,
+        }),
+      )
       localCartContent.map(async (item) =>
         (await useProducts.soldProduct).mutate(item),
       )
       localStorage.removeItem('cart')
+      localStorage.setItem('orderId', JSON.stringify(orderId))
 
       navigate('/confirmation', {
         state: {

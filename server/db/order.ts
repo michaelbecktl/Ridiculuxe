@@ -1,3 +1,4 @@
+import { OrderProduct } from '../../models/ridiculuxe.ts'
 import db from './connection.ts'
 
 interface NewOrder {
@@ -7,6 +8,10 @@ interface NewOrder {
   address1: string
   address2?: string
   address3?: string
+}
+
+export async function getOrder(id: string) {
+  return await db('order').where('user_id', id).select('*')
 }
 
 export async function createOrder(order: NewOrder) {
@@ -22,4 +27,13 @@ export async function createOrder(order: NewOrder) {
     .returning('id')
 
   return id
+}
+
+export async function createOrderProduct(order: OrderProduct) {
+  const formatted = {
+    product_id: order.productId,
+    order_id: order.orderId,
+    quantity: order.quantity,
+  }
+  return await db('product_order').insert(formatted)
 }
