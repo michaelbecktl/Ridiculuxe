@@ -74,9 +74,242 @@ body {
   transform: scale(1.1);
 }
 
+/* vvv----------------------------------------------------- Checkout page   ------------------------------------------vvv */
+/* ------------------ Checkout page LIGHT MODE  ------------------ */
+.checkout-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem;
+  background-color: #f5f5f5;
+  color: #424242;
+}
 
-/* confirmation page  */
-/* ------------------confirmation page LIGHT MODE  ------------------ */
+.checkout-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.section-heading {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 4px solid #dcdcdc;
+  padding-bottom: 0.5rem;
+}
+
+.cart-item {
+  background: #e0e0e0;
+  border-radius: 20px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 2rem;
+  box-shadow: inset 0 2px 6px rgba(66, 66, 66, 0.05);
+}
+
+.cart-item-image {
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(66, 66, 66, 0.1);
+}
+
+.item-title {
+  font-size: 1.4rem;
+  margin-top: 1rem;
+}
+
+.item-price,
+.item-quantity,
+.total-price {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.shipping-info {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.free {
+  color: green;
+  font-weight: bold;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.success-message {
+  color: green;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.checkout-form {
+  width: 100%;
+  max-width: 600px;
+  margin-top: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.submit-button {
+  background-color: #424242;
+  color: #fff;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #2c2c2c;
+}
+/* ------------------Checkout page Dark MODE  ------------------ */
+.darkMode .checkout-container {
+  background-color: #0b0b0f;
+  color: #ccc;
+  
+}
+
+.darkMode .checkout-title {
+  color: #0AEAF1;
+  margin: 20px;
+  text-align: center;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  text-shadow:
+    0 0 10px rgba(10, 234, 241, 0.6),
+    0 0 20px rgba(50, 39, 167, 0.4),
+    0 0 35px rgba(253, 235, 39, 0.3),
+    0 0 50px rgba(252, 21, 239, 0.2);
+  animation: glowPulse 3s infinite ease-in-out;
+}
+@keyframes glowPulse {
+  0%, 100% {
+    text-shadow:
+      0 0 30px rgba(10, 234, 241, 0.6),
+      0 0 50px rgba(50, 39, 167, 0.4),
+      0 0 80px rgba(253, 235, 39, 0.3),
+      0 0 100px rgba(252, 21, 239, 0.2);
+  }
+  50% {
+    text-shadow:
+      0 0 100px rgba(10, 234, 241, 0.8),
+      0 0 80px rgba(50, 39, 167, 0.6),
+      0 0 50px rgba(253, 235, 39, 0.5),
+      0 0 30px rgba(252, 21, 239, 0.4);
+  }
+}
+
+.darkMode .section-heading {
+  color: #F8232F;
+  border-bottom: 1px solid rgba(248, 35, 47, 0.4);
+  letter-spacing: 1px;
+}
+
+.darkMode .cart-item {
+  background: rgba(50, 39, 167, 0.08);
+  border: 1px solid #3227A7;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: inset 0 0 8px rgba(50, 39, 167, 0.2);
+}
+
+.darkMode .cart-item-image {
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(10, 234, 241, 0.2);
+}
+
+.darkMode .item-title {
+  color: #FDEB27;
+  font-weight: 600;
+  text-shadow: 0 0 3px rgba(253, 235, 39, 0.4);
+}
+
+.darkMode .item-price,
+.darkMode .item-quantity,
+.darkMode .total-price {
+  color: #ccc;
+  font-size: 1rem;
+}
+
+.darkMode .shipping-info {
+  color: #FC15EF;
+  text-shadow: 0 0 2px rgba(252, 21, 239, 0.3);
+}
+
+.darkMode .free {
+  color: #0AEAF1;
+  font-weight: bold;
+  text-shadow: 0 0 4px rgba(10, 234, 241, 0.4);
+}
+
+.darkMode .error-message {
+  color: #F8232F;
+  font-weight: bold;
+}
+
+.darkMode .success-message {
+  color: #0AEAF1;
+  font-weight: bold;
+}
+
+.darkMode .checkout-form {
+  background-color: rgba(20, 20, 40, 0.4);
+  border: 1px solid rgba(250, 250, 250, 0.05);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+.darkMode .form-group label {
+  color: #FDEB27;
+}
+
+.darkMode .input-field {
+  background-color: #14141f;
+  color: #ccc;
+  border: 1px solid #3227A7;
+  border-radius: 8px;
+  padding: 0.8rem;
+}
+
+.darkMode .submit-button {
+  background-color: #0AEAF1;
+  color: #0b0b0f;
+  border-radius: 12px;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 0 15px rgba(10, 234, 241, 0.3);
+}
+
+.darkMode .submit-button:hover {
+  background-color: #0ec6d6;
+}
+
+
+/* --------------------------------------- Confirmation page   ------------------------------------- */
+/* ------------------ confirmation page LIGHT MODE  ------------------ */
 .confirmation-container {
   display: flex;
   justify-content: center;
@@ -200,14 +433,13 @@ ul {
   color: #424242;
 }
 
-/* ------------------confirmation page DARK MODE  ------------------ */
+/* vvv------------------confirmation page DARK MODE  ------------------vvv */
 
 .darkMode .confirmation-container {
   background-color: #0b0b0f;
   font-family: 'Orbitron', 'Segoe UI', sans-serif;
   color: #ccc;
 }
-
 .darkMode .confirmation-card {
   background: linear-gradient(145deg, #14141f, #0a0a14);
   border-radius: 40px;
@@ -219,12 +451,10 @@ ul {
   box-shadow: 20px 25px 12px rgba(252, 21, 239, 0.1);
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
-
 .darkMode .confirmation-card:hover {
   transform: perspective(1000px) rotateX(1deg) scale(1.02);
   box-shadow: 0px 0 20px #0AEAF1, 0 0 40px #3227A7;
 }
-
 .darkMode .confirmation-header {
   font-size: 2.8rem;
   font-weight: 700;
@@ -295,7 +525,7 @@ ul {
 .darkMode .free {
   color: #0AEAF1;
   font-weight: bold;
-  text-shadow: 0 0 4px rgba(10, 234, 241, 0.4);
+  text-shadow: 0 0 4px rgba(120, 137, 138, 0.4);
 }
 
 .darkMode .address-box {

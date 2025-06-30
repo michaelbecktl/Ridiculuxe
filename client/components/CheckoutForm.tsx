@@ -91,96 +91,106 @@ for (const product of purchasedItems) {
     (sum, item) => sum + item.price * item.quantity,
     0)
 
-  return (
-    <div>
-      <h1>Review & Pay</h1>
-      <h2> Item in your cart</h2>
-
-      {purchasedItems.map((product) => (
-        <div key={product.id}>
-          <img
-            src={product.image}
-            alt={product.title}
-            style={{ width: '25%', height: '200px', objectFit: 'cover' }}
-          /> 
-         
-          <h2>{product.title}</h2>
-         
-          <p>Price: ${product.price}</p>
-          <p>Quantity: {product.quantity}</p>
-          <p>
-  Shipping: <span style={{ color: 'green' }}>Free</span>
-</p>
-          <p>Total (GST included): NZ$ ${totalPrice.toFixed(2)}</p>
-        
-        </div>
-      ))}
-
-      {error && <p style={{ color: 'red' }}>Error: {error}</p>}
-      {success && <p style={{ color: 'green' }}>Order placed successfully!</p>}
-
-      <h2>Ship to </h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="fullname">Full Name</label>
-          <br />
-          <input
-            id="fullname"
-            type="text"
-            required
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="email">Email</label>
-          <br />
-          <input
-            id="email"
-            type="email"
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="address1">Address </label>
-          <br />
-          <input
-            id="address1"
-            type="text"
-            required
-            value={address1}
-            onChange={(e) => setAddress1(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="address2">City</label>
-          <br />
-          <input
-            id="address2"
-            type="text"
-            value={address2}
-            onChange={(e) => setAddress2(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="address3">Country</label>
-          <br />
-          <input
-            id="address3"
-            type="text"
-            value={address3}
-            onChange={(e) => setAddress3(e.target.value)}
-          />
-        </div>
-        <div>
-          <button type="submit" disabled={submitting}>
-            {submitting ? 'Placing Order...' : 'Place Order'}
-          </button>
-        </div>
-      </form>
-    </div>
-  )
-}
-export default CheckoutForm
+    return (
+      <div className="checkout-container">
+        <h1 className="checkout-title">Review & Pay</h1>
+        <h2 className="section-heading">Item in your cart</h2>
+    
+        {purchasedItems.map((product) => (
+          <div key={product.id} className="cart-item">
+            <img
+              src={product.image}
+              alt={product.title}
+              className="cart-item-image"
+              style={{ width: '25%', height: '200px', objectFit: 'cover' }}
+            />
+    
+            <h2 className="item-title">{product.title}</h2>
+            <p className="item-price">Price: ${product.price}</p>
+            <p className="item-quantity">Quantity: {product.quantity}</p>
+            <p className="shipping-info">
+              Shipping: <span className="free">Free</span>
+            </p>
+            <p className="total-price">
+              Total (GST included): NZ$ ${totalPrice.toFixed(2)}
+            </p>
+          </div>
+        ))}
+    
+        {error && <p className="error-message">Error: {error}</p>}
+        {success && <p className="success-message">Order placed successfully!</p>}
+    
+        <h2 className="section-heading">Ship to</h2>
+        <form onSubmit={handleSubmit} className="checkout-form">
+          <div className="form-group">
+            <label htmlFor="fullname">Full Name</label>
+            <br />
+            <input
+              id="fullname"
+              type="text"
+              required
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="input-field"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <br />
+            <input
+              id="email"
+              type="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="input-field"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="address1">Address</label>
+            <br />
+            <input
+              id="address1"
+              type="text"
+              required
+              value={address1}
+              onChange={(e) => setAddress1(e.target.value)}
+              className="input-field"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="address2">City</label>
+            <br />
+            <input
+              id="address2"
+              type="text"
+              value={address2}
+              onChange={(e) => setAddress2(e.target.value)}
+              className="input-field"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="address3">Country</label>
+            <br />
+            <input
+              id="address3"
+              type="text"
+              value={address3}
+              onChange={(e) => setAddress3(e.target.value)}
+              className="input-field"
+            />
+          </div>
+          <div className="form-group">
+            <button
+              type="submit"
+              disabled={submitting}
+              className="submit-button"
+            >
+              {submitting ? 'Placing Order...' : 'Place Order'}
+            </button>
+          </div>
+        </form>
+      </div>
+    )
+  }
+    export default CheckoutForm
