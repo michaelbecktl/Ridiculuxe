@@ -41,7 +41,7 @@ function Confirmation() {
       </div>
 
       <div className="total-section">
-        <p>Shipping: <span className="free">Free</span></p>
+      <p className="shipping-info">Shipping: <span className="free">Free</span></p>
         <h3>Order Total (GST included): NZ${totalPrice.toFixed(2)}</h3>
       </div>
 

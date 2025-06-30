@@ -29,6 +29,7 @@ body {
   --bg-color: white;
   --secondary-color: #569bdbdc;
   --shadow-color: #56dbb3cb;
+  
 }
 
 body {
@@ -40,6 +41,7 @@ body {
 .darkMode {
   --text-color: rgb(255, 255, 255);
   --bg-color: rgb(46, 46, 46);
+  --shadow-color: #56dbb3cb;
 }
 
 .activeTheme {
@@ -74,13 +76,13 @@ body {
 
 
 /* confirmation page  */
-
+/* ------------------confirmation page LIGHT MODE  ------------------ */
 .confirmation-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 50rem; 
-  padding: 1rem;
+  min-height: 50rem;
+  padding: 7rem;
 }
 
 @keyframes spinOnce {
@@ -95,7 +97,7 @@ body {
 .confirmation-card {
   background: #e0e0e0;
   border-radius: 50px;
-  box-shadow: 20px 3px 6000px rgba(66, 66, 66, 0.15);
+  box-shadow: 20px 3px 60px rgba(66, 66, 66, 0.15);
   padding: 10rem;
   max-width: 1000px;
   width: 100%;
@@ -105,7 +107,7 @@ body {
 }
 
 .confirmation-card:hover {
-  transform: perspective(1000px) rotateX(20deg) scale(1.1);
+  transform: perspective(1000px) rotateX(1deg) scale(1.2);
 }
 
 .confirmation-header {
@@ -145,7 +147,7 @@ body {
 .total-section h3,
 .shipping-section h3 {
   font-size: 1.2rem;
-  margin-bottom:1rem;
+  margin-bottom: 1rem;
   color: #424242;
   border-bottom: 10px solid #e0e0e0;
   padding-bottom: 0.3rem;
@@ -162,7 +164,7 @@ ul {
   border-radius: 10px;
   padding: 1rem;
   margin-bottom: 1rem;
-  box-shadow: inset 0 2px 6px #424242(66, 66, 66, 0.05);
+  box-shadow: inset 0 2px 6px rgba(66, 66, 66, 0.05);
 }
 
 .item h4 {
@@ -172,22 +174,138 @@ ul {
 
 .item p {
   margin: 0.2rem 0;
-  color: #757575;
+  color: #424242;
 }
 
 .total-section {
   margin-top: 2rem;
 }
+.shipping-info {
+  font-size: 1.2rem;
+  color: #424242; 
+  margin-top: 1rem;
+}
+
 
 .free {
-  color: #424242; 
+  color: #424242;
   font-weight: bold;
 }
 
 .address-box {
-  background: #eeeeee;
+  background: #bdbdbd;
   border-radius: 20px;
   padding: 5rem;
-  box-shadow: inset 0 2px 6px #424242(66, 66, 66, 0.05);
+  box-shadow: inset 0 2px 6px rgba(66, 66, 66, 0.05);
   color: #424242;
+}
+
+
+/* ------------------confirmation page DARK MODE  ------------------ */
+
+.darkMode .confirmation-container {
+  background-color: #0b0b0f;
+  font-family: 'Orbitron', 'Segoe UI', sans-serif;
+  color: #ccc;
+}
+
+.darkMode .confirmation-card {
+  background: linear-gradient(145deg, #14141f, #0a0a14);
+  border-radius: 40px;
+  padding: 6rem;
+  max-width: 1000px;
+  width: 100%;
+  animation: spinOnce 1s ease-in-out;
+  border: 1px solid rgba(250, 250, 250, 0.05);
+  box-shadow: 20px 25px 12px rgba(252, 21, 239, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.darkMode .confirmation-card:hover {
+  transform: perspective(1000px) rotateX(1deg) scale(1.02);
+  box-shadow: 0 0 20px #0AEAF1, 0 0 40px #3227A7;
+}
+
+.darkMode .confirmation-header {
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #0AEAF1;
+  letter-spacing: 1.5px;
+  text-shadow: 0 0 4px rgba(253, 235, 39, 0.3);
+}
+
+.darkMode .greeting,
+.darkMode .thank-you,
+.darkMode .message {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #FC15EF;
+  margin-bottom: 1.2rem;
+  text-shadow: 0 0 2px rgba(252, 21, 239, 0.4);
+}
+
+.darkMode .greeting span {
+  color: #0AEAF1;
+  font-weight: 600;
+  text-shadow: 0 0 3px rgba(10, 234, 241, 0.6);
+}
+
+.darkMode .items-section h3,
+.darkMode .total-section h3,
+.darkMode .shipping-section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #F8232F;
+  border-bottom: 2px solid rgba(248, 35, 47, 0.4);
+  padding-bottom: 0.4rem;
+  letter-spacing: 1px;
+}
+
+.darkMode .item {
+  background: rgba(50, 39, 167, 0.08);
+  border: 1px solid #3227A7;
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1.2rem;
+  box-shadow: inset 0 0 8px rgba(50, 39, 167, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+
+.darkMode .item h4 {
+  margin: 0 0 0.5rem;
+  color: #FDEB27;
+  font-weight: 600;
+  text-shadow: 0 0 3px rgba(253, 235, 39, 0.4);
+}
+
+.darkMode .item p {
+  margin: 0.3rem 0;
+  color: #aaa;
+  font-size: 1rem;
+}
+
+.darkMode .shipping-info {
+  font-size: 1.1rem;
+  color: #FC15EF;
+  text-shadow: 0 0 3px rgba(252, 21, 239, 0.3);
+  margin-top: 1rem;
+}
+
+.darkMode .free {
+  color: #0AEAF1;
+  font-weight: bold;
+  text-shadow: 0 0 4px rgba(10, 234, 241, 0.4);
+}
+
+.darkMode .address-box {
+  background: rgba(252, 21, 239, 0.05);
+  border: 1px solid rgba(252, 21, 239, 0.3);
+  border-radius: 24px;
+  padding: 4rem;
+  color: #FC15EF;
+  box-shadow: inset 0 0 15px rgba(252, 21, 239, 0.1);
+  text-shadow: 0 0 3px rgba(252, 21, 239, 0.3);
+  margin-top: 3rem;
 }
