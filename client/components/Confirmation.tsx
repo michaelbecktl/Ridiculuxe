@@ -20,38 +20,43 @@ function Confirmation() {
     (sum, item) => sum + item.price * item.quantity, 0)
 
   return (
-    <div style={{ textAlign: 'center', padding: '2rem' }}>
-      <h1>Ridiculuxe Order Confirmation!</h1>
-      <p> Hey, {location.state?.name}</p>
-      <h1>Thank you for shopping with us.</h1>
-      <p>
-        We have received your order. We will send you a notifications once your
-        order has been dispatched.
-      </p>
+    <div className="confirmation-container">
+    <div className="confirmation-card">
+      <h1 className="confirmation-header">Ridiculuxe Order Confirmation!</h1>
+      <p className="greeting">Hey, <span>{name}</span></p>
+      <h2 className="thank-you">Thank you for shopping with us.</h2>
+      <p className="message">We have received your order. You’ll receive a notification once it has been dispatched.</p>
 
-      <h2 style={{ marginTop: '2rem' }}>Items ordered</h2>
+      <div className="items-section">
+        <h3>Items Ordered</h3>
+        <ul>
+          {purchasedItems.map((item) => (
+            <li key={item.id} className="item">
+              <h4>{item.title}</h4>
+              <p>Quantity: x {item.quantity}</p>
+              <p>Price: NZ${item.price}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
 
-      <ul style={{ listStyle: 'none', padding: 0 }}>
-        {purchasedItems.map((item) => (
-          <li key={item.id}>
-            {item.title || 'N/A'}
-            <p>Quantity: x {item.quantity} </p>
-            <p>NZ${item.price}</p>
-          </li>
-        ))}
-      </ul>
-      <p>
-  Shipping: <span style={{ color: 'green' }}>Free</span>
-</p>
-      <h2>Order total(GST included): NZ${totalPrice.toFixed(2)}</h2>
+      <div className="total-section">
+        <p>Shipping: <span className="free">Free</span></p>
+        <h3>Order Total (GST included): NZ${totalPrice.toFixed(2)}</h3>
+      </div>
 
-      <h2>Shipping Details</h2>
-<p>{name}</p>
-<p>{address1}</p>
-<p>{address2}</p>
-<p>{address3}</p>
+      <div className="shipping-section">
+        <h3>Shipping Details</h3>
+        <div className="address-box">
+          <p>Name:{name}</p>
+          <p>Address:{address1}</p>
+          <p>{address2}</p>
+          <p>{address3}</p>
+        </div>
+      </div>
     </div>
-  )
+  </div>
+)
 }
 
 export default Confirmation
