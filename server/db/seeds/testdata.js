@@ -3,6 +3,8 @@
  * @returns { Promise<void> }
  */
 export async function seed(knex) {
+  await knex('cart').del()
+  await knex('product_order').del()
   await knex('order').del()
   await knex('product').del()
   await knex('user').del()

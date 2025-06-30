@@ -1,6 +1,6 @@
+import { Link } from 'react-router-dom'
 import { useAllProducts } from '../hooks/useProduct'
 import Footer from './Footer'
-import Header from './Header'
 
 export default function Homepage() {
   const { data: products, isPending, isError } = useAllProducts()
@@ -10,13 +10,13 @@ export default function Homepage() {
 
   return (
     <div>
-      <Header />
       {products.map((e) => (
         <div key={e.id} className="homepageProduct">
-          <p>Name: {e.name}</p>
           <img src={e.image} alt={e.name} style={{ height: '30%' }} />
-          <p>Description: {e.description}</p>
-          <p>Price: ${e.price}</p>
+          <Link to={`/shop/${e.name}`}>
+            <p>{e.name}</p>
+          </Link>
+          <p>{e.price}</p>
         </div>
       ))}
       <Footer />
