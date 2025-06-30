@@ -44,13 +44,24 @@ router.patch('/:id', async (req, res) => {
   }
 })
 
-router.delete('/:id', async (req, res) => {
+router.delete('/remove/:id', async (req, res) => {
   try {
     const userId = req.params.id
     const { productId } = req.body
     await db.deleteFromCart({ userId, productId })
     const newCart = await db.getCartByUser(userId)
     res.status(200).json(newCart)
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({ message: 'Something went wrong' })
+  }
+})
+
+router.delete('/destroy/:id', async (req, res) => {
+  try {
+    const userId = req.params.id
+    await db.deleteCart({ userId })
+    res.status(204)
   } catch (error) {
     console.log(error)
     res.status(500).json({ message: 'Something went wrong' })

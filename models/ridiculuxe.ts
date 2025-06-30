@@ -42,7 +42,7 @@ export interface Product extends ProductData {
   id: number
 }
 export interface ProductQuantity {
-  id: string
+  productId: string
   quantity: number
 }
 export interface UserData {

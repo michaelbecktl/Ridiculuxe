@@ -1,24 +1,19 @@
 import express, { Request, Response } from 'express'
 import * as db from '../db/order'
 
-
-
 const router = express.Router()
 
-
 router.post('/', async (req: Request, res: Response) => {
-  
-  const { product_id, name, email, address1, address2,  address3 }= req.body
+  const { user_id, name, email, address1, address2, address3 } = req.body
 
-  if (!product_id || !name || !email || !address1) {
+  if (!name || !email || !address1) {
+    console.log(req.body)
     return res.status(400).json({ error: 'Please fill all required fields' })
   }
 
   try {
-    
-
     const newOrderId = await db.createOrder({
-      product_id,
+      user_id,
       name,
       email,
       address1,
