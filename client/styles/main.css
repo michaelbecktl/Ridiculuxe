@@ -96,7 +96,7 @@ body {
   width: 100%;
   transform: perspective(1000px) rotateX(1deg);
   transition: transform 0.3s ease;
-  animation: spinOnce 2s ease-in-out;
+  animation: spinOnce 1s ease-in-out;
 }
 
 .confirmation-card:hover {
