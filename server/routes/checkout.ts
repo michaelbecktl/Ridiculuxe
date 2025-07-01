@@ -1,32 +1,37 @@
 import express, { Request, Response } from 'express'
-import * as db from '../db/order'
-
-
+import * as db from '../db/functions/order'
 
 const router = express.Router()
 
+router.get('/:id', async (req, res) => {
+  try {
+    const { id } = req.params
+    const result = await db.getOrder(id)
+    if (!result) res.status(404).json(`No orders found with ID ${id}`)
+    res.json(result)
+  } catch (err) {
+    console.error(err)
+    res.status(500).json({ error: 'Something went wrong. Please try again' })
+  }
+})
 
 router.post('/', async (req: Request, res: Response) => {
-  
-  const { product_id, name, email, address1, address2,  address3 }= req.body
+  const { user_id, name, email, address1, address2, address3 } = req.body
 
-  if (!product_id || !name || !email || !address1) {
+  if (!name || !email || !address1) {
     return res.status(400).json({ error: 'Please fill all required fields' })
   }
 
   try {
-    
-
     const newOrderId = await db.createOrder({
-      product_id,
+      user_id,
       name,
       email,
       address1,
       address2,
       address3,
     })
-    console.log('newOrderId', newOrderId)
-    res.status(201).json({ message: 'Order created', orderId: newOrderId })
+    res.json(newOrderId)
   } catch (err) {
     console.error(err)
     res.status(500).json({ error: 'Something went wrong. Please try again' })

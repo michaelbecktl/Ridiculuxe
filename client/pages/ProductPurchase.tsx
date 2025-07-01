@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { Link, Navigate, useNavigate, useParams } from 'react-router-dom'
 import { useProduct } from '../hooks/useProduct'
 import { useState } from 'react'
 import { useCart } from '../hooks/useCart'
@@ -9,6 +9,7 @@ function ProductPurchase() {
   const params = useParams()
   const name = params.name as string
   const product = useProduct(name)
+  const navigate = useNavigate()
 
   const [quantity, setQuantity] = useState('1')
 
@@ -61,14 +62,32 @@ function ProductPurchase() {
       productId: productData.id.toString(),
       quantity: Number(quantity),
     }
+    if (!userId) {
+      const existsLocally = temporaryCart.find(
+        (item) => item.productId === addProduct.productId,
+      )
+      existsLocally
+        ? temporaryCart.map((item) => {
+            if (item.productId === addProduct.productId)
+              item.quantity += addProduct.quantity
+          })
+        : temporaryCart.push(addProduct)
+      localStorage.setItem('cart', JSON.stringify(temporaryCart))
+      navigate('/checkout')
+    }
     cart.buyNow.mutate(addProduct)
   }
 
   return (
     <>
-      <div>
+      <div className="my-[100px]">
+        <Link to={`/${productData.name}`}>
+          <h1 className="inline text-6xl hover:decoration-solid">
+            {productData.name}
+          </h1>
+        </Link>
         <img src={productData.image} alt={productData.name} />
-        <h1>{productData.name}</h1>
+
         <p>{productData.description}</p>
         <p>NZD {productData.price}</p>
         {productData.stock < 1 ? (

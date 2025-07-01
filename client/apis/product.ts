@@ -31,9 +31,9 @@ export async function getProductById(id: string): Promise<Product> {
 }
 
 export async function soldProduct(data: ProductQuantity) {
-  const { id, quantity } = data
+  const { productId, quantity } = data
   const response = await request
-    .patch(`${rootURL}/stock/${id}`)
+    .patch(`${rootURL}/stock/${productId}`)
     .send({ quantity })
   if (!response) {
     throw new Error('Error updating product')
