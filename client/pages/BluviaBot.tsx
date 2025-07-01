@@ -21,7 +21,7 @@ function BluviaBot() {
       <div className="robot-canvas-container">
         <Canvas gl={{ alpha: true }} style={{ background: 'transparent' }}>
           <ambientLight intensity={2.0} />
-          <directionalLight position={[50, 50, 50]} />
+          <directionalLight position={[10, 50, 5]} />
           <Suspense fallback={null}>
             <ScrollControls pages={3} damping={0.1}>
               <Scroll>

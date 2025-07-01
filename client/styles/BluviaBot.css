@@ -1,6 +1,6 @@
 
 
-/* Ensure full height and stacking context */
+/* the background image */
 .robot-wrapper {
   position: relative;
   width: 100%;
@@ -8,7 +8,6 @@
   overflow: hidden;
 }
 
-/* This layer holds the background image */
 .background-layer {
   position: absolute;
   top: 0;
@@ -16,7 +15,7 @@
   width: 100%;
   height: 100%;
   z-index: 0;
-  display: none; /* hidden by default */
+  display: none; 
 }
 
 /* Show background only in dark mode */
@@ -26,7 +25,6 @@ body.darkMode .background-layer {
   filter: brightness(1.2) contrast(1);
 }
 
-/* Canvas on top of background */
 .robot-canvas-container {
   position: relative;
   width: 100%;
@@ -66,3 +64,15 @@ body.darkMode .glitter-layer {
     background-position: 100px 10px, 20px 500px, 200px 100px;
   }
 }
+
+/* Ttltle style for dark mode */
+.darkMode .tech-title {
+  color: #e5e6e6;
+  text-shadow:
+    0 0 4px #0AEAF1,
+    0 0 8px #FDEB27,
+    0 0 12px #F8232F,
+    0 0 2px #FC15EF;
+  letter-spacing: 0.2em;
+}
+
