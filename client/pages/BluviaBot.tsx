@@ -1,10 +1,9 @@
-
 import React, { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { Scroll, ScrollControls, OrbitControls, useGLTF } from '@react-three/drei'
 
 import Title from '../components/RoBot/ Tiltle'
-
+import '../styles/BluviaBot.css'
 
 function Robot() {
   const { scene } = useGLTF('/Robot/bluebot.glb')
@@ -12,29 +11,30 @@ function Robot() {
 }
 
 function BluviaBot() {
-
   return (
-    <div style={{ height: '100vh', width: '100%' }}>
-      <Canvas gl={{ alpha: true }} style={{ background: 'transparent' }}>
-        {/* Static 3D Elements */}
-        <ambientLight intensity={2.0} />
-        <directionalLight position={[50, 50, 50]} />
-        <Suspense fallback={null}>
-          <ScrollControls pages={3} damping={0.1}>
-            {/* Scroll-linked 3D content */}
-            <Scroll>
-              <Robot />
-            </Scroll>
+    <div className="robot-wrapper">
+  
+      <div className="background-layer" />
+      <div className="glitter-layer" />
 
-            {/* Scroll-linked HTML content */}
-            <Scroll html>
-           
-            <Title />
-            </Scroll>
-          </ScrollControls>
-        </Suspense>
-        <OrbitControls enableZoom={true} />
-      </Canvas>
+      {/* Canvas & HTML content */}
+      <div className="robot-canvas-container">
+        <Canvas gl={{ alpha: true }} style={{ background: 'transparent' }}>
+          <ambientLight intensity={2.0} />
+          <directionalLight position={[50, 50, 50]} />
+          <Suspense fallback={null}>
+            <ScrollControls pages={3} damping={0.1}>
+              <Scroll>
+                <Robot />
+              </Scroll>
+              <Scroll html>
+                <Title />
+              </Scroll>
+            </ScrollControls>
+          </Suspense>
+          <OrbitControls enableZoom={true} />
+        </Canvas>
+      </div>
     </div>
   )
 }
