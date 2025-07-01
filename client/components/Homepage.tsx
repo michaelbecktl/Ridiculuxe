@@ -7,16 +7,16 @@ import { useEffect, useRef } from 'react'
 export default function Homepage() {
   const { data: products, isPending, isError } = useAllProducts()
   const ref1 = useRef(null)
-  const isInView1 = useInView(ref1, { once: true})
+  const isInView1 = useInView(ref1, { once: true })
 
   const ref2 = useRef(null)
-  const isInView2 = useInView(ref2, { once: true})
+  const isInView2 = useInView(ref2, { once: true })
 
   const ref3 = useRef(null)
-  const isInView3 = useInView(ref3, { once: true})
+  const isInView3 = useInView(ref3, { once: true })
 
   const ref4 = useRef(null)
-  const isInView4 = useInView(ref4, { once: true})
+  const isInView4 = useInView(ref4, { once: true })
 
   const mainControls = useAnimation()
 
@@ -80,23 +80,23 @@ export default function Homepage() {
             <motion.img
               src={e.image}
               alt={e.name}
-              style={{ height: '80%' }}
+              style={{ height: '60%' }}
               variants={{
                 hidden: { opacity: 0 },
-                visible: { opacity: 1 }
+                visible: { opacity: 1 },
               }}
               initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
+              animate={isInView ? 'visible' : 'hidden'}
               transition={{ duration: 1, delay: 0.5 }}
             />
-            <Link to={`/shop/${e.name}`}>
+            <Link to={`/product/${e.name}`}>
               <motion.p
                 variants={{
                   hidden: { opacity: 0 },
-                  visible: { opacity: 1 }
+                  visible: { opacity: 1 },
                 }}
                 initial="hidden"
-                animate={isInView ? "visible" : "hidden"}
+                animate={isInView ? 'visible' : 'hidden'}
                 transition={{ duration: 1, delay: 0.5 }}
               >
                 {e.name}
@@ -105,10 +105,10 @@ export default function Homepage() {
             <motion.p
               variants={{
                 hidden: { opacity: 0 },
-                visible: { opacity: 1 }
+                visible: { opacity: 1 },
               }}
               initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
+              animate={isInView ? 'visible' : 'hidden'}
               transition={{ duration: 1, delay: 0.5 }}
             >
               {e.price}
