@@ -11,7 +11,7 @@ import Profile from './pages/Profile.tsx'
 import ContactUs from './pages/ContactUs.tsx'
 import Confirmation from './components/Confirmation.tsx'
 import AboutUs from './pages/AboutUs.tsx'
-import HFTWatch from './pages/HTFWatch.tsx'
+import HFTWatch from './pages/HFTWatch.tsx'
 import EricProduct from './pages/EricProduct.tsx'
 import DavidProduct from './pages/DavidProduct.tsx'
 import OraneeProduct from './pages/OraneeProduct.tsx'
@@ -26,7 +26,7 @@ export default createRoutesFromElements(
     <Route path="/profile" element={<Profile />} />
     <Route path="/contact" element={<ContactUs />} />
     <Route path="/aboutus" element={<AboutUs />} />
-    <Route path="/product/hftwatch" element={<HFTWatch />} />
+    <Route path="/product/LuxTechWatch" element={<HFTWatch />} />
     <Route path="/product/ericproduct" element={<EricProduct />} />
     <Route path="/product/davidproduct" element={<DavidProduct />} />
     <Route path="/product/oraneeproduct" element={<OraneeProduct />} />

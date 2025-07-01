@@ -27,9 +27,10 @@ a {
 :root {
   --text-color: black;
   --bg-color: white;
+  --secondary-bg: rgb(250, 250, 250);
   --secondary-color: #569bdbdc;
   --shadow-color: #56dbb3cb;
-  
+  --basic-shadow: #9e9e9e;
 }
 
 body {
@@ -40,8 +41,10 @@ body {
 
 .darkMode {
   --text-color: rgb(255, 255, 255);
-  --bg-color: rgb(46, 46, 46);
+  --bg-color: rgb(39, 39, 39);
+  --secondary-bg: rgb(22, 22, 22);
   --shadow-color: #56dbb3cb;
+  --basic-shadow: #0c0c0c;
 }
 
 .activeTheme {
@@ -73,7 +76,6 @@ body {
 .inactiveTheme:active {
   transform: scale(1.1);
 }
-
 
 /* vvv----------------------------------------------------- Checkout page   ------------------------------------------vvv */
 /* ------------------ Checkout page LIGHT MODE  ------------------ */
@@ -122,7 +124,6 @@ body {
   object-fit: cover;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(66, 66, 66, 0.1);
-
 }
 
 .cart-item-details {
@@ -201,11 +202,10 @@ body {
 .darkMode .checkout-container {
   background-color: #0b0b0f;
   color: #ccc;
-  
 }
 
 .darkMode .checkout-title {
-  color: #0AEAF1;
+  color: #0aeaf1;
   margin: 20px;
   text-align: center;
   font-size: 2.5rem;
@@ -218,7 +218,8 @@ body {
   animation: glowPulse 3s infinite ease-in-out;
 }
 @keyframes glowPulse {
-  0%, 100% {
+  0%,
+  100% {
     text-shadow:
       0 0 30px rgba(10, 234, 241, 0.6),
       0 0 50px rgba(50, 39, 167, 0.4),
@@ -235,14 +236,14 @@ body {
 }
 
 .darkMode .section-heading {
-  color: #F8232F;
+  color: #f8232f;
   border-bottom: 1px solid rgba(248, 35, 47, 0.4);
   letter-spacing: 1px;
 }
 
 .darkMode .cart-item {
   background: rgba(50, 39, 167, 0.08);
-  border: 1px solid #3227A7;
+  border: 1px solid #3227a7;
   box-shadow: inset 0 0 8px rgba(50, 39, 167, 0.2);
 }
 
@@ -251,7 +252,7 @@ body {
 }
 
 .darkMode .item-title {
-  color: #FDEB27;
+  color: #fdeb27;
   text-shadow: 0 0 3px rgba(253, 235, 39, 0.4);
 }
 
@@ -261,23 +262,23 @@ body {
 }
 
 .darkMode .shipping-info {
-  color: #FC15EF;
+  color: #fc15ef;
   text-shadow: 0 0 2px rgba(252, 21, 239, 0.3);
 }
 
 .darkMode .free {
-  color: #0AEAF1;
+  color: #0aeaf1;
   font-weight: bold;
   text-shadow: 0 0 4px rgba(10, 234, 241, 0.4);
 }
 
 .darkMode .error-message {
-  color: #F8232F;
+  color: #f8232f;
   font-weight: bold;
 }
 
 .darkMode .success-message {
-  color: #0AEAF1;
+  color: #0aeaf1;
   font-weight: bold;
 }
 
@@ -290,19 +291,19 @@ body {
 }
 
 .darkMode .form-group label {
-  color: #FDEB27;
+  color: #fdeb27;
 }
 
 .darkMode .input-field {
   background-color: #14141f;
   color: #ccc;
-  border: 1px solid #3227A7;
+  border: 1px solid #3227a7;
   border-radius: 8px;
   padding: 0.8rem;
 }
 
 .darkMode .submit-button {
-  background-color: #0AEAF1;
+  background-color: #0aeaf1;
   color: #0b0b0f;
   border-radius: 12px;
   padding: 1rem 2rem;
@@ -317,7 +318,6 @@ body {
   background-color: #0ec6d6;
 }
 
-
 /* --------------------------------------- Confirmation page   ------------------------------------- */
 /* ------------------ confirmation page LIGHT MODE  ------------------ */
 .confirmation-container {
@@ -329,7 +329,6 @@ body {
   padding: 7rem;
 
   padding: 1rem;
-
 }
 
 @keyframes spinOnce {
@@ -429,10 +428,9 @@ ul {
 }
 .shipping-info {
   font-size: 1.2rem;
-  color: #424242; 
+  color: #424242;
   margin-top: 1rem;
 }
-
 
 .free {
   color: #424242;
@@ -446,7 +444,6 @@ ul {
   box-shadow: inset 0 2px 6px rgba(66, 66, 66, 0.05);
   color: #424242;
 }
-
 
 /* vvv------------------confirmation page DARK MODE  ------------------vvv */
 
@@ -464,18 +461,22 @@ ul {
   animation: spinOnce 1s ease-in-out;
   border: 1px solid rgba(250, 250, 250, 0.05);
   box-shadow: 20px 25px 12px rgba(252, 21, 239, 0.1);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
 }
 .darkMode .confirmation-card:hover {
   transform: perspective(1000px) rotateX(1deg) scale(1.02);
-  box-shadow: 0px 0 20px #0AEAF1, 0 0 40px #3227A7;
+  box-shadow:
+    0px 0 20px #0aeaf1,
+    0 0 40px #3227a7;
 }
 .darkMode .confirmation-header {
   font-size: 2.8rem;
   font-weight: 700;
   text-align: center;
   margin-bottom: 1.5rem;
-  color: #0AEAF1;
+  color: #0aeaf1;
   letter-spacing: 1.5px;
   text-shadow: 0 0 4px rgba(253, 235, 39, 0.3);
 }
@@ -485,13 +486,13 @@ ul {
 .darkMode .message {
   text-align: center;
   font-size: 1.2rem;
-  color: #FC15EF;
+  color: #fc15ef;
   margin-bottom: 1.2rem;
   text-shadow: 0 0 2px rgba(252, 21, 239, 0.4);
 }
 
 .darkMode .greeting span {
-  color: #0AEAF1;
+  color: #0aeaf1;
   font-weight: 600;
   text-shadow: 0 0 3px rgba(10, 234, 241, 0.6);
 }
@@ -501,7 +502,7 @@ ul {
 .darkMode .shipping-section h3 {
   font-size: 1.2rem;
   margin-bottom: 1rem;
-  color: #F8232F;
+  color: #f8232f;
   border-bottom: 2px solid rgba(248, 35, 47, 0.4);
   padding-bottom: 0.4rem;
   letter-spacing: 1px;
@@ -509,7 +510,7 @@ ul {
 
 .darkMode .item {
   background: rgba(50, 39, 167, 0.08);
-  border: 1px solid #3227A7;
+  border: 1px solid #3227a7;
   border-radius: 16px;
   padding: 1.5rem;
   margin-bottom: 1.2rem;
@@ -519,7 +520,7 @@ ul {
 
 .darkMode .item h4 {
   margin: 0 0 0.5rem;
-  color: #FDEB27;
+  color: #fdeb27;
   font-weight: 600;
   text-shadow: 0 0 3px rgba(253, 235, 39, 0.4);
 }
@@ -532,13 +533,13 @@ ul {
 
 .darkMode .shipping-info {
   font-size: 1.1rem;
-  color: #FC15EF;
+  color: #fc15ef;
   text-shadow: 0 0 3px rgba(252, 21, 239, 0.3);
   margin-top: 1rem;
 }
 
 .darkMode .free {
-  color: #0AEAF1;
+  color: #0aeaf1;
   font-weight: bold;
   text-shadow: 0 0 4px rgba(120, 137, 138, 0.4);
 }
@@ -548,9 +549,8 @@ ul {
   border: 1px solid rgba(252, 21, 239, 0.3);
   border-radius: 24px;
   padding: 4rem;
-  color: #FC15EF;
+  color: #fc15ef;
   box-shadow: inset 0 0 15px rgba(252, 21, 239, 0.1);
   text-shadow: 0 0 3px rgba(252, 21, 239, 0.3);
   margin-top: 3rem;
 }
-

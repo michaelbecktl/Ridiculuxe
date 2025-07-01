@@ -24,11 +24,10 @@ export async function seed(knex) {
   await knex('product').insert([
     {
       id: 1,
-      name: 'LuxTech Glasses',
-      description: 'The ultimate glasses for all your needs',
-      price: 399.9,
-      image:
-        'https://api.time.com/wp-content/uploads/2015/03/screen-shot-2015-03-12-at-12-01-22-pm.png?w=1080&quality=85',
+      name: 'LuxTech Watch',
+      description: 'The ultimate watch for all your needs',
+      price: 1799,
+      image: '/image/luxtechwatch.png',
       stock: 99,
     },
     {

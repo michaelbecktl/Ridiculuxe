@@ -6,7 +6,7 @@ function Mind() {
       version="1.1"
       id="Capa_1"
       xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
       viewBox="0 0 341.594 341.594"
       xmlSpace="preserve"
     >
