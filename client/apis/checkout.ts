@@ -28,6 +28,6 @@ export async function createOrder(order: Order) {
     throw new Error('Error creating order')
   } else {
     console.log(response.body)
-    return response.body[0].id
+    return response.body.orderId[0].id
   }
 }

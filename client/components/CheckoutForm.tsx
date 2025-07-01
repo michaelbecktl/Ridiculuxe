@@ -105,7 +105,7 @@ function CheckoutForm() {
           quantity: item.quantity,
         }),
       )
-      cart.destroy.mutate({ userId: cart.user.id.toString() })
+      cart.destroy.mutate({ userId: cart.user?.id.toString() })
       localStorage.setItem('orderId', JSON.stringify(orderId))
 
       navigate('/confirmation', {
