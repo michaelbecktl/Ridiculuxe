@@ -11,6 +11,7 @@ function HFTWatch() {
         <Canvas gl={{ alpha: true }} style={{ background: 'transparent' }}>
             <Scroll>
               <Displaywatch url="/3dmodels/smartwatch.fbx" />
+              
             </Scroll>
             <Scroll html>
               <div className="flex h-screen w-screen">
