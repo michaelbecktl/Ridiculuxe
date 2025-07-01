@@ -18,7 +18,7 @@ function Title() {
         transition={{ delay: 1.8, duration: 0.6 }}
         className="text-xl mt-10 max-w-md px-1"
       >
-        Your Everyday Luxe Assistant – just say it, and BotBluvia does it.
+        Your Everyday Luxe Assistant  just say it, and BotBluvia does it.
       </motion.p>
     </div>
   )
