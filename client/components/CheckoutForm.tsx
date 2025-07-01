@@ -185,64 +185,71 @@ function CheckoutForm() {
   )
 
   return (
-    <div>
-      <h1>Review & Pay</h1>
-      <h2> Item in your cart</h2>
+    <div className="checkout-container">
+      <h1 className="checkout-title">Review & Pay</h1>
+      <h2 className="section-heading">Items in your cart</h2>
+
       <IfAuthenticated>
         <div>
           {products ? (
             products.data?.map((product, index) => (
-              <div key={product.id}>
+              <div key={product.id} className="cart-item">
                 <img
                   src={product.image}
                   alt={product.title}
-                  style={{ width: '25%', height: '200px', objectFit: 'cover' }}
+                  className="cart-item-image"
                 />
-
-                <h2>{product.title}</h2>
-
-                <p>Price: ${product.price}</p>
-                <p>Quantity: {cart.data[index].quantity}</p>
+                <h2 className="item-title">{product.title}</h2>
+                <p className="item-price">Price: ${product.price}</p>
+                <p className="item-quantity">
+                  Quantity: {cart.data[index].quantity}
+                </p>
               </div>
             ))
           ) : (
             <></>
           )}
-          <p>
-            Shipping: <span style={{ color: 'green' }}>Free</span>
+          <p className="shipping-info">
+            Shipping: <span className="free">Free</span>
           </p>
-          <p>Total (GST included): ${totalUserPrice.toFixed(2)}</p>
+          <p className="total-price">
+            Total (GST included): ${totalUserPrice.toFixed(2)}
+          </p>
         </div>
       </IfAuthenticated>
+
       <IfNotAuthenticated>
         <div>
           {localQuery.data.map((product, index) => (
-            <div key={product.id}>
+            <div key={product.id} className="cart-item">
               <img
                 src={product.image}
                 alt={product.title}
-                style={{ width: '25%', height: '200px', objectFit: 'cover' }}
+                className="cart-item-image"
               />
-
-              <h2>{product.title}</h2>
-
-              <p>Price: ${product.price}</p>
-              <p>Quantity: {localCartContent[index].quantity}</p>
+              <h2 className="item-title">{product.title}</h2>
+              <p className="item-price">Price: ${product.price}</p>
+              <p className="item-quantity">
+                Quantity: {localCartContent[index].quantity}
+              </p>
             </div>
           ))}
-          <p>
-            Shipping: <span style={{ color: 'green' }}>Free</span>
+          <p className="shipping-info">
+            Shipping: <span className="free">Free</span>
           </p>
-          <p>Total (GST included): ${totalLocalPrice.toFixed(2)}</p>
+          <p className="total-price">
+            Total(GST included): ${totalLocalPrice.toFixed(2)}
+          </p>
         </div>
       </IfNotAuthenticated>
 
-      {error && <p style={{ color: 'red' }}>Error: {error}</p>}
-      {success && <p style={{ color: 'green' }}>Order placed successfully!</p>}
+      {error && <p className="error-message">Error: {error}</p>}
+      {success && <p className="success-message">Order placed successfully!</p>}
 
-      <h2>Shipping Address</h2>
+      <h2 className="section-heading">Shipping Details</h2>
+
       <IfAuthenticated>
-        <fieldset>
+        <fieldset className="checkout-form">
           <legend>Select a shipping address:</legend>
           <input
             type="radio"
@@ -257,6 +264,7 @@ function CheckoutForm() {
           <p>{userShippingDetails.address1}</p>
           <p>{userShippingDetails.address2}</p>
           <p>{userShippingDetails.address3}</p>
+
           <input
             type="radio"
             id="newDetails"
@@ -266,126 +274,146 @@ function CheckoutForm() {
             onChange={handleChange}
           />
           <label htmlFor="newDetails"> New Address</label>
+
           <form onSubmit={handleSubmit}>
-            <div>
+            <div className="form-group">
               <label htmlFor="fullname">Full Name</label>
-              <br />
               <input
                 id="fullname"
+                className="input-field"
                 type="text"
                 required={selectedDetails === 'new'}
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
             </div>
-            <div>
+
+            <div className="form-group">
               <label htmlFor="email">Email</label>
-              <br />
               <input
                 id="email"
+                className="input-field"
                 type="email"
                 required={selectedDetails === 'new'}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
-            <div>
+
+            <div className="form-group">
               <label htmlFor="address1">Address Line 1</label>
-              <br />
               <input
                 id="address1"
+                className="input-field"
                 type="text"
                 required={selectedDetails === 'new'}
                 value={address1}
                 onChange={(e) => setAddress1(e.target.value)}
               />
             </div>
-            <div>
+
+            <div className="form-group">
               <label htmlFor="address2">Address Line 2</label>
-              <br />
               <input
                 id="address2"
+                className="input-field"
                 type="text"
                 value={address2}
                 onChange={(e) => setAddress2(e.target.value)}
               />
             </div>
-            <div>
+
+            <div className="form-group">
               <label htmlFor="address3">Address Line 3</label>
-              <br />
               <input
                 id="address3"
+                className="input-field"
                 type="text"
                 value={address3}
                 onChange={(e) => setAddress3(e.target.value)}
               />
             </div>
-            <div>
-              <button type="submit" disabled={submitting}>
+
+            <div className="form-group">
+              <button
+                type="submit"
+                className="submit-button"
+                disabled={submitting}
+              >
                 {submitting ? 'Placing Order...' : 'Place Order'}
               </button>
             </div>
           </form>
         </fieldset>
       </IfAuthenticated>
+
       <IfNotAuthenticated>
-        <h2>Ship to </h2>
-        <form onSubmit={handleSubmitGuest}>
-          <div>
+        <h2 className="section-heading">Ship to</h2>
+        <form className="checkout-form" onSubmit={handleSubmitGuest}>
+          <div className="form-group">
             <label htmlFor="fullname">Full Name</label>
-            <br />
             <input
               id="fullname"
+              className="input-field"
               type="text"
               required
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
           </div>
-          <div>
+
+          <div className="form-group">
             <label htmlFor="email">Email</label>
-            <br />
             <input
               id="email"
+              className="input-field"
               type="email"
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <div>
+
+          <div className="form-group">
             <label htmlFor="address1">Address Line 1</label>
-            <br />
             <input
               id="address1"
+              className="input-field"
               type="text"
               required
               value={address1}
               onChange={(e) => setAddress1(e.target.value)}
             />
           </div>
-          <div>
+
+          <div className="form-group">
             <label htmlFor="address2">Address Line 2</label>
-            <br />
             <input
               id="address2"
+              className="input-field"
               type="text"
               value={address2}
               onChange={(e) => setAddress2(e.target.value)}
             />
           </div>
-          <div>
+
+          <div className="form-group">
             <label htmlFor="address3">Address Line 3</label>
-            <br />
             <input
               id="address3"
+              className="input-field"
               type="text"
               value={address3}
               onChange={(e) => setAddress3(e.target.value)}
             />
           </div>
-          <div>
-            <button type="submit" disabled={submitting}>
+
+          <div className="form-group">
+            <button
+              type="submit"
+              className="submit-button"
+              disabled={submitting}
+            >
               {submitting ? 'Placing Order...' : 'Place Order'}
             </button>
           </div>
