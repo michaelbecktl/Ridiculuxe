@@ -7,6 +7,13 @@ body {
   @apply bg-plain1;
 }
 
+.rubik-logo {
+  font-family: 'Rubik', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
 a {
   @apply m-0;
 }
@@ -20,7 +27,11 @@ a {
 }
 
 .homepageProduct {
-  @apply m-0 flex h-dvh w-dvw flex-col items-center justify-center;
+  @apply m-0 flex flex-col items-center justify-center;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  min-height: 100vh;
 }
 
 .navbar {
