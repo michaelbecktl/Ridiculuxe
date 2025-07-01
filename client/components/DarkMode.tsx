@@ -21,8 +21,8 @@ function DarkMode() {
         onClick={handleChange}
         style={{
           width: '32px',
-          top: '18px',
-          right: '30px',
+          // top: '18px',
+          // left: '30px',
           position: 'absolute',
         }}
         className={isDark ? 'inactiveTheme' : 'activeTheme'}
@@ -58,8 +58,8 @@ function DarkMode() {
         onClick={handleChange}
         style={{
           width: '32px',
-          top: '18px',
-          right: '30px',
+          // top: '18px',
+          // left: '30px',
           position: 'absolute',
           borderRadius: '50%',
         }}

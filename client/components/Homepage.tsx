@@ -10,6 +10,11 @@ export default function Homepage() {
 
   return (
     <div>
+      <img
+        src="/image/futuristic-image.jpg"
+        alt="main homepage futuristic"
+        className="h-dvh w-dvw"
+      />
       {products.map((e) => (
         <div key={e.id} className="homepageProduct">
           <img src={e.image} alt={e.name} style={{ height: '30%' }} />
