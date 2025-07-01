@@ -18,6 +18,12 @@ function Confirmation() {
   const totalPrice = purchasedItems.reduce(
     (sum, item) => sum + item.price * item.quantity, 0)
 
+
+
+   
+
+
+
   return (
     <div className="confirmation-container">
     <div className="confirmation-card">
@@ -58,3 +64,6 @@ function Confirmation() {
 }
 
 export default Confirmation
+
+
+

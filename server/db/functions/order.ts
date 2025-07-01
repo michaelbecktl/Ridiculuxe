@@ -1,5 +1,5 @@
-import { OrderProduct } from '../../models/ridiculuxe.ts'
-import db from './connection.ts'
+import { OrderProduct } from '../../../models/ridiculuxe.ts'
+import db from '../connection.ts'
 
 interface NewOrder {
   user_id: number
@@ -37,3 +37,5 @@ export async function createOrderProduct(order: OrderProduct) {
   }
   return await db('product_order').insert(formatted)
 }
+
+
