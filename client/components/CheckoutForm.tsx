@@ -89,8 +89,9 @@ function CheckoutForm() {
               address2: address2,
               address3: address3,
             }
-      const orderId = await order.addOrder.mutateAsync(postBody)
 
+      const orderId = await order.addOrder.mutateAsync(postBody)
+      console.log(orderId)
       cart.data.map(async (item: ProductQuantity) =>
         orderProducts.mutateAsync({
           orderId: orderId,

@@ -37,5 +37,3 @@ export async function createOrderProduct(order: OrderProduct) {
   }
   return await db('product_order').insert(formatted)
 }
-
-
