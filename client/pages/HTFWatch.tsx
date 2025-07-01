@@ -14,8 +14,7 @@ function HFTWatch() {
     <>
       <div className="h-screen w-screen">
         <Canvas gl={{ alpha: true }} style={{ background: 'transparent' }}>
-          <directionalLight position={[5, 5, 5]} />
-          <ScrollControls pages={3} damping={0.1}>
+          <ScrollControls>
             <Scroll>
               <Displaywatch url="/3dmodels/smartwatch.fbx" />
             </Scroll>
