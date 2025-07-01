@@ -5,9 +5,7 @@ import Homepage from './components/Homepage.tsx'
 import ProductPurchase from './pages/ProductPurchase.tsx'
 import CheckoutForm from './components/CheckoutForm.tsx'
 import Registration from './pages/Registration.tsx'
-
 import Profile from './pages/Profile.tsx'
-
 import ContactUs from './pages/ContactUs.tsx'
 import Confirmation from './components/Confirmation.tsx'
 import AboutUs from './pages/AboutUs.tsx'
