@@ -12,7 +12,7 @@ import AboutUs from './pages/AboutUs.tsx'
 import HFTWatch from './pages/HFTWatch.tsx'
 import EricProduct from './pages/EricProduct.tsx'
 import LuxeVision from './pages/LuxeVision.tsx'
-import OraneeProduct from './pages/OraneeProduct.tsx'
+import BluviaBot from './pages/BluviaBot.tsx'
 
 export default createRoutesFromElements(
   <Route path="/" element={<Layout />}>
@@ -27,6 +27,6 @@ export default createRoutesFromElements(
     <Route path="/product/LuxTech Watch" element={<HFTWatch />} />
     <Route path="/product/ericproduct" element={<EricProduct />} />
     <Route path="/product/LuxeVision" element={<LuxeVision />} />
-    <Route path="/product/oraneeproduct" element={<OraneeProduct />} />
+    <Route path="/product/BluviaBot" element={<BluviaBot />} />
   </Route>,
 )

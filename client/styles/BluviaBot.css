@@ -1,0 +1,139 @@
+/* the background image
+/* Show background only in dark mode */
+.robot-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.background-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  display: none; 
+}
+
+body.darkMode .background-layer {
+  display: block;
+  background: url('/public/Robot/BGbot3.jpg') center/cover no-repeat;
+  filter: brightness(1.2) contrast(1);
+}
+
+.robot-canvas-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Glitter layer on top of background, behind robot */
+.glitter-layer {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-image:
+    radial-gradient(2px 3px at 20% 30%, #5b525288 20%, transparent 70%),
+    radial-gradient(2px 2px at 70% 80%, #FDEB27aa 20%, transparent 70%),
+    radial-gradient(1.5px 1.5px at 40% 60%, #0AEAF1bb 20%, transparent 70%);
+  background-repeat: repeat;
+  background-size: 300px 300px;
+  animation: glitter-move 5s linear infinite;
+  display: none;
+}
+
+/* Dark mode only */
+body.darkMode .glitter-layer {
+  display: block;
+}
+
+@keyframes glitter-move {
+  0% {
+    background-position: 0 0, 100px 100px, 200px 200px;
+  }
+  100% {
+    background-position: 100px 10px, 20px 500px, 200px 100px;
+  }
+}
+
+/* Ttltle style for dark mode */
+.darkMode .tech-title {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 4rem;
+  letter-spacing: 0.3em;
+  color: #0AEAF1; 
+  text-transform: uppercase;
+  text-shadow:
+    5px 5px 10px #0AEAF1,
+    0 0 10px #FC15EF,
+    0 0 30px #3227A7,
+    0 0 20px #0b0b0b,
+    30px 20px 20px #FDEB27,
+    0 0 25px #FC15EF;
+  animation: neonPulse 1s ease-in-out infinite;
+}
+
+
+.robot-text {
+  max-width: 1000px;
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  padding: 1.2rem 1.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: center;
+  color: #333;
+  margin: 10rem auto 0 auto;
+  padding-left: 2rem;
+  padding-right: 2re
+}
+
+
+.darkMode .robot-text-bubble {
+  background-color: #484848;
+  color: #f5f5f5;
+  padding: 4rem 5rem;
+  max-width: 100%;
+  border-radius: 1.25rem;
+  margin: 2rem auto 2rem 0;
+  box-shadow: 20px 15px 20px rgba(199, 157, 208, 0.4);
+  font-size: 1rem;
+  line-height: 2;
+  position: relative;
+}
+
+
+
+canvas {
+  z-index: 0;
+  position: relative;
+}
+
+.robot-canvas-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.buy-now-button {
+  position: absolute;
+  top: 85vh; 
+  right: -10%;
+  z-index: 10;
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  background-color: #FDEB27;
+  color: #424242;
+  border-radius: 100px;
+  box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.5);
+}
