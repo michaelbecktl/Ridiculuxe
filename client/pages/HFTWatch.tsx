@@ -22,14 +22,14 @@ function HFTWatch() {
 
   return (
     <>
-      <div className="hftwatch h-[84vh] w-screen">
+      <div className="hftwatch h-[88h] w-screen">
         <Canvas
           gl={{ alpha: true }}
           style={{
             background: 'transparent',
             position: 'absolute',
-            top: '16vh',
-            height: '84vh',
+            top: '12vh',
+            height: '88vh',
           }}
         >
           <ScrollControls pages={3.5} damping={0.08}>

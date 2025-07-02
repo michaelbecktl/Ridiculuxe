@@ -4,6 +4,7 @@ import DarkMode from './DarkMode'
 import { IfAuthenticated } from './Authenticated'
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
+import CartLink from './CartLink'
 
 const ANIMATION_ROUTES = ['/']
 
@@ -40,25 +41,33 @@ export default function Header() {
 
   return (
     <header className="header">
-      <div className="flex w-dvw flex-row items-center justify-center pb-5 pl-10 pr-10 pt-5">
+      <div className="flex h-[7vh] w-dvw flex-row items-center justify-center pl-10 pr-10 pt-5">
         <div className="darkmode-position w-1/2">
           <DarkMode />
         </div>
         <div className="rubik-logo absolute">
           <motion.div
-            initial={{ 
-              opacity: 0, 
+            initial={{
+              opacity: 0,
               scale: isHomePage ? 2 : 1,
-              y: isHomePage ? window.innerHeight/2 : 0
+              y: isHomePage ? window.innerHeight / 2 : 0,
             }}
             animate={{
               opacity: 1,
-              scale: isHomePage ? (easeProgress === 1 ? 1 : 2 - easeProgress) : 1,
-              y: isHomePage ? (easeProgress === 1 ? 0 : (window.innerHeight/2) * (1 - easeProgress)) : 0
+              scale: isHomePage
+                ? easeProgress === 1
+                  ? 1
+                  : 2 - easeProgress
+                : 1,
+              y: isHomePage
+                ? easeProgress === 1
+                  ? 0
+                  : (window.innerHeight / 2) * (1 - easeProgress)
+                : 0,
             }}
             transition={{
               duration: 0.1,
-              ease: "easeInOut"
+              ease: 'easeInOut',
             }}
             className={`text-[48px] ${scrollY > 0 ? 'opacity-50' : 'opacity-100'}`}
           >
@@ -66,15 +75,16 @@ export default function Header() {
           </motion.div>
         </div>
         <div className="flex w-1/2 justify-end">
+          <CartLink />
           <LoginButton />
         </div>
       </div>
-      <div className="navbar flex w-dvw flex-row justify-evenly">
+      <div className="navbar flex -translate-x-10 flex-row">
         <div>
-          <button onClick={() => scrollToProduct(0)}>Watch</button>
-          <button onClick={() => scrollToProduct(1)}>Nano Robot</button>
-          <button onClick={() => scrollToProduct(2)}>Robot</button>
-          <button onClick={() => scrollToProduct(3)}>Glasses</button>
+          <button onClick={() => scrollToProduct(0)}>LuxTech Watch</button>
+          <button onClick={() => scrollToProduct(1)}>Nanobot</button>
+          <button onClick={() => scrollToProduct(2)}>BluviaBot</button>
+          <button onClick={() => scrollToProduct(3)}>LuxeVision</button>
         </div>
         <div>
           <Link to="/aboutus">About Us</Link>
