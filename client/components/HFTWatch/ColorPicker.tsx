@@ -1,16 +1,25 @@
 import { useFrame } from '@react-three/fiber'
 import { useState } from 'react'
 
-function ColorPicker({ setBandColor, setFrameColor, bandColor, frameColor }) {
+function ColorPicker({
+  setBandColor,
+  setFrameColor,
+  bandColor,
+  frameColor,
+  loaded,
+  buyNow,
+  setBuyNow,
+}) {
   const [show, setShow] = useState(false)
   const [opacity, setOpacity] = useState('opacity-0')
 
   useFrame((state) => {
     const timeElapsed = state.clock.getElapsedTime()
 
-    if (timeElapsed > 3.7 && !show) {
+    if (timeElapsed > 5.3 && !show && loaded) {
       setShow(true)
       setOpacity('opacity-100')
+      setBuyNow('opacity-90')
     }
   })
 

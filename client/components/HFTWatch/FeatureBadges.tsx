@@ -13,9 +13,6 @@ function FeatureBadges() {
   const scroll = useScroll()
   const [complete, setComplete] = useState(false)
 
-  // useFrame(() => {
-  //   if (scroll.offset * 3 - 0.2 < 1) setValue(scroll.offset * 3 - 0.2)
-  // })
   let velocity = 0.1
   const damping = 0.09
 
@@ -25,12 +22,12 @@ function FeatureBadges() {
         velocity *= damping
         return (prev += velocity)
       })
-    if (!complete && value >= 1) setComplete(true)
+    if (!complete && value >= 0.95) setComplete(true)
   })
 
   return (
     <div
-      className={`mx-64 my-8 grid grid-cols-3 rounded-3xl border-4 border-solid border-current bg-[var(--secondary-bg)]`}
+      className={`mx-64 my-8 grid grid-cols-3 rounded-3xl bg-[var(--secondary-bg)] shadow-xl shadow-[var(--basic-shadow)]`}
       style={{
         opacity: value,
         transform: `scale(${value}) translateY(${1000 - value * 1000}px)`,

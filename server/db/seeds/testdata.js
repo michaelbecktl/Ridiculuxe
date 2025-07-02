@@ -27,7 +27,7 @@ export async function seed(knex) {
       name: 'LuxTech Watch',
       description: 'The ultimate watch for all your needs',
       price: 1799,
-      image: '/image/luxtechwatch.png',
+      image: '/image/luxtechwatch43.png',
       stock: 99,
     },
     {

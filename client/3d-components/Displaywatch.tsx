@@ -10,7 +10,7 @@ interface Props {
   frameColor: number
 }
 
-function FbxModel({ url, bandColor, frameColor }: Props) {
+function FbxModel({ url, bandColor, frameColor, loaded, setLoaded }: Props) {
   const fbx = useLoader(FBXLoader, url)
   const modelRef = useRef<THREE.Group>(null!)
   const texture = useTexture('/3dmodels/watchnewtexture.png')
@@ -50,6 +50,7 @@ function FbxModel({ url, bandColor, frameColor }: Props) {
   }, [fbx, texture, bandColor, frameColor])
 
   useFrame(() => {
+    if (fbx && !loaded) setLoaded(true)
     modelRef.current.rotation.y += accelerateCW
     modelRef.current.rotation.y += accelerateCCW
     if (clockwise) {
