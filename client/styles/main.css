@@ -19,11 +19,11 @@ a {
 }
 
 .header {
-  @apply bg-plain4 sticky top-0 flex w-full flex-col items-center;
+  @apply sticky top-0 flex w-full flex-col items-center bg-plain4;
 }
 
 .footer {
-  @apply bg-plain4 fixed bottom-0 flex w-full justify-center p-[20px];
+  @apply fixed bottom-0 flex w-full justify-center bg-plain4 p-[20px];
 }
 
 .homepageProduct {
@@ -241,20 +241,21 @@ body {
 @keyframes glowPulse {
   0%,
   100% {
-  0%,
-  100% {
-    text-shadow:
-      0 0 30px rgba(10, 234, 241, 0.6),
-      0 0 50px rgba(50, 39, 167, 0.4),
-      0 0 80px rgba(253, 235, 39, 0.3),
-      0 0 100px rgba(252, 21, 239, 0.2);
-  }
-  50% {
-    text-shadow:
-      0 0 100px rgba(10, 234, 241, 0.8),
-      0 0 80px rgba(50, 39, 167, 0.6),
-      0 0 50px rgba(253, 235, 39, 0.5),
-      0 0 30px rgba(252, 21, 239, 0.4);
+    0%,
+    100% {
+      text-shadow:
+        0 0 30px rgba(10, 234, 241, 0.6),
+        0 0 50px rgba(50, 39, 167, 0.4),
+        0 0 80px rgba(253, 235, 39, 0.3),
+        0 0 100px rgba(252, 21, 239, 0.2);
+    }
+    50% {
+      text-shadow:
+        0 0 100px rgba(10, 234, 241, 0.8),
+        0 0 80px rgba(50, 39, 167, 0.6),
+        0 0 50px rgba(253, 235, 39, 0.5),
+        0 0 30px rgba(252, 21, 239, 0.4);
+    }
   }
 }
 
