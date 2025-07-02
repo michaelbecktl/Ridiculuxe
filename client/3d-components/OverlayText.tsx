@@ -28,10 +28,10 @@ export function OverlayText() {
   const [forthSectionOpacity, setForthSectionOpacity] = useState(1)
 
   useFrame(() => {
-    setFirstSectionOpacity(1 - scroll.range(0, 1 / 8))
-    setSecondSectionOpacity(scroll.curve(1 / 4, 1 / 4))
-    setThirdSectionOpacity(scroll.curve(2 / 4, 1 / 4))
-    setForthSectionOpacity(scroll.range(3 / 4, 1 / 4))
+    setFirstSectionOpacity(1 - scroll.range(0, 1 / 10))
+    setSecondSectionOpacity(scroll.curve(1 / 5, 1 / 5))
+    setThirdSectionOpacity(scroll.curve(2 / 5, 1 / 5))
+    setForthSectionOpacity(scroll.curve(3 / 5, 1 / 5))
   })
 
   return (
