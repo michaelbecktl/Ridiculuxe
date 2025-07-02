@@ -24,10 +24,10 @@ export async function seed(knex) {
   await knex('product').insert([
     {
       id: 1,
-      name: 'hftwatch',
+      name: 'LuxTech Watch',
       description: 'The ultimate watch for all your needs',
-      price: 399.9,
-      image: '/image/Watch.png',
+      price: 1799,
+      image: '/image/luxtechwatch43.png',
       stock: 99,
     },
     {
