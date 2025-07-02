@@ -1,4 +1,3 @@
-
 import express from 'express'
 import * as Path from 'node:path'
 
@@ -6,6 +5,7 @@ import productRoutes from './routes/product.ts'
 import cartRoutes from './routes/cart.ts'
 import CheckoutRoutes from './routes/checkout.ts'
 import userRoutes from './routes/userRoutes.ts'
+import orderRoutes from './routes/order.ts'
 
 const server = express()
 
@@ -14,7 +14,7 @@ server.use(express.json())
 server.use('/api/v1/product', productRoutes)
 server.use('/api/v1/cart', cartRoutes)
 server.use('/api/v1/checkout', CheckoutRoutes)
-
+server.use('/api/v1/order', orderRoutes)
 server.use('/api/v1/users', userRoutes)
 
 if (process.env.NODE_ENV === 'production') {

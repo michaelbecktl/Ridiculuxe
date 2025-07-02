@@ -1,4 +1,4 @@
-import { Link, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { useProduct } from '../hooks/useProduct'
 import { useState } from 'react'
 import { useCart } from '../hooks/useCart'
@@ -9,6 +9,7 @@ function ProductPurchase() {
   const params = useParams()
   const name = params.name as string
   const product = useProduct(name)
+  const navigate = useNavigate()
 
   const [quantity, setQuantity] = useState('1')
 
@@ -61,20 +62,33 @@ function ProductPurchase() {
       productId: productData.id.toString(),
       quantity: Number(quantity),
     }
+    if (!userId) {
+      const existsLocally = temporaryCart.find(
+        (item) => item.productId === addProduct.productId,
+      )
+      existsLocally
+        ? temporaryCart.map((item) => {
+            if (item.productId === addProduct.productId)
+              item.quantity += addProduct.quantity
+          })
+        : temporaryCart.push(addProduct)
+      localStorage.setItem('cart', JSON.stringify(temporaryCart))
+      navigate('/checkout')
+    }
     cart.buyNow.mutate(addProduct)
   }
 
   return (
     <>
-      <div className="mx-32 my-16 flex">
+      <div className="size-dvh mx-32 my-16 flex bg-[var(--bg-color)]">
         <div>
-          <Link to={`${productData.name}`}>
+          <Link to={`/product/${productData.name}`}>
             <h1 className="my-4 text-6xl decoration-from-font hover:underline">
               {productData.name}
             </h1>
           </Link>
           <span className="mr-4">{productData.description}</span>
-          <Link to={`${productData.name}`}>
+          <Link to={`/product/${productData.name}`}>
             <span className="mr-2 decoration-from-font hover:underline">
               Learn More
             </span>
@@ -105,10 +119,18 @@ function ProductPurchase() {
             onChange={handleChange}
             disabled={isOOS}
           />
-          <button disabled={isOOS} onClick={handleBuy}>
+          <button
+            disabled={isOOS}
+            onClick={handleBuy}
+            className="m-2 rounded-xl bg-[#424242] px-4 py-2 text-[white] hover:opacity-80 active:opacity-100"
+          >
             Buy Now
           </button>
-          <button disabled={isOOS} onClick={handleAdd}>
+          <button
+            disabled={isOOS}
+            onClick={handleAdd}
+            className="m-2 rounded-xl bg-[#424242] px-4 py-2 text-[white] hover:opacity-80 active:opacity-100"
+          >
             Add To Cart
           </button>
         </div>

@@ -19,8 +19,10 @@ export default function LoginButton() {
   return (
     <div>
       <IfAuthenticated>
-        <button onClick={handleSignOut}>Sign out</button>
-        {user && <p>Signed in as: {user?.nickname}</p>}
+        <div className="flex flex-col items-center justify-center">
+          <button onClick={handleSignOut}>Sign out</button>
+          {user && <p>Signed in as: {user?.nickname}</p>}
+        </div>
       </IfAuthenticated>
       <IfNotAuthenticated>
         <button onClick={handleSignIn}>Sign in</button>
