@@ -50,8 +50,8 @@ export async function seed(knex) {
       id: 4,
       name: 'LuxeVision',
       description: 'The ultimate glasses for all your needs',
-      price: 9999.9,
-      image: '/image/Glasses.png',
+      price: 2299.9,
+      image: '/image/LuxeVision.png',
       stock: 99,
     },
   ])

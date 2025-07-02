@@ -2,6 +2,7 @@
 import { Scroll, useScroll } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 
 function Section(props) {
   return (
@@ -11,9 +12,7 @@ function Section(props) {
     >
       <div className="flex w-1/2 items-center justify-center">
         <div className="w-full max-w-sm">
-          <div className="rounded-lg bg-[#8cbccc] px-8 py-12">
-            {props.children}
-          </div>
+          <div className="text-[28px]">{props.children}</div>
         </div>
       </div>
     </section>
@@ -27,6 +26,9 @@ export function OverlayText() {
   const [thirdSectionOpacity, setThirdSectionOpacity] = useState(1)
   const [forthSectionOpacity, setForthSectionOpacity] = useState(1)
 
+  const navigate = useNavigate()
+  const handleClick = () => navigate('/shop/LuxeVision')
+
   useFrame(() => {
     setFirstSectionOpacity(1 - scroll.range(0, 1 / 10))
     setSecondSectionOpacity(scroll.curve(1 / 5, 1 / 5))
@@ -36,29 +38,39 @@ export function OverlayText() {
 
   return (
     <Scroll html>
+      <h1 className="luxevision-adjustment-name absolute left-[400px] top-[250px] text-[64px]">
+        LuxeVision
+      </h1>
+      <button
+        onClick={handleClick}
+        className="luxevision-adjustment-button absolute left-[300px] top-[350px]"
+      >
+        Buy Now
+      </button>
+
       <Section opacity={firstSectionOpacity}>
-        <p>
+        <h1>
           Experience next-generation immersion with our state-of-the-art VR
           glasses.
-        </p>
+        </h1>
       </Section>
       <Section right opacity={secondSectionOpacity}>
-        <p>
+        <h1>
           Redefining virtual reality with precision optics and advanced motion
           tracking.
-        </p>
+        </h1>
       </Section>
       <Section opacity={thirdSectionOpacity}>
-        <p>
+        <h1>
           Designed for clarity, comfort, and total immersion—VR glasses built
           for the future.
-        </p>
+        </h1>
       </Section>
       <Section right opacity={forthSectionOpacity}>
-        <p>
+        <h1>
           Step into a new dimension with premium VR glasses crafted for seamless
           performance.
-        </p>
+        </h1>
       </Section>
     </Scroll>
   )
