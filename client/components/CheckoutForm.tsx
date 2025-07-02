@@ -89,8 +89,8 @@ function CheckoutForm() {
               address2: address2,
               address3: address3,
             }
-      const orderId = await order.addOrder.mutateAsync(postBody)
 
+      const orderId = await order.addOrder.mutateAsync(postBody)
       cart.data.map(async (item: ProductQuantity) =>
         orderProducts.mutateAsync({
           orderId: orderId,
@@ -105,18 +105,36 @@ function CheckoutForm() {
           quantity: item.quantity,
         }),
       )
-      cart.destroy.mutate({ userId: cart.user.id.toString() })
-      localStorage.setItem('orderId', JSON.stringify(orderId))
+      const temporaryLocalCache = products.data.map((product, index) => {
+        return {
+          id: product.id,
+          title: product.name,
+          price: product.price,
+          quantity: cart.data[index].quantity,
+        }
+      })
+      localStorage.setItem('tempOrder', JSON.stringify(temporaryLocalCache))
+      cart.destroy.mutate({ userId: cart.user?.id.toString() })
 
       navigate('/confirmation', {
         state: {
-          name: selectedDetails === 'existing' ? userShippingDetails.name : name,
-          email: selectedDetails === 'existing' ? userShippingDetails.email : email,
-          address1: selectedDetails === 'existing' ? userShippingDetails.address1: address1,
-          address2: selectedDetails === 'existing' ? userShippingDetails.address2: address2,
-          address3: selectedDetails === 'existing' ? userShippingDetails.address3: address3,
+          name:
+            selectedDetails === 'existing' ? userShippingDetails.name : name,
+          email:
+            selectedDetails === 'existing' ? userShippingDetails.email : email,
+          address1:
+            selectedDetails === 'existing'
+              ? userShippingDetails.address1
+              : address1,
+          address2:
+            selectedDetails === 'existing'
+              ? userShippingDetails.address2
+              : address2,
+          address3:
+            selectedDetails === 'existing'
+              ? userShippingDetails.address3
+              : address3,
           purchasedItems,
-          
         },
       })
     } catch (err) {
@@ -154,12 +172,21 @@ function CheckoutForm() {
       localCartContent.map(async (item) =>
         (await useProducts.soldProduct).mutate(item),
       )
+
+      const temporaryLocalCache = localQuery.data.map((product, index) => {
+        return {
+          id: product.id,
+          title: product.name,
+          price: product.price,
+          quantity: localCartContent[index].quantity,
+        }
+      })
+      localStorage.setItem('tempOrder', JSON.stringify(temporaryLocalCache))
       localStorage.removeItem('cart')
-      localStorage.setItem('orderId', JSON.stringify(orderId))
 
       navigate('/confirmation', {
         state: {
-          name, 
+          name,
           email,
           address1,
           address2,
@@ -196,10 +223,10 @@ function CheckoutForm() {
               <div key={product.id} className="cart-item">
                 <img
                   src={product.image}
-                  alt={product.title}
+                  alt={product.name}
                   className="cart-item-image"
                 />
-                <h2 className="item-title">{product.title}</h2>
+                <h2 className="item-title">{product.name}</h2>
                 <p className="item-price">Price: ${product.price}</p>
                 <p className="item-quantity">
                   Quantity: {cart.data[index].quantity}
@@ -224,10 +251,10 @@ function CheckoutForm() {
             <div key={product.id} className="cart-item">
               <img
                 src={product.image}
-                alt={product.title}
+                alt={product.name}
                 className="cart-item-image"
               />
-              <h2 className="item-title">{product.title}</h2>
+              <h2 className="item-title">{product.name}</h2>
               <p className="item-price">Price: ${product.price}</p>
               <p className="item-quantity">
                 Quantity: {localCartContent[index].quantity}

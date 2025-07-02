@@ -1,4 +1,4 @@
-import { Link, useParams } from 'react-router-dom'
+import { Link, Navigate, useNavigate, useParams } from 'react-router-dom'
 import { useProduct } from '../hooks/useProduct'
 import { useState } from 'react'
 import { useCart } from '../hooks/useCart'
@@ -9,6 +9,7 @@ function ProductPurchase() {
   const params = useParams()
   const name = params.name as string
   const product = useProduct(name)
+  const navigate = useNavigate()
 
   const [quantity, setQuantity] = useState('1')
 
@@ -60,6 +61,19 @@ function ProductPurchase() {
       userId: userId,
       productId: productData.id.toString(),
       quantity: Number(quantity),
+    }
+    if (!userId) {
+      const existsLocally = temporaryCart.find(
+        (item) => item.productId === addProduct.productId,
+      )
+      existsLocally
+        ? temporaryCart.map((item) => {
+            if (item.productId === addProduct.productId)
+              item.quantity += addProduct.quantity
+          })
+        : temporaryCart.push(addProduct)
+      localStorage.setItem('cart', JSON.stringify(temporaryCart))
+      navigate('/checkout')
     }
     cart.buyNow.mutate(addProduct)
   }

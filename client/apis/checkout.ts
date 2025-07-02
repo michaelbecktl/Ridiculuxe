@@ -13,7 +13,6 @@ export async function getOrder(id: string) {
 }
 
 export async function createOrder(order: Order) {
-  console.log(order)
   const formatted = {
     user_id: order.id,
     name: order.name,
@@ -22,7 +21,6 @@ export async function createOrder(order: Order) {
     address2: order.address2,
     address3: order.address3,
   }
-  console.log(formatted)
   const response = await request.post(rootURL).send(formatted)
   if (!response) {
     throw new Error('Error creating order')

@@ -7,29 +7,50 @@ body {
   @apply bg-plain1;
 }
 
+.rubik-logo {
+  font-family: 'Rubik', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
 a {
   @apply m-0;
 }
 
 .header {
-  @apply bg-plain4/50 fixed top-0 flex w-full justify-between;
-  padding: 20px 80px;
+  @apply sticky top-0 flex w-full flex-col items-center bg-plain4;
 }
 
 .footer {
-  @apply bg-plain4/50 fixed bottom-0 flex w-full justify-center p-[20px];
+  @apply fixed bottom-0 flex w-full justify-center bg-plain4 p-[20px];
 }
 
 .homepageProduct {
-  @apply m-0 flex h-dvh w-dvw flex-col items-center justify-center;
+  @apply m-0 flex flex-col items-center justify-center;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  border-top: black solid 3px;
+}
+
+.navbar {
+  padding: 20px;
+  border-top: solid white 1px;
+  * {
+    margin: 0 10px;
+  }
 }
 
 :root {
   --text-color: black;
   --bg-color: white;
+  --secondary-bg: rgb(250, 250, 250);
   --secondary-color: #569bdbdc;
   --shadow-color: #56dbb3cb;
-  
+  --basic-shadow: #9e9e9e;
 }
 
 body {
@@ -40,8 +61,10 @@ body {
 
 .darkMode {
   --text-color: rgb(255, 255, 255);
-  --bg-color: rgb(46, 46, 46);
+  --bg-color: rgb(39, 39, 39);
+  --secondary-bg: rgb(22, 22, 22);
   --shadow-color: #56dbb3cb;
+  --basic-shadow: #0c0c0c;
 }
 
 .activeTheme {
@@ -73,7 +96,6 @@ body {
 .inactiveTheme:active {
   transform: scale(1.1);
 }
-
 
 /* vvv----------------------------------------------------- Checkout page   ------------------------------------------vvv */
 /* ------------------ Checkout page LIGHT MODE  ------------------ */
@@ -124,7 +146,6 @@ body {
   object-fit: cover;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(66, 66, 66, 0.1);
-
 }
 
 .cart-item-details {
@@ -202,6 +223,7 @@ body {
 /* vvv---------------------Checkout page Dark MODE  ---------------------vvv */
 
 .darkMode .checkout-container {
+
   background: 
     linear-gradient(rgba(13, 17, 23, 0.85), rgba(13, 17, 23, 0.85)),
     url('/public/image/BGcheckout/neon.avif') no-repeat center center fixed;
@@ -211,6 +233,7 @@ body {
 
 .darkMode .checkout-title {
   color: #58a6ff;
+
   margin: 20px;
   text-align: center;
   font-size: 1.5rem;
@@ -232,6 +255,7 @@ body {
   background: #161b22;
   border: 1px solid #30363d;
   box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.02);
+
 }
 
 .darkMode .cart-item-image {
@@ -241,6 +265,7 @@ body {
 .darkMode .item-title {
   color: #767676;
   font-weight: 600;
+
 }
 
 .darkMode .item-price,
@@ -249,17 +274,21 @@ body {
 }
 
 .darkMode .shipping-info {
+
   color: #868585;
   font-weight: 500;
 }
 
 .darkMode .free {
   color: #3fb950;
+
   font-weight: bold;
 }
 
 .darkMode .error-message {
+
   color: #f85149;
+
   font-weight: bold;
 }
 
@@ -277,6 +306,7 @@ body {
 }
 
 .darkMode .form-group label {
+
   color: #79c0ff;
 }
 
@@ -293,6 +323,7 @@ body {
   color: #000000;
   border-radius: 10px;
   padding: 0.75rem 1.5rem;
+
   font-size: 1rem;
   font-weight: bold;
   border: none;
@@ -312,8 +343,6 @@ body {
   align-items: center;
   min-height: 50rem;
   padding: 5rem;
-
-
 }
 
 @keyframes spinOnce {
@@ -414,10 +443,10 @@ ul {
 }
 .shipping-info {
   font-size: 1.2rem;
-  color: #424242; 
+  color: #424242;
+  color: #424242;
   margin-top: 1rem;
 }
-
 
 .free {
   color: #424242;
@@ -431,7 +460,6 @@ ul {
   box-shadow: inset 0 2px 6px rgba(66, 66, 66, 0.05);
   color: #424242;
 }
-
 
 /* vvv------------------confirmation page DARK MODE  ------------------vvv */
 
@@ -454,6 +482,7 @@ ul {
   border: 1px solid #30363d;
   box-shadow: 0 0 8px rgba(240, 246, 252, 0.03);
   transition: box-shadow 0.3s ease, transform 0.3s ease;
+
 }
 
 .darkMode .confirmation-card:hover {
@@ -470,7 +499,7 @@ ul {
   letter-spacing: 1px;
   text-shadow:
     10px 10px 15px rgba(88, 166, 255, 0.4),
-    0 0 12px rgba(88, 166, 255, 0.2);
+    0 0 12px rgba(88, 166, 255, 0.2)
 }
 
 .darkMode .greeting,
@@ -541,3 +570,4 @@ ul {
   box-shadow: inset 0 0 8px rgba(240, 246, 252, 0.03);
   margin-top: 3rem;
 }
+

@@ -1,0 +1,1010 @@
+[33mcommit 4d345e30296b909b6ca6e2b496eb7c98a5765267[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32m58-product-page-michael[m[33m)[m
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Wed Jul 2 15:45:40 2025 +1200
+
+    Removed large OBJ file
+
+[33mcommit e540b03af2a703d178f887b99047177e6ca5bd07[m
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Wed Jul 2 15:44:20 2025 +1200
+
+    Product Page completed
+
+[33mcommit dda8fcd3b846150ad4b6486484552398da8a18cb[m[33m ([m[1;31morigin/58-product-page-michael[m[33m)[m
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Wed Jul 2 10:44:01 2025 +1200
+
+    Refined color picker and feature transition
+
+[33mcommit 9b24e78f8ad6ef275927a3ac8f2d5fa0ee65f408[m
+Merge: aedff33 bfa2ad2
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Tue Jul 1 17:39:16 2025 +1200
+
+    Merge branch 'dev' into 58-product-page-michael
+
+[33mcommit aedff335c0974e1e519069244572e252b5858256[m
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Tue Jul 1 16:36:36 2025 +1200
+
+    Features tab done
+
+[33mcommit bfa2ad2d6c0f3aeb9400c5bd7c5fa3833f42752b[m[33m ([m[1;31morigin/dev[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mdev[m[33m)[m
+Merge: da46554 ec1850f
+Author: Eric <dhgnlrms99@gmail.com>
+Date:   Tue Jul 1 15:41:49 2025 +1200
+
+    Merge pull request #79 from ngahuru-2025/76-debug-buy-now-non-user-and-passing-order-details-to-confirmation
+    
+    76 debug buy now non user and passing order details to confirmation
+
+[33mcommit ec1850f8877c7594e2f44a51ac7b43d99e10b869[m[33m ([m[1;31morigin/76-debug-buy-now-non-user-and-passing-order-details-to-confirmation[m[33m, [m[1;32m76-debug-buy-now-non-user-and-passing-order-details-to-confirmation[m[33m)[m
+Merge: 166af71 da46554
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Tue Jul 1 15:39:09 2025 +1200
+
+    Merge branch 'dev' into 76-debug-buy-now-non-user-and-passing-order-details-to-confirmation
+
+[33mcommit 166af71b0650661ad7b764f766d16f3430157470[m
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Tue Jul 1 15:38:46 2025 +1200
+
+    More bugs
+
+[33mcommit da46554eceeba96da741521eeef3a855784fb1a7[m
+Merge: bd72b59 37d20ca
+Author: Eric <dhgnlrms99@gmail.com>
+Date:   Tue Jul 1 14:57:54 2025 +1200
+
+    Merge pull request #77 from ngahuru-2025/76-debug-buy-now-non-user-and-passing-order-details-to-confirmation
+    
+    Debugged
+
+[33mcommit 37d20ca00a8beda1936bba10bff5968220566ab4[m
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Tue Jul 1 14:56:49 2025 +1200
+
+    Debugged
+
+[33mcommit bd72b59b5581a1b6628060d91ba422438b2db718[m
+Merge: 38662b7 b740dcd
+Author: Eric <dhgnlrms99@gmail.com>
+Date:   Tue Jul 1 14:29:10 2025 +1200
+
+    Merge pull request #75 from ngahuru-2025/58-product-page-michael
+    
+    58 product page michael
+
+[33mcommit b740dcd67d0285cf35c73d9e639d4ff619bd36eb[m
+Merge: 7af2825 38662b7
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Tue Jul 1 14:27:27 2025 +1200
+
+    Merge branch 'dev' into 58-product-page-michael
+
+[33mcommit 7af2825e9b4296cb7e5d448b4facee006c50f5dc[m
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Tue Jul 1 14:27:07 2025 +1200
+
+    Blank components and draft page for watch product
+
+[33mcommit 38662b7884b746ef88e3d1802e8237c14c9186b8[m
+Merge: f3f07fc 539e014
+Author: Eric <dhgnlrms99@gmail.com>
+Date:   Tue Jul 1 13:54:29 2025 +1200
+
+    Merge pull request #73 from ngahuru-2025/41-style-checkout-confirmation-page
+    
+    41 style checkout confirmation page
+
+[33mcommit 539e01429398973bef6462d360e8d2ab71045770[m
+Author: Oranee-Kasem-Whai-25 <ornks43@gmail.com>
+Date:   Tue Jul 1 13:44:25 2025 +1200
+
+     styling css checkout and confi page
+
+[33mcommit ef694122c0fe648aa50d2f2891202dc3ebc5125e[m
+Author: Oranee-Kasem-Whai-25 <ornks43@gmail.com>
+Date:   Tue Jul 1 12:56:28 2025 +1200
+
+     styling css checkout and confi page
+
+[33mcommit ebd8521ac773ecb66ddec177ddaea7be61ca5094[m
+Author: Oranee-Kasem-Whai-25 <ornks43@gmail.com>
+Date:   Tue Jul 1 10:48:53 2025 +1200
+
+    add user name display for both log in and guest on confir page
+
+[33mcommit f70f8a6a43d3e5406fe60c56abff15e599a35d74[m
+Merge: a83fc7a f3f07fc
+Author: Oranee-Kasem-Whai-25 <ornks43@gmail.com>
+Date:   Tue Jul 1 09:58:07 2025 +1200
+
+    Merge branch 'dev' into 41-style-checkout-confirmation-page
+
+[33mcommit a83fc7ac43d8e3027dd104395913d99ff7070e7a[m
+Author: Oranee-Kasem-Whai-25 <ornks43@gmail.com>
+Date:   Tue Jul 1 09:38:24 2025 +1200
+
+    styling checkout , confirmation page
+
+[33mcommit f3f07fcd0f9898c737ee9d2d3477f67841ea203f[m
+Merge: 4277594 0b0ca90
+Author: Eric <dhgnlrms99@gmail.com>
+Date:   Tue Jul 1 09:14:45 2025 +1200
+
+    Merge pull request #71 from ngahuru-2025/70-install-threejs-packages
+    
+    Added react 3 to package
+
+[33mcommit 0b0ca909334dfaeb088ec7214cc088a53313a1ea[m[33m ([m[1;31morigin/70-install-threejs-packages[m[33m, [m[1;32m70-install-threejs-packages[m[33m)[m
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Tue Jul 1 09:13:00 2025 +1200
+
+    Added react 3 to package
+
+[33mcommit 427759421ab15582a64dfbe26aff3bf2df40f09b[m
+Merge: 160054e 9314e18
+Author: Eric <dhgnlrms99@gmail.com>
+Date:   Tue Jul 1 09:10:32 2025 +1200
+
+    Merge pull request #68 from ngahuru-2025/51-checkout-with-guest-users-functionality
+    
+    51 checkout with guest users functionality
+
+[33mcommit 9314e188d06c42aaa821872e60a1eb92fd818182[m[33m ([m[1;31morigin/51-checkout-with-guest-users-functionality[m[33m)[m
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Mon Jun 30 23:33:42 2025 +1200
+
+    Debugging and added functionality to send to product order table
+
+[33mcommit e1566d5e9ba90416b0c440e86ca7137c674e7fac[m
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Mon Jun 30 22:02:40 2025 +1200
+
+    Created hooks for order and product order table handling
+
+[33mcommit 189f738002d4c28ea6aa31f4732d6b133ce0ab6a[m
+Author: Oranee-Kasem-Whai-25 <ornks43@gmail.com>
+Date:   Mon Jun 30 18:38:29 2025 +1200
+
+    conf pahe
+
+[33mcommit 160054ebc62d1b6883f381a6a6b11c65fb2d507a[m
+Merge: 439441a d2faf20
+Author: Eric <dhgnlrms99@gmail.com>
+Date:   Mon Jun 30 17:46:17 2025 +1200
+
+    Merge pull request #65 from ngahuru-2025/51-checkout-with-guest-users-functionality
+    
+    51 checkout with guest users functionality
+
+[33mcommit d2faf2099e4855cbd0d406538cc0a95983176619[m
+Merge: c4ede6c 439441a
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Mon Jun 30 17:07:40 2025 +1200
+
+    Merge branch 'dev' into 51-checkout-with-guest-users-functionality
+
+[33mcommit c4ede6c9af58ab187dce8ef81af96361920a4640[m
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Mon Jun 30 16:51:09 2025 +1200
+
+    Registered users properly checks out, fixed display and deletes stock as intended
+
+[33mcommit b52a0665556da4f0958de3eed70ef4275cc35b16[m
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Mon Jun 30 16:35:31 2025 +1200
+
+    Guest functionality complete, deletes stock level and checkouts properly
+
+[33mcommit 439441a31d5a7b27da2a5fda68f4a464840f5991[m
+Merge: ebf6138 1cb5185
+Author: Eric <dhgnlrms99@gmail.com>
+Date:   Mon Jun 30 16:14:54 2025 +1200
+
+    Merge pull request #62 from ngahuru-2025/8-homepage-layout
+    
+    8 homepage layout
+
+[33mcommit 1cb5185eb98fb97a20b0ab99af8928cd934b3ade[m[33m ([m[1;31morigin/8-homepage-layout[m[33m)[m
+Author: David Kim <khk980703@hotmail.com>
+Date:   Mon Jun 30 16:13:39 2025 +1200
+
+    edit homepage abit
+
+[33mcommit a42bcd4fa5dfd82c3b96c45c648831d0c7bd9abd[m
+Author: Oranee-Kasem-Whai-25 <ornks43@gmail.com>
+Date:   Mon Jun 30 15:51:26 2025 +1200
+
+    css groe neon color dark mode
+
+[33mcommit 6dfcfdcb7b7792c2b1257973daee675068888f5b[m
+Author: David Kim <khk980703@hotmail.com>
+Date:   Mon Jun 30 14:48:08 2025 +1200
+
+    add link to Ridiculuxe
+
+[33mcommit ebf61380f12c75bbfafb35e25b83d131fd12c9bc[m
+Merge: 2368b6f 070183f
+Author: Eric <dhgnlrms99@gmail.com>
+Date:   Mon Jun 30 14:35:15 2025 +1200
+
+    Merge pull request #56 from ngahuru-2025/9-tailwindcss-custom-fonts
+    
+    adjust seed, add color scheme
+
+[33mcommit 2368b6fc69d57d46acd21f75533c5bea0a97c03c[m
+Merge: 71e49ed bdccd6c
+Author: Eric <dhgnlrms99@gmail.com>
+Date:   Mon Jun 30 14:35:04 2025 +1200
+
+    Merge pull request #60 from ngahuru-2025/41-style-checkout-confirmation-page
+    
+    41 style checkout confirmation page
+
+[33mcommit 71e49ede154ecf1bfbc169af0cfe1bcb154da067[m
+Merge: 80bc2b9 74c260e
+Author: Eric <dhgnlrms99@gmail.com>
+Date:   Mon Jun 30 14:34:39 2025 +1200
+
+    Merge pull request #61 from ngahuru-2025/59-show-header-in-all-pages
+    
+    show header in all pages
+
+[33mcommit 74c260e484e22c40829452ee1253fcece28226e4[m[33m ([m[1;31morigin/59-show-header-in-all-pages[m[33m)[m
+Author: David Kim <khk980703@hotmail.com>
+Date:   Mon Jun 30 14:32:21 2025 +1200
+
+    show header in all pages
+
+[33mcommit bdccd6cc1a580ef9f63029ddd2525ea5c092b24e[m[33m ([m[1;31morigin/41-style-checkout-confirmation-page[m[33m)[m
+Author: Oranee-Kasem-Whai-25 <ornks43@gmail.com>
+Date:   Mon Jun 30 14:30:26 2025 +1200
+
+    css confirmation page
+
+[33mcommit a2f3db70312bb87fce26415b0276142bc6ec5fde[m
+Author: Oranee-Kasem-Whai-25 <ornks43@gmail.com>
+Date:   Mon Jun 30 14:03:06 2025 +1200
+
+    css confirmation page
+
+[33mcommit 76cbdd487fdf6f927e3c3bce1e0a78fcd688b5bd[m
+Author: Oranee-Kasem-Whai-25 <ornks43@gmail.com>
+Date:   Mon Jun 30 13:19:07 2025 +1200
+
+    style css
+
+[33mcommit 070183fe425e9bf23fdf6133763bba88dd1d6b9c[m[33m ([m[1;31morigin/9-tailwindcss-custom-fonts[m[33m)[m
+Author: David Kim <khk980703@hotmail.com>
+Date:   Mon Jun 30 12:40:14 2025 +1200
+
+    adjust seed, add color scheme
+
+[33mcommit 80bc2b9b8c6f55284fde3a68be9a5224c915f698[m[33m ([m[1;31morigin/52-style-register-page[m[33m)[m
+Merge: 3d82a5a 09539bf
+Author: Eric <dhgnlrms99@gmail.com>
+Date:   Mon Jun 30 11:45:39 2025 +1200
+
+    Merge pull request #50 from ngahuru-2025/31-order-successful-confirmation-page
+    
+    confirm page
+
+[33mcommit 3d82a5a1c3bf1417c4b2c3d539a9fc03de9e4137[m
+Merge: 0ba88d7 f289f4b
+Author: Eric <dhgnlrms99@gmail.com>
+Date:   Mon Jun 30 11:41:29 2025 +1200
+
+    Merge pull request #49 from ngahuru-2025/46-create-dark-mode-button
+    
+    Dark mode
+
+[33mcommit f289f4b05bc4f75d860e3869c44049bc6f640a17[m[33m ([m[1;31morigin/46-create-dark-mode-button[m[33m)[m
+Merge: 79ee13a 0ba88d7
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Mon Jun 30 11:40:54 2025 +1200
+
+    Merge branch 'dev' into 46-create-dark-mode-button
+
+[33mcommit 79ee13a43b66e85b86c0747c5e1eca8e4220bc57[m
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Mon Jun 30 11:39:44 2025 +1200
+
+    Dark mode
+
+[33mcommit 0ba88d7f93c737b75e00065fa809dc74c92cefb1[m
+Merge: 25e8a42 970f90d
+Author: Eric <dhgnlrms99@gmail.com>
+Date:   Mon Jun 30 11:33:24 2025 +1200
+
+    Merge pull request #48 from ngahuru-2025/30-profile-page
+    
+    30 profile page
+
+[33mcommit 970f90d61714563b4174d31d96a1bd3e5432687a[m[33m ([m[1;31morigin/30-profile-page[m[33m)[m
+Merge: cafda09 25e8a42
+Author: Eric <dhgnlrms99@gmail.com>
+Date:   Mon Jun 30 11:33:14 2025 +1200
+
+    Merge branch 'dev' into 30-profile-page
+
+[33mcommit cafda09b4b540562b41a98a70b3e276b18f0d8a5[m
+Author: Eric Oh <dhgnlrms99@gmail.com>
+Date:   Mon Jun 30 11:31:39 2025 +1200
+
+    feat: made profile button on header
+
+[33mcommit d8e152d81aad9142e3a90e0044ba335bac998909[m
+Author: Eric Oh <dhgnlrms99@gmail.com>
+Date:   Mon Jun 30 11:25:12 2025 +1200
+
+    feat: displaying user data
+
+[33mcommit 25e8a42a9c5983591b9c88724a3090930a54c6ca[m
+Merge: a306d67 6986a78
+Author: Eric <dhgnlrms99@gmail.com>
+Date:   Mon Jun 30 10:29:10 2025 +1200
+
+    Merge pull request #47 from ngahuru-2025/13-contact-us-page
+    
+    13 contact us page
+
+[33mcommit 6986a785692409724bed4370de1bc5a8b9eb6674[m[33m ([m[1;31morigin/13-contact-us-page[m[33m)[m
+Merge: 3c4d2b2 a306d67
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Mon Jun 30 10:26:50 2025 +1200
+
+    Merge branch 'dev' into 13-contact-us-page
+
+[33mcommit 3c4d2b2320f0bb62a0c91a36a5d38d1c9fa7a9b0[m
+Merge: a8ae2a6 899604f
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Mon Jun 30 10:26:25 2025 +1200
+
+    Merge branch '13-contact-us-page' of github.com:ngahuru-2025/Ridiculuxe into 13-contact-us-page
+
+[33mcommit a8ae2a6b25c05520607a8d3097037e647215f101[m
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Mon Jun 30 10:23:47 2025 +1200
+
+    Collapsible element bug fixed to accomodate Tailwind errors
+
+[33mcommit 637a2f3d042786b394ec15e0959f1363ef119f67[m
+Merge: 1e9dc63 a306d67
+Author: Eric Oh <dhgnlrms99@gmail.com>
+Date:   Mon Jun 30 10:17:59 2025 +1200
+
+    Co-authored-by: david-kim <khk980703@users.noreply.github.com>
+
+[33mcommit a306d674cd056d72ea72603fa4893d396fc8fd32[m
+Merge: 3f5b3c6 899604f
+Author: Eric <dhgnlrms99@gmail.com>
+Date:   Mon Jun 30 09:21:41 2025 +1200
+
+    Merge pull request #45 from ngahuru-2025/13-contact-us-page
+    
+    13 contact us page
+
+[33mcommit 899604f67424690660f1aa34c75b4aba09029361[m
+Merge: 0159d52 3f5b3c6
+Author: Eric <dhgnlrms99@gmail.com>
+Date:   Mon Jun 30 09:21:33 2025 +1200
+
+    Merge branch 'dev' into 13-contact-us-page
+
+[33mcommit b362a5ba5c08e2062b98cd7e1d9441a97da7ab4c[m
+Merge: 0159d52 3f5b3c6
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Mon Jun 30 09:17:57 2025 +1200
+
+    Merge branch 'dev' into 13-contact-us-page
+
+[33mcommit 0159d5218d1f6dd8a9788951eea170ceb3cca839[m
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Mon Jun 30 09:17:04 2025 +1200
+
+    Added collapsible element with CSS
+
+[33mcommit 09539bf4ae5bc344badd09cb9ae0a46632615e05[m[33m ([m[1;31morigin/31-order-successful-confirmation-page[m[33m)[m
+Author: Oranee-Kasem-Whai-25 <ornks43@gmail.com>
+Date:   Mon Jun 30 09:11:00 2025 +1200
+
+    pages
+
+[33mcommit 3f5b3c6e5b119860012a51b060e61c1f0e942918[m
+Merge: c90127f fce625c
+Author: Eric <dhgnlrms99@gmail.com>
+Date:   Mon Jun 30 09:07:54 2025 +1200
+
+    Merge pull request #40 from ngahuru-2025/31-order-successful-confirmation-page
+    
+    31 order successful confirmation page
+
+[33mcommit c90127f567965bd154ab5aca68d9491cbf6ab944[m
+Merge: 5fc3134 558fd96
+Author: Eric <dhgnlrms99@gmail.com>
+Date:   Mon Jun 30 09:07:42 2025 +1200
+
+    Merge pull request #43 from ngahuru-2025/42-make-seed-run-able-without-deleting-devsqlite3
+    
+    fix seed deleting order
+
+[33mcommit 5fc3134cd833cc934da71a2ddf7cce7dc7a13b63[m
+Merge: d488f55 4f2503a
+Author: Eric <dhgnlrms99@gmail.com>
+Date:   Mon Jun 30 09:07:29 2025 +1200
+
+    Merge pull request #44 from ngahuru-2025/8-homepage-layout
+    
+    get all product from server
+
+[33mcommit 4f2503a6d8b8c07d182d771cb2ed64aedb6573ea[m
+Author: David Kim <khk980703@hotmail.com>
+Date:   Sun Jun 29 21:36:06 2025 +1200
+
+    get all product from server
+
+[33mcommit 558fd967dd81631e89fec3235628cb8b2f7ca304[m[33m ([m[1;31morigin/42-make-seed-run-able-without-deleting-devsqlite3[m[33m)[m
+Author: David Kim <khk980703@hotmail.com>
+Date:   Sun Jun 29 19:40:19 2025 +1200
+
+    fix seed deleting order
+
+[33mcommit fce625cd0bfc3f82ac43dbe25dd566f8894aa030[m
+Author: Oranee-Kasem-Whai-25 <ornks43@gmail.com>
+Date:   Sun Jun 29 15:57:52 2025 +1200
+
+    confirm page datail
+
+[33mcommit 8ba1a9f01f535c7f02b8c669b02b1ffc97609556[m
+Author: Oranee-Kasem-Whai-25 <ornks43@gmail.com>
+Date:   Sun Jun 29 15:38:53 2025 +1200
+
+    NZ$
+
+[33mcommit 7359b7aabff66ec71e2c7229f20a80f8dc4cfc01[m
+Author: Oranee-Kasem-Whai-25 <ornks43@gmail.com>
+Date:   Sun Jun 29 15:36:23 2025 +1200
+
+    shipping
+
+[33mcommit 36117bd83e7dc867e9d000358e18df260751a9fa[m
+Author: Oranee-Kasem-Whai-25 <ornks43@gmail.com>
+Date:   Sun Jun 29 15:32:46 2025 +1200
+
+    add shipping
+
+[33mcommit fda3ee2066b6b51b936d4c35d298cea0ff6dcfe7[m
+Author: Oranee-Kasem-Whai-25 <ornks43@gmail.com>
+Date:   Sun Jun 29 15:23:53 2025 +1200
+
+     passing quantity for all 3 pages
+
+[33mcommit 16ebf74dd6de721d8c941445e59774fdd78ab0f8[m
+Author: Oranee-Kasem-Whai-25 <ornks43@gmail.com>
+Date:   Sun Jun 29 14:26:16 2025 +1200
+
+    q x price = total price
+
+[33mcommit 5522c9fb648ab512b344ca573966bc86fef6e76a[m
+Author: Oranee-Kasem-Whai-25 <ornks43@gmail.com>
+Date:   Sat Jun 28 21:30:38 2025 +1200
+
+    product confirmation
+
+[33mcommit 4d70d93349825ca74cc9bc09ac0144734c2636b5[m
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Sat Jun 28 11:54:58 2025 +1200
+
+    Added Collapsible CSS on FAQ
+
+[33mcommit a78a54136593adc7a679669354b85d9c520281f5[m
+Merge: faddc35 d488f55
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Fri Jun 27 16:44:30 2025 +1200
+
+    Merge branch 'dev' into 13-contact-us-page
+
+[33mcommit faddc35c38cd9f283657b3236caedb27f5b86b80[m
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Fri Jun 27 16:39:45 2025 +1200
+
+    Updated submit button
+
+[33mcommit cd79605df68b88a72a449f0906d7a6f5706eba7a[m
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Fri Jun 27 16:29:20 2025 +1200
+
+    Contact Us Page and Form
+
+[33mcommit e66260a6618645de74768a5c880e4104d25d1a5b[m
+Merge: 59fa36b d488f55
+Author: Oranee-Kasem-Whai-25 <ornks43@gmail.com>
+Date:   Fri Jun 27 16:13:21 2025 +1200
+
+    Co-authored-by: Michael Beck <michaelbecktl@users.noreply.github.com>
+
+[33mcommit 59fa36b24115b8a19e9eabb1036faebfb0b5efe6[m
+Author: Oranee-Kasem-Whai-25 <ornks43@gmail.com>
+Date:   Fri Jun 27 16:11:06 2025 +1200
+
+    add confirmation page
+
+[33mcommit d488f551888575da54cc961b6461d99532c136df[m
+Merge: 9a173bf cb0d576
+Author: Eric <dhgnlrms99@gmail.com>
+Date:   Fri Jun 27 15:12:28 2025 +1200
+
+    Merge pull request #37 from ngahuru-2025/12-about-us-page
+    
+    12 about us page
+
+[33mcommit a223e7b13f9d106dd234faa58a3d7e65eb379e91[m
+Author: Oranee-Kasem-Whai-25 <ornks43@gmail.com>
+Date:   Fri Jun 27 15:11:35 2025 +1200
+
+    cartItem.quantity
+
+[33mcommit fe87a90b79c5da711e65633aa72d1f19da47123b[m
+Author: Oranee-Kasem-Whai-25 <ornks43@gmail.com>
+Date:   Fri Jun 27 14:59:35 2025 +1200
+
+    total Price
+
+[33mcommit cb0d57660013e76ac667f19441df82617e9661d8[m[33m ([m[1;31morigin/12-about-us-page[m[33m)[m
+Merge: 1ff01b5 9a173bf
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Fri Jun 27 14:53:07 2025 +1200
+
+    Merge branch 'dev' into 12-about-us-page
+
+[33mcommit 1ff01b5021b8342d32e727c66104e47c25eedd70[m
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Fri Jun 27 14:49:34 2025 +1200
+
+    About Us page drafted and linked from Header
+
+[33mcommit 1e9dc63fbc619134dce2c8f332b41c2a70a9add3[m
+Merge: 5a53eb5 9a173bf
+Author: Eric Oh <dhgnlrms99@gmail.com>
+Date:   Fri Jun 27 14:18:03 2025 +1200
+
+    Merge remote-tracking branch 'origin' into 30-profile-page
+
+[33mcommit 9a173bf4207b409d87e19e3ebc4bec1396803080[m
+Merge: a6231e7 1a4c1d7
+Author: Eric <dhgnlrms99@gmail.com>
+Date:   Fri Jun 27 14:17:08 2025 +1200
+
+    Merge pull request #36 from ngahuru-2025/11-build-checkout-form
+    
+    11 build checkout form
+
+[33mcommit 5a53eb5ad235db02336abbf9da52c193e673b586[m
+Merge: 356338b a6231e7
+Author: Eric Oh <dhgnlrms99@gmail.com>
+Date:   Fri Jun 27 14:15:41 2025 +1200
+
+    Merge remote-tracking branch 'origin' into 30-profile-page
+
+[33mcommit 1a4c1d74d792f878aba214301ec141e9d4ce3edc[m[33m ([m[1;31morigin/11-build-checkout-form[m[33m)[m
+Author: Oranee-Kasem-Whai-25 <ornks43@gmail.com>
+Date:   Fri Jun 27 14:15:12 2025 +1200
+
+    checkout page
+
+[33mcommit a6231e7f7ec7b2749b39311556bc47fe582a5206[m
+Merge: 5622611 a35e990
+Author: Eric <dhgnlrms99@gmail.com>
+Date:   Fri Jun 27 14:14:36 2025 +1200
+
+    Merge pull request #35 from ngahuru-2025/15-product-purchase-confirmation-page
+    
+    15 product purchase confirmation page
+
+[33mcommit 1894920c7f92f1aef3e974d5b5bb074af2e01d99[m
+Author: Oranee-Kasem-Whai-25 <ornks43@gmail.com>
+Date:   Fri Jun 27 12:41:37 2025 +1200
+
+    product checkout hndle submit
+
+[33mcommit a35e990470e3083cd3074f87c61c6f26cc1d2f0a[m[33m ([m[1;31morigin/15-product-purchase-confirmation-page[m[33m)[m
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Fri Jun 27 12:37:05 2025 +1200
+
+    Shopping Cart works for guest users
+
+[33mcommit ae9af4b7aedb1a2e0633f0f334a4f0892950a8a5[m
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Fri Jun 27 12:10:02 2025 +1200
+
+    Added user hook to properly call cart mutations
+
+[33mcommit 356338b3cfc38e15498976e5f7724147e392ded7[m
+Merge: 15271e3 5622611
+Author: Eric Oh <dhgnlrms99@gmail.com>
+Date:   Fri Jun 27 12:03:18 2025 +1200
+
+    Merge remote-tracking branch 'origin' into 30-profile-page
+
+[33mcommit 37477a6d38283e1ee71ef3cdea0a4512e24c577b[m
+Merge: bf4406b 5622611
+Author: Oranee-Kasem-Whai-25 <ornks43@gmail.com>
+Date:   Fri Jun 27 11:05:10 2025 +1200
+
+    Merge branch 'dev' into 11-build-checkout-form
+
+[33mcommit bf4406beaeedde3c7b09df4b1be13156d9e1049c[m
+Author: Oranee-Kasem-Whai-25 <ornks43@gmail.com>
+Date:   Fri Jun 27 10:59:07 2025 +1200
+
+    cart product
+
+[33mcommit 15271e31b84dd7b48d2a965bd88e5f9a02bab59e[m
+Merge: 019955c 5c6002b
+Author: Eric Oh <dhgnlrms99@gmail.com>
+Date:   Fri Jun 27 10:54:19 2025 +1200
+
+    Merge remote-tracking branch 'origin' into 30-profile-page
+
+[33mcommit 5622611839785c6421361e9a8f8bc4a2e95e192d[m
+Merge: 5c6002b 9777b55
+Author: Eric <dhgnlrms99@gmail.com>
+Date:   Fri Jun 27 10:52:18 2025 +1200
+
+    Merge pull request #34 from ngahuru-2025/22-new-user-page
+    
+    edit: fixing not updating our user table
+
+[33mcommit 9777b5588b23ae71db83458e3f26b6e7bb672654[m[33m ([m[1;31morigin/22-new-user-page[m[33m)[m
+Author: Eric Oh <dhgnlrms99@gmail.com>
+Date:   Fri Jun 27 10:51:22 2025 +1200
+
+    edit: fixing not updating our user table
+
+[33mcommit 5c6002bb6f83c245da64d32621df20b7c3690276[m
+Merge: fc62bb7 a7369dd
+Author: Eric <dhgnlrms99@gmail.com>
+Date:   Fri Jun 27 10:50:03 2025 +1200
+
+    Merge pull request #33 from ngahuru-2025/32-bug-fix-get-products-hook
+    
+    Separated getProductByName and getProductById for separate purposes
+
+[33mcommit a7369ddb9b20043ee62d518bbd94f47c4c7cebb0[m[33m ([m[1;31morigin/32-bug-fix-get-products-hook[m[33m)[m
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Fri Jun 27 10:48:00 2025 +1200
+
+    Separated getProductByName and getProductById for separate purposes
+
+[33mcommit 019955c4452b5a57bd1305b1c62e173185744562[m
+Author: Eric Oh <dhgnlrms99@gmail.com>
+Date:   Fri Jun 27 10:27:00 2025 +1200
+
+    feat: made a profile page
+
+[33mcommit 07fde1b141a2703c1f99870a81fe6d04272c050c[m
+Merge: 6cfb0c9 fc62bb7
+Author: Oranee-Kasem-Whai-25 <ornks43@gmail.com>
+Date:   Thu Jun 26 16:45:46 2025 +1200
+
+    Merge branch 'dev' into 11-build-checkout-form
+
+[33mcommit fc62bb73e83a2bbb6e855c8f02583f9b7f433b80[m
+Merge: 21cb65f c9f2208
+Author: Eric <dhgnlrms99@gmail.com>
+Date:   Thu Jun 26 16:42:28 2025 +1200
+
+    Merge pull request #29 from ngahuru-2025/22-new-user-page
+    
+    22 new user page
+
+[33mcommit c9f2208615b50d3617fb4115f25a009c5ca17459[m
+Merge: 8c78c87 21cb65f
+Author: Eric Oh <dhgnlrms99@gmail.com>
+Date:   Thu Jun 26 16:41:01 2025 +1200
+
+    Merge remote-tracking branch 'origin' into 22-new-user-page
+
+[33mcommit 6cfb0c943ebaa50afd0ca4c0bdb9e619a03673e5[m
+Author: Oranee-Kasem-Whai-25 <ornks43@gmail.com>
+Date:   Thu Jun 26 16:39:27 2025 +1200
+
+    checkout form
+
+[33mcommit 21cb65ff9f035c25fad549d5f56b9fc140994048[m
+Merge: ef5f965 b6519c4
+Author: Eric <dhgnlrms99@gmail.com>
+Date:   Thu Jun 26 16:37:50 2025 +1200
+
+    Merge pull request #28 from ngahuru-2025/25-shopping-cart-individual-product-component
+    
+    25 shopping cart individual product component
+
+[33mcommit 8c78c87892ddbda88b0f43a6d3f0464fab3d03cb[m
+Author: Eric Oh <dhgnlrms99@gmail.com>
+Date:   Thu Jun 26 16:36:56 2025 +1200
+
+    edit: changed typo on server.ts
+
+[33mcommit b6519c4900394e4302373150bcee79f75c8fb148[m[33m ([m[1;31morigin/25-shopping-cart-individual-product-component[m[33m)[m
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Thu Jun 26 16:35:48 2025 +1200
+
+    Removed ProductElement, created custom hook that grabs all cart product and it's details
+
+[33mcommit 04410691cf5123e6b26dcb4aa4feda9ff3a1a64a[m
+Author: Oranee-Kasem-Whai-25 <ornks43@gmail.com>
+Date:   Thu Jun 26 16:10:30 2025 +1200
+
+    add cart product elememts
+
+[33mcommit 253eab577aeb9ec5c06a6007e1d51d05cb34f3e0[m
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Thu Jun 26 15:52:30 2025 +1200
+
+    Cart Product with function and id prop created
+
+[33mcommit 22ce29f9acc9657429f4f72678442b4c87a0725d[m
+Merge: f8ca452 ef5f965
+Author: Eric Oh <dhgnlrms99@gmail.com>
+Date:   Thu Jun 26 15:30:33 2025 +1200
+
+    Merge remote-tracking branch 'origin' into 22-new-user-page
+
+[33mcommit ef5f9655a6ba9df3212a30d14e7a77b592db664a[m
+Merge: 0bbaf70 fd07982
+Author: Eric <dhgnlrms99@gmail.com>
+Date:   Thu Jun 26 15:27:23 2025 +1200
+
+    Merge pull request #26 from ngahuru-2025/15-product-purchase-confirmation-page
+    
+    15 product purchase confirmation page
+
+[33mcommit fd07982ff8ef9667135416e227c4ff74f86654f6[m
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Thu Jun 26 15:25:42 2025 +1200
+
+    Loading message added
+
+[33mcommit ff58a1a1998036bc191572afb3ff2ec1781b7b48[m
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Thu Jun 26 15:25:07 2025 +1200
+
+    Added isPending to cart hook
+
+[33mcommit f8ca45242771d49729224c673268a5d259f884a3[m
+Author: Eric Oh <dhgnlrms99@gmail.com>
+Date:   Thu Jun 26 15:15:50 2025 +1200
+
+    edit: fixed css style bug
+
+[33mcommit 021a321abf847110866774f0f4b01caf0135af4f[m
+Author: Oranee-Kasem-Whai-25 <ornks43@gmail.com>
+Date:   Thu Jun 26 15:12:28 2025 +1200
+
+    checkoutForm
+
+[33mcommit 2b9ba6c27448cdd35380196408a98ef3183f867f[m
+Merge: 6e8fb9f 0bbaf70
+Author: Oranee-Kasem-Whai-25 <ornks43@gmail.com>
+Date:   Thu Jun 26 14:47:07 2025 +1200
+
+    Co-authored-by: david-kim <khk980703@users.noreply.github.com>
+    Co-authored-by: Michael Beck <michaelbecktl@users.noreply.github.com>
+
+[33mcommit 5924c8c4d14fb0d51207403779c21253a503bb0e[m
+Author: Eric Oh <dhgnlrms99@gmail.com>
+Date:   Thu Jun 26 14:43:28 2025 +1200
+
+    feat: made Registration page
+
+[33mcommit 6e8fb9f21adf412a6cfc01b928b7845978979f85[m
+Author: Oranee-Kasem-Whai-25 <ornks43@gmail.com>
+Date:   Thu Jun 26 14:40:26 2025 +1200
+
+    api/v1/checkou
+
+[33mcommit e6a93840a670cdb5ada473e2d0b5628180377ac3[m
+Merge: a1f3f27 0bbaf70
+Author: Eric Oh <dhgnlrms99@gmail.com>
+Date:   Thu Jun 26 14:27:46 2025 +1200
+
+    Merge remote-tracking branch 'origin' into 22-new-user-page
+
+[33mcommit 0bbaf7090cee54b7b2a425d33d5708a11d145f58[m
+Merge: 0576ff1 5cf5cd0
+Author: Eric <dhgnlrms99@gmail.com>
+Date:   Thu Jun 26 14:22:40 2025 +1200
+
+    Merge pull request #24 from ngahuru-2025/15-product-purchase-confirmation-page
+    
+    15 product purchase confirmation page
+
+[33mcommit a1f3f27a84ee7314e7d5c235009f063cb1af4227[m
+Merge: cc40c77 0576ff1
+Author: Eric Oh <dhgnlrms99@gmail.com>
+Date:   Thu Jun 26 14:22:16 2025 +1200
+
+    Merge remote-tracking branch 'origin' into 22-new-user-page
+
+[33mcommit cc40c771d115cc98f90a210ebfc08e649d58df39[m
+Author: Eric Oh <dhgnlrms99@gmail.com>
+Date:   Thu Jun 26 14:19:38 2025 +1200
+
+    feat: made CreateUser component
+
+[33mcommit 5eb6886d3032944b49b901ad16642c592caa1627[m
+Author: Oranee-Kasem-Whai-25 <ornks43@gmail.com>
+Date:   Thu Jun 26 14:17:54 2025 +1200
+
+    router
+
+[33mcommit 5cf5cd0e3899cf31f082f1eabc49eb1976ea4970[m
+Merge: c4ffd06 0576ff1
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Thu Jun 26 14:13:10 2025 +1200
+
+    Merge branch 'dev' into 15-product-purchase-confirmation-page
+
+[33mcommit c4ffd06f61fe028246be44c61f7aa2ac684f6ba0[m
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Thu Jun 26 14:10:47 2025 +1200
+
+    Seed changes, jacket changed to glasses
+
+[33mcommit 0576ff123dc45445e8208be36ec572dae93a7f6b[m
+Merge: 019a59b 9bd6695
+Author: Eric <dhgnlrms99@gmail.com>
+Date:   Thu Jun 26 14:06:31 2025 +1200
+
+    Merge pull request #23 from ngahuru-2025/8-homepage-layout
+    
+    basic homepage layout
+
+[33mcommit 4de74bd18871c52fb83939bc382f9dc0d33e68f3[m
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Thu Jun 26 13:57:42 2025 +1200
+
+    Added comments to hook to explain it's uses
+
+[33mcommit 12699de336c7c74b48f5d02371996461ddcff693[m
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Thu Jun 26 12:30:24 2025 +1200
+
+    Buy Now and Add To Cart button hooked up to API
+
+[33mcommit 9bd6695299ba7d3eb77918d2effdaa22b9d3dd7c[m
+Author: David Kim <khk980703@hotmail.com>
+Date:   Thu Jun 26 12:29:49 2025 +1200
+
+    basic homepage layout
+
+[33mcommit bc98c2fc12d0f90cb4119fb78e43c8d4e24459b6[m
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Thu Jun 26 11:58:21 2025 +1200
+
+    CRUD operations for shopping cart
+
+[33mcommit 68291082b2b9d415f1d4cb641f98175677042d2e[m
+Author: Oranee-Kasem-Whai-25 <ornks43@gmail.com>
+Date:   Thu Jun 26 11:03:44 2025 +1200
+
+    server route
+
+[33mcommit a4684807873740fcbd59dbeb58e65eb9d7f9b4b7[m
+Merge: 291aa00 019a59b
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Thu Jun 26 10:17:46 2025 +1200
+
+    Merge branch 'dev' into 15-product-purchase-confirmation-page
+
+[33mcommit 291aa0051b735e7353fc4180aa3da93838c8d586[m
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Thu Jun 26 10:16:57 2025 +1200
+
+    Product quantity input QOL fixed
+
+[33mcommit 33483447bf54e1a891c25299dab15c577bec2bdb[m
+Author: Oranee-Kasem-Whai-25 <ornks43@gmail.com>
+Date:   Thu Jun 26 09:53:52 2025 +1200
+
+    use Effect
+
+[33mcommit 234079f2094f677dcfc0ddb4e0e1b29c2f67afe6[m
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Wed Jun 25 16:22:51 2025 +1200
+
+    Front end API and hooks created for getting product info
+
+[33mcommit c3566bff1e703391902b16f425ece7bb47fe7f8d[m
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Wed Jun 25 16:22:35 2025 +1200
+
+    Product Purchase page and route
+
+[33mcommit 019a59ba269b75eb496cde92e2b8ba4689a33ece[m
+Merge: 4266579 4c54938
+Author: Eric <dhgnlrms99@gmail.com>
+Date:   Wed Jun 25 16:13:52 2025 +1200
+
+    Merge pull request #21 from ngahuru-2025/20-model
+    
+    feat: created model
+
+[33mcommit 4c5493863ba4a96a9c3fecfcf16b5ebf1e9baee1[m[33m ([m[1;31morigin/20-model[m[33m)[m
+Author: Eric Oh <dhgnlrms99@gmail.com>
+Date:   Wed Jun 25 16:13:09 2025 +1200
+
+    feat: created model
+
+[33mcommit 426657909f12dd29fd26c03718427576c1d7aee5[m
+Merge: 78471ed f489d22
+Author: Eric <dhgnlrms99@gmail.com>
+Date:   Wed Jun 25 15:53:52 2025 +1200
+
+    Merge pull request #18 from ngahuru-2025/5-migrations-and-seeds
+    
+    Added Shopping Card table
+
+[33mcommit 78471eda54e4dfa5e9bff0e5d686e1430dba9ec1[m
+Merge: 4badd3d 9a5bd03
+Author: Eric <dhgnlrms99@gmail.com>
+Date:   Wed Jun 25 15:53:21 2025 +1200
+
+    Merge pull request #19 from ngahuru-2025/Auth0
+    
+    Auth0
+
+[33mcommit 9a5bd0349e3af93d0f78847dea1abd9685d58e1d[m[33m ([m[1;31morigin/7--set-up-user-authentication[m[33m)[m
+Author: Eric Oh <dhgnlrms99@gmail.com>
+Date:   Wed Jun 25 15:50:36 2025 +1200
+
+    feat: made LoginButton
+
+[33mcommit f489d2261cb80bdc34408d1c5184b797fb32d2fb[m[33m ([m[1;31morigin/5-migrations-and-seeds[m[33m)[m
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Wed Jun 25 15:22:13 2025 +1200
+
+    Added Shopping Card table
+
+[33mcommit 57b5459b4dc73503cadd7c1b408bfe9425993b96[m
+Merge: f0c8c68 4badd3d
+Author: Eric Oh <dhgnlrms99@gmail.com>
+Date:   Wed Jun 25 15:02:15 2025 +1200
+
+    Merge remote-tracking branch 'origin' into Auth0
+
+[33mcommit f0c8c68e16be85f21f633edba96991ced575bced[m
+Author: Eric Oh <dhgnlrms99@gmail.com>
+Date:   Wed Jun 25 15:01:17 2025 +1200
+
+    feat: made Authenticated component
+
+[33mcommit 4badd3dd4d1db9e4dc25eae1262ae08de92a3e70[m
+Merge: ea744f4 e5e8d85
+Author: Eric <dhgnlrms99@gmail.com>
+Date:   Wed Jun 25 14:55:12 2025 +1200
+
+    Merge pull request #10 from ngahuru-2025/5-migrations-and-seeds
+    
+    5 migrations and seeds
+
+[33mcommit e5e8d8543aba2cafdc20d5f7e86723ba4841cc98[m
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Wed Jun 25 14:43:48 2025 +1200
+
+    Seeds
+
+[33mcommit 4d5b44ead2c2294c30fc1ec6e8784747f793c90c[m
+Author: Michael Beck <michaelbeck1206@gmail.com>
+Date:   Wed Jun 25 14:32:29 2025 +1200
+
+    Migrations
+
+[33mcommit ea744f4662fe1b32fe3a8b85796bfb5364812e40[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Eric <dhgnlrms99@gmail.com>
+Date:   Wed Jun 25 10:41:07 2025 +1200
+
+    Initial commit
