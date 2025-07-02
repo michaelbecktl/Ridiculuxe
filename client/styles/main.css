@@ -109,17 +109,19 @@ body {
 }
 
 .checkout-title {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   margin: 20px;
+  margin-bottom: 1px;
   font-weight: bold;
   text-align: center;
-  letter-spacing: 2px;
+  letter-spacing: 0px;
 }
 
 .section-heading {
   font-size: 1.5rem;
   margin-top: 2rem;
   margin-bottom: 1rem;
+  letter-spacing: 0.5px;
   border-bottom: 4px solid #dcdcdc;
   padding-bottom: 0.5rem;
 }
@@ -205,7 +207,7 @@ body {
 }
 
 .submit-button {
-  background-color: #424242;
+  background-color: #555353;
   color: #fff;
   padding: 1rem 2rem;
   font-size: 1rem;
@@ -219,137 +221,118 @@ body {
   background-color: #2c2c2c;
 }
 /* vvv---------------------Checkout page Dark MODE  ---------------------vvv */
+
 .darkMode .checkout-container {
-  background-color: #0b0b0f;
-  color: #ccc;
+
+  background: 
+    linear-gradient(rgba(13, 17, 23, 0.85), rgba(13, 17, 23, 0.85)),
+    url('/public/image/BGcheckout/neon.avif') no-repeat center center fixed;
+  background-size: cover;
+  color: #b4b5b6;
 }
 
 .darkMode .checkout-title {
-  color: #0aeaf1;
-  color: #0aeaf1;
+  color: #58a6ff;
+
   margin: 20px;
   text-align: center;
-  font-size: 2.5rem;
-  letter-spacing: 2px;
+  font-size: 1.5rem;
+  letter-spacing: 0px;
+  margin-bottom: 1px;
   text-shadow:
-    0 0 10px rgba(10, 234, 241, 0.6),
-    0 0 20px rgba(50, 39, 167, 0.4),
-    0 0 35px rgba(253, 235, 39, 0.3),
-    0 0 50px rgba(252, 21, 239, 0.2);
-  animation: glowPulse 3s infinite ease-in-out;
-}
-@keyframes glowPulse {
-  0%,
-  100% {
-    0%,
-    100% {
-      text-shadow:
-        0 0 30px rgba(10, 234, 241, 0.6),
-        0 0 50px rgba(50, 39, 167, 0.4),
-        0 0 80px rgba(253, 235, 39, 0.3),
-        0 0 100px rgba(252, 21, 239, 0.2);
-    }
-    50% {
-      text-shadow:
-        0 0 100px rgba(10, 234, 241, 0.8),
-        0 0 80px rgba(50, 39, 167, 0.6),
-        0 0 50px rgba(253, 235, 39, 0.5),
-        0 0 30px rgba(252, 21, 239, 0.4);
-    }
-  }
+    0 0 6px rgba(88, 166, 255, 0.4),
+    0 0 12px rgba(88, 166, 255, 0.2);
 }
 
 .darkMode .section-heading {
-  color: #f8232f;
-  color: #f8232f;
-  border-bottom: 1px solid rgba(248, 35, 47, 0.4);
-  letter-spacing: 1px;
+  color: #8b949e;
+  border-bottom: 1px solid #30363d;
+  
+  letter-spacing: 0.5px;
 }
 
 .darkMode .cart-item {
-  background: rgba(50, 39, 167, 0.08);
-  border: 1px solid #3227a7;
-  border: 1px solid #3227a7;
-  box-shadow: inset 0 0 8px rgba(50, 39, 167, 0.2);
+  background: #161b22;
+  border: 1px solid #30363d;
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.02);
+
 }
 
 .darkMode .cart-item-image {
-  box-shadow: 0 4px 10px rgba(10, 234, 241, 0.2);
+  box-shadow: 0 2px 8px rgba(88, 166, 255, 0.1);
 }
 
 .darkMode .item-title {
-  color: #fdeb27;
-  color: #fdeb27;
-  text-shadow: 0 0 3px rgba(253, 235, 39, 0.4);
+  color: #767676;
+  font-weight: 600;
+
 }
 
 .darkMode .item-price,
 .darkMode .item-quantity {
-  color: #ccc;
+  color: #c9d1d9;
 }
 
 .darkMode .shipping-info {
-  color: #fc15ef;
-  color: #fc15ef;
-  text-shadow: 0 0 2px rgba(252, 21, 239, 0.3);
+
+  color: #868585;
+  font-weight: 500;
 }
 
 .darkMode .free {
-  color: #0aeaf1;
-  color: #0aeaf1;
+  color: #3fb950;
+
   font-weight: bold;
-  text-shadow: 0 0 4px rgba(10, 234, 241, 0.4);
 }
 
 .darkMode .error-message {
-  color: #f8232f;
-  color: #f8232f;
+
+  color: #f85149;
+
   font-weight: bold;
 }
 
 .darkMode .success-message {
-  color: #0aeaf1;
-  color: #0aeaf1;
+  color: #3fa7b9;
   font-weight: bold;
 }
 
 .darkMode .checkout-form {
-  background-color: rgba(20, 20, 40, 0.4);
-  border: 1px solid rgba(250, 250, 250, 0.05);
+  background-color: #161b22;
+  border: 1px solid #30363d;
   padding: 2rem;
-  border-radius: 20px;
-  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  box-shadow: 0 0 8px rgba(240, 246, 252, 0.03);
 }
 
 .darkMode .form-group label {
-  color: #fdeb27;
-  color: #fdeb27;
+
+  color: #79c0ff;
 }
 
 .darkMode .input-field {
-  background-color: #14141f;
-  color: #ccc;
-  border: 1px solid #3227a7;
-  border: 1px solid #3227a7;
-  border-radius: 8px;
-  padding: 0.8rem;
+  background-color: #0d1117;
+  color: #c9d1d9;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 0.75rem;
 }
 
 .darkMode .submit-button {
-  background-color: #0aeaf1;
-  background-color: #0aeaf1;
-  color: #0b0b0f;
-  border-radius: 12px;
-  padding: 1rem 2rem;
+  background-color: #0AEAF1;
+  color: #000000;
+  border-radius: 10px;
+  padding: 0.75rem 1.5rem;
+
   font-size: 1rem;
   font-weight: bold;
   border: none;
   transition: background-color 0.3s ease;
-  box-shadow: 0 0 15px rgba(10, 234, 241, 0.3);
+  box-shadow: 10px 10px 8px rgba(76, 130, 83, 0.3);
 }
 
 .darkMode .submit-button:hover {
-  background-color: #0ec6d6;
+  background-color: #4940ae;;
 }
 
 /* --------------------------------------- Confirmation page   ------------------------------------- */
@@ -359,10 +342,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 50rem;
-
-  padding: 7rem;
-
-  padding: 1rem;
+  padding: 5rem;
 }
 
 @keyframes spinOnce {
@@ -378,8 +358,9 @@ body {
   background: #e0e0e0;
   border-radius: 50px;
   box-shadow: 20px 3px 60px rgba(66, 66, 66, 0.15);
-  padding: 10rem;
-  max-width: 1000px;
+  padding: 4rem;
+  max-width: 800px;
+  margin-top:50px;
   width: 100%;
   transform: perspective(1000px) rotateX(1deg);
   transition: transform 0.3s ease;
@@ -387,11 +368,11 @@ body {
 }
 
 .confirmation-card:hover {
-  transform: perspective(1000px) rotateX(1deg) scale(1.2);
+  transform: perspective(500px) rotateX(1deg) scale(1.1);
 }
 
 .confirmation-header {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   font-weight: bold;
   text-align: center;
   margin-bottom: 0.5rem;
@@ -483,62 +464,57 @@ ul {
 /* vvv------------------confirmation page DARK MODE  ------------------vvv */
 
 .darkMode .confirmation-container {
-  background-color: #0b0b0f;
+  background: 
+    linear-gradient(rgba(13, 17, 23, 0.85), rgba(13, 17, 23, 0.85)),
+    url('/public/image/BGcheckout/neon.avif') no-repeat center center fixed;
+  background-size: cover;
   font-family: 'Orbitron', 'Segoe UI', sans-serif;
-  color: #ccc;
+  color: #b4b5b6;
 }
 .darkMode .confirmation-card {
-  background: linear-gradient(145deg, #14141f, #0a0a14);
-  border-radius: 40px;
-  padding: 6rem;
+  background: #161b22;
+  border-radius: 20px;
+  padding: 3rem;
+  margin-top:40px;
   max-width: 1000px;
   width: 100%;
   animation: spinOnce 1s ease-in-out;
-  border: 1px solid rgba(250, 250, 250, 0.05);
-  box-shadow: 20px 25px 12px rgba(252, 21, 239, 0.1);
-  transition:
-    box-shadow 0.3s ease,
-    transform 0.3s ease;
-  transition:
-    box-shadow 0.3s ease,
-    transform 0.3s ease;
+  border: 1px solid #30363d;
+  box-shadow: 0 0 8px rgba(240, 246, 252, 0.03);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+
 }
+
 .darkMode .confirmation-card:hover {
   transform: perspective(1000px) rotateX(1deg) scale(1.02);
-  box-shadow:
-    0px 0 20px #0aeaf1,
-    0 0 40px #3227a7;
-  box-shadow:
-    0px 0 20px #0aeaf1,
-    0 0 40px #3227a7;
+  box-shadow: 0px 20px 20px #0AEAF1, 10px 10px 40px #3227A7;
 }
+
 .darkMode .confirmation-header {
-  font-size: 2.8rem;
-  font-weight: 700;
+  font-size: 1.5rem;
+  font-weight: 600;
   text-align: center;
   margin-bottom: 1.5rem;
-  color: #0aeaf1;
-  color: #0aeaf1;
-  letter-spacing: 1.5px;
-  text-shadow: 0 0 4px rgba(253, 235, 39, 0.3);
+  color: #58a6ff;
+  letter-spacing: 1px;
+  text-shadow:
+    10px 10px 15px rgba(88, 166, 255, 0.4),
+    0 0 12px rgba(88, 166, 255, 0.2)
 }
 
 .darkMode .greeting,
 .darkMode .thank-you,
 .darkMode .message {
   text-align: center;
-  font-size: 1.2rem;
-  color: #fc15ef;
-  color: #fc15ef;
+  font-size: 1.1rem;
+  color: #fbf9f9;
   margin-bottom: 1.2rem;
-  text-shadow: 0 0 2px rgba(252, 21, 239, 0.4);
 }
 
 .darkMode .greeting span {
-  color: #0aeaf1;
-  color: #0aeaf1;
+  color: #1dada6;
   font-weight: 600;
-  text-shadow: 0 0 3px rgba(10, 234, 241, 0.6);
+  text-shadow: 0 0 3px rgba(63, 185, 80, 0.4);
 }
 
 .darkMode .items-section h3,
@@ -546,30 +522,25 @@ ul {
 .darkMode .shipping-section h3 {
   font-size: 1.2rem;
   margin-bottom: 1rem;
-  color: #f8232f;
-  color: #f8232f;
-  border-bottom: 2px solid rgba(248, 35, 47, 0.4);
+  color: #fbf9f9;
+  border-bottom: 1px solid #30363d;
   padding-bottom: 0.4rem;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
 .darkMode .item {
-  background: rgba(50, 39, 167, 0.08);
-  border: 1px solid #3227a7;
-  border: 1px solid #3227a7;
+  background: #161b22;
+  border: 1px solid #30363d;
   border-radius: 16px;
   padding: 1.5rem;
   margin-bottom: 1.2rem;
-  box-shadow: inset 0 0 8px rgba(50, 39, 167, 0.2);
-  transition: box-shadow 0.3s ease;
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.02);
 }
 
 .darkMode .item h4 {
   margin: 0 0 0.5rem;
-  color: #fdeb27;
-  color: #fdeb27;
+  color: #767676;
   font-weight: 600;
-  text-shadow: 0 0 3px rgba(253, 235, 39, 0.4);
 }
 
 .darkMode .item p {
@@ -580,27 +551,23 @@ ul {
 
 .darkMode .shipping-info {
   font-size: 1.1rem;
-  color: #fc15ef;
-  color: #fc15ef;
-  text-shadow: 0 0 3px rgba(252, 21, 239, 0.3);
+  color: #fbf9f9;
+  font-weight: 500;
   margin-top: 1rem;
 }
 
 .darkMode .free {
-  color: #0aeaf1;
-  color: #0aeaf1;
+  color: #a40000;
   font-weight: bold;
-  text-shadow: 0 0 4px rgba(120, 137, 138, 0.4);
 }
 
 .darkMode .address-box {
-  background: rgba(252, 21, 239, 0.05);
-  border: 1px solid rgba(252, 21, 239, 0.3);
-  border-radius: 24px;
-  padding: 4rem;
-  color: #fc15ef;
-  color: #fc15ef;
-  box-shadow: inset 0 0 15px rgba(252, 21, 239, 0.1);
-  text-shadow: 0 0 3px rgba(252, 21, 239, 0.3);
+  background: rgba(255, 255, 255, 0.02);
+  border: 5px solid #02384f;
+  border-radius: 16px;
+  padding: 2rem;
+  color: #f1f1f1;
+  box-shadow: inset 0 0 8px rgba(240, 246, 252, 0.03);
   margin-top: 3rem;
 }
+
