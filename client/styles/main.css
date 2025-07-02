@@ -32,8 +32,8 @@ a {
   place-items: center;
   align-content: center;
   min-height: 100vh;
-  background-color: #e5dfd4;
-  border-top: rgb(142, 142, 142) solid 3px;
+  background-color: var(--bg-color);
+  border-top: black solid 3px;
 }
 
 .navbar {
