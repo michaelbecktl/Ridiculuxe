@@ -32,7 +32,7 @@ function HFTWatch() {
             height: '88vh',
           }}
         >
-          <ScrollControls pages={3.5} damping={0.08}>
+          <ScrollControls pages={3.3} damping={0.08}>
             <directionalLight position={[5, 5, 5]} intensity={2} />
             <Scroll>
               <Displaywatch
