@@ -40,10 +40,10 @@ export async function seed(knex) {
     },
     {
       id: 3,
-      name: 'oraneeproduct',
-      description: 'The ultimate robot for all your needs',
-      price: 9999.9,
-      image: '/image/Robot.png',
+      name: 'BluviaBot',
+      description: 'Your Luxe Everyday Assistant',
+      price: 29999.99,
+      image: '/image/BotBluvia.png',
       stock: 99,
     },
     {
