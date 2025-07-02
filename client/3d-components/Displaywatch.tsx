@@ -1,13 +1,19 @@
 import { FBXLoader } from 'three/examples/jsm/Addons.js'
 import { useFrame, useLoader } from '@react-three/fiber'
 import * as THREE from 'three'
-import { Children, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useScroll, useTexture } from '@react-three/drei'
 
-function FbxModel({ url }: { url: string }) {
+interface Props {
+  url: string
+  bandColor: number
+  frameColor: number
+}
+
+function FbxModel({ url, bandColor, frameColor, loaded, setLoaded }: Props) {
   const fbx = useLoader(FBXLoader, url)
   const modelRef = useRef<THREE.Group>(null!)
-  const texture = useTexture('/3dmodels/watchtexture.png')
+  const texture = useTexture('/3dmodels/watchnewtexture.png')
   const scroll = useScroll()
 
   const [clockwise, setClockwise] = useState(true)
@@ -22,28 +28,29 @@ function FbxModel({ url }: { url: string }) {
           transparent: true,
           side: THREE.DoubleSide,
         })
-        if (child.name !== 'Glass') {
-          child.material = new THREE.MeshPhongMaterial({
-            map: texture,
-            transparent: true,
-            side: THREE.DoubleSide,
-          })
-        }
         child.material.needsUpdate = true
-      }
-      if (child.name !== 'Glass') {
+      } else if (child.name === 'UpperBelt' || child.name === 'LowerBelt') {
         child.material = new THREE.MeshPhongMaterial({
           transparent: true,
           side: THREE.DoubleSide,
-          color: 0xffffff,
+          color: bandColor,
         })
+        child.material.needsUpdate = true
+      } else if (child.name !== 'Glass') {
+        child.material = new THREE.MeshPhongMaterial({
+          transparent: true,
+          side: THREE.DoubleSide,
+          color: frameColor,
+        })
+        child.material.needsUpdate = true
       }
-      child.material.needsUpdate = true
+
       child.material.opacity = 0
     })
-  }, [fbx, texture])
+  }, [fbx, texture, bandColor, frameColor])
 
   useFrame(() => {
+    if (fbx && !loaded) setLoaded(true)
     modelRef.current.rotation.y += accelerateCW
     modelRef.current.rotation.y += accelerateCCW
     if (clockwise) {
@@ -63,7 +70,7 @@ function FbxModel({ url }: { url: string }) {
     fbx.traverse((child) => {
       if (child.material.opacity < 1) child.material.opacity += 0.005
     })
-    modelRef.current.position.y = scroll.offset * 20 + 2
+    modelRef.current.position.y = scroll.offset * 40 + 3
   })
 
   return (

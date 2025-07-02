@@ -9,7 +9,7 @@ function BuyRobot() {
       transition={{ delay: 2, duration: 1, ease: 'easeOut' }}
       className="mt-12 px-6"
     >
-      <Link to="/product/BotBluvia">
+      <Link to="/product/BluviaBot">
       <button onClick={handleClick}>Buy Now</button>
       </Link>
     </motion.div>
