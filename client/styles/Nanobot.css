@@ -1,0 +1,53 @@
+/* 🔁 Watch Demo Button Flip Effect */
+.btn-12 {
+  position: relative;
+  border: none;
+  box-shadow: none;
+  width: 130px;
+  height: 40px;
+  line-height: 42px;
+  perspective: 230px;
+}
+
+.btn-12 span {
+  background: linear-gradient(0deg, #00faff 0%, #00d3e0 100%);
+  display: block;
+  position: absolute;
+  width: 130px;
+  height: 40px;
+  box-shadow:
+    inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1),
+    4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  text-align: center;
+  line-height: 40px;
+  transition: all 0.3s;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.btn-12 span:nth-child(1) {
+  box-shadow:
+    -7px -7px 20px 0px #fff9,
+    -4px -4px 5px 0px #fff9,
+    7px 7px 20px 0px #0002,
+    4px 4px 5px 0px #0001;
+  transform: rotateX(90deg);
+  transform-origin: 50% 50% -20px;
+}
+
+.btn-12 span:nth-child(2) {
+  transform: rotateX(0deg);
+  transform-origin: 50% 50% -20px;
+}
+
+.btn-12:hover span:nth-child(1) {
+  transform: rotateX(0deg);
+}
+
+.btn-12:hover span:nth-child(2) {
+  transform: rotateX(-90deg);
+  color: transparent;
+}
