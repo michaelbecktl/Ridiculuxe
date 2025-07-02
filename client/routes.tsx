@@ -13,7 +13,7 @@ import Confirmation from './components/Confirmation.tsx'
 import AboutUs from './pages/AboutUs.tsx'
 import HFTWatch from './pages/HTFWatch.tsx'
 import EricProduct from './pages/EricProduct.tsx'
-import DavidProduct from './pages/DavidProduct.tsx'
+import LuxeVision from './pages/LuxeVision.tsx'
 import OraneeProduct from './pages/OraneeProduct.tsx'
 
 export default createRoutesFromElements(
@@ -28,7 +28,7 @@ export default createRoutesFromElements(
     <Route path="/aboutus" element={<AboutUs />} />
     <Route path="/product/hftwatch" element={<HFTWatch />} />
     <Route path="/product/ericproduct" element={<EricProduct />} />
-    <Route path="/product/davidproduct" element={<DavidProduct />} />
+    <Route path="/product/LuxeVision" element={<LuxeVision />} />
     <Route path="/product/oraneeproduct" element={<OraneeProduct />} />
   </Route>,
 )
