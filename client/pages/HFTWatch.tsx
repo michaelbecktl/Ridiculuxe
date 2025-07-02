@@ -1,4 +1,4 @@
-import { Canvas, useFrame } from '@react-three/fiber'
+import { Canvas } from '@react-three/fiber'
 import Displaywatch from '../3d-components/Displaywatch'
 import { Scroll, ScrollControls } from '@react-three/drei'
 import BlurText from '../components/HFTWatch/BlurText'
@@ -6,7 +6,6 @@ import Title from '../components/HFTWatch/Title'
 import FeatureBadges from '../components/HFTWatch/FeatureBadges'
 import { useState } from 'react'
 import ColorPicker from '../components/HFTWatch/ColorPicker'
-import BuyWatch from '../components/HFTWatch/BuyWatch'
 import { useNavigate } from 'react-router-dom'
 import Holowatch from '../3d-components/Holowatch'
 import AbstractCity from '../3d-components/AbstractCity'
@@ -23,9 +22,17 @@ function HFTWatch() {
 
   return (
     <>
-      <div className="h-screen w-screen">
-        <Canvas gl={{ alpha: true }} style={{ background: 'transparent' }}>
-          <ScrollControls pages={3} damping={0.08}>
+      <div className="hftwatch h-[84vh] w-screen">
+        <Canvas
+          gl={{ alpha: true }}
+          style={{
+            background: 'transparent',
+            position: 'absolute',
+            top: '16vh',
+            height: '84vh',
+          }}
+        >
+          <ScrollControls pages={3.5} damping={0.08}>
             <directionalLight position={[5, 5, 5]} intensity={2} />
             <Scroll>
               <Displaywatch

@@ -8,13 +8,16 @@ function AboutUs() {
     { name: 'Knex JS', image: '/public/image/Knex_JS.png' },
     { name: 'Auth0', image: '/public/image/Auth0.svg' },
     { name: 'Tailwind CSS', image: '/public/image/Tailwind_CSS.svg' },
+    { name: 'Three JS', image: '/public/image/Threejs.svg' },
+    { name: 'Framer Motion', image: '/public/image/Framer-Motion.webp' },
   ]
 
   return (
     <>
       <div className="justify-items-center">
-        <h1 className="text-[96px]">Ridiculuxe</h1>
-        <h2 className="text-[32px]">So Luxurious, It's Ridiculous</h2>
+        <h1 className="aboutUs-title mt-8 text-[96px]">
+          So Luxurious, It&apos;s Ridiculous
+        </h1>
         <br />
         <p>
           Thank you for browsing our webpage, this website is our final group
@@ -30,17 +33,24 @@ function AboutUs() {
         <br />
         <p>This website was built with:</p>
         <br />
-        <ul className="flex">
-          {technologies.map((technology) => (
-            <li key={technology.name} className="m-3">
-              <img
-                src={technology.image}
-                alt={technology.name}
-                className="h-20"
-              />
-            </li>
-          ))}
-        </ul>
+      </div>
+      <div className="flex justify-center">
+        <div className="w-[60%] justify-items-center rounded-3xl bg-[var(--text-field)] p-4 shadow-xl shadow-[var(--shadow-color)]">
+          <ul className="flex">
+            {technologies.map((technology) => (
+              <li
+                key={technology.name}
+                className="m-3 flex-auto justify-center"
+              >
+                <img
+                  src={technology.image}
+                  alt={technology.name}
+                  className="h-20"
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </>
   )

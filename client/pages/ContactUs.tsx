@@ -34,20 +34,28 @@ function ContactUs() {
 
   return (
     <>
-      <div className="justify-items-center">
-        <h1>Get In Touch</h1>
+      <div className="h-[84vh] justify-items-center overflow-scroll pb-16">
+        <h1 className="mt-8 text-6xl">Get In Touch</h1>
 
-        <p>We want to hear from you. Chat with us.</p>
+        <p className="mt-2 text-2xl">We want to hear from you. Chat with us.</p>
         <ContactUsForm />
         <br />
         <br />
-        <h2>Frequently Asked Questions</h2>
+        <h2 className="border-b-1 mb-8 border-b border-current pb-4 text-3xl">
+          Frequently Asked Questions
+        </h2>
         <div className="w-[50%] self-start text-left">
           <div className="flex">
-            <button id="shipping" onClick={handleClick} className="w-[30px]">
+            <button
+              id="shipping"
+              onClick={handleClick}
+              className="w-[30px] text-xl font-bold"
+            >
               {show.shipping === '' ? '-' : '+'}
             </button>
-            <h2>How long will it take for my order to arrive?</h2>
+            <h2 className="text-xl">
+              How long will it take for my order to arrive?
+            </h2>
           </div>
           <div
             className={`m-3 h-auto overflow-hidden px-8 transition-all duration-500 ease-in-out`}
@@ -59,16 +67,22 @@ function ContactUs() {
             all your specifications followed thoroughly!
           </div>
           <div className="flex">
-            <button id="missing" onClick={handleClick} className="w-[30px]">
+            <button
+              id="missing"
+              onClick={handleClick}
+              className="w-[30px] text-xl font-bold"
+            >
               {show.missing === '' ? '-' : '+'}
             </button>
-            <h2>I still did not receive my order.</h2>
+            <h2 className="text-xl">I still did not receive my order.</h2>
           </div>
           <div
             className={`m-3 h-auto overflow-hidden px-8 transition-all duration-500 ease-in-out`}
             style={{ maxHeight: style.missing }}
           >
-            <h3>Check delivery details</h3>
+            <h3 className="border-b-1 mb-4 w-fit border-b border-current pb-1">
+              Check delivery details
+            </h3>
             <ul className="list-disc">
               <li>
                 Double check if the correct address was written in your order.
@@ -83,10 +97,16 @@ function ContactUs() {
             </ul>
           </div>
           <div className="flex">
-            <button id="overseas" onClick={handleClick} className="w-[30px]">
+            <button
+              id="overseas"
+              onClick={handleClick}
+              className="w-[30px] text-xl font-bold"
+            >
               {show.overseas === '' ? '-' : '+'}
             </button>
-            <h2>Is shipping available for locations outside of New Zealand?</h2>
+            <h2 className="text-xl">
+              Is shipping available for locations outside of New Zealand?
+            </h2>
           </div>
           <div
             className={`m-3 h-auto overflow-hidden px-8 transition-all duration-500 ease-in-out`}

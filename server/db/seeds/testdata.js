@@ -32,10 +32,10 @@ export async function seed(knex) {
     },
     {
       id: 2,
-      name: 'ericproduct',
-      description: 'The ultimate nano robot for all your needs',
-      price: 299.9,
-      image: '/image/Nano-Robot.png',
+      name: 'Nanobot',
+      description: 'Healing from the inside out',
+      price: 1499.9,
+      image: '/image/Nanobot.png',
       stock: 99,
     },
     {
