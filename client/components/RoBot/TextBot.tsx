@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 
+
 interface TextbotProps {
   text: string
   delay?: number
@@ -29,16 +30,17 @@ function Textbot({ text, delay = 0, className = '' }: TextbotProps) {
       {characters.map((char, index) => (
         <motion.span
           key={index}
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 100, y: 1000 }}
           animate={showIndex >= index ? { opacity: 1, y: 0 } : {}}
           transition={{
-            delay: 0,
-            duration: 0.4,
+            delay: 2,
+            duration: 1.4,
             ease: 'easeOut',
           }}
         >
           {char}
         </motion.span>
+       
       ))}
     </div>
   )

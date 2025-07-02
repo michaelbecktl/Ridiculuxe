@@ -1,16 +1,19 @@
 import React, { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { Scroll, ScrollControls, OrbitControls, useGLTF } from '@react-three/drei'
+import { useNavigate } from 'react-router-dom'
 
 import Title from '../components/RoBot/ Tiltle'
 import '../styles/BluviaBot.css'
 
 function Robot() {
   const { scene } = useGLTF('/Robot/bluebot.glb')
-  return <primitive object={scene} scale={2.5} position={[0, 0, 0]} />
+  return <primitive object={scene} scale={2.5} position={[0,-0.5, 0]} />
 }
 
 function BluviaBot() {
+  const navigate = useNavigate()
+  const handleClick = () => navigate('/shop/LuxTech Watch')
   return (
     <div className="robot-wrapper">
   
@@ -23,7 +26,7 @@ function BluviaBot() {
           <ambientLight intensity={2.0} />
           <directionalLight position={[10, 50, 5]} />
           <Suspense fallback={null}>
-            <ScrollControls pages={3} damping={0.1}>
+            <ScrollControls pages={2} damping={0.5}>
               <Scroll>
                 <Robot />
               </Scroll>
@@ -34,7 +37,9 @@ function BluviaBot() {
           </Suspense>
           <OrbitControls enableZoom={true} />
         </Canvas>
+       
       </div>
+      
     </div>
   )
 }
