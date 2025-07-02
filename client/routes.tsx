@@ -25,7 +25,7 @@ export default createRoutesFromElements(
     <Route path="/contact" element={<ContactUs />} />
     <Route path="/aboutus" element={<AboutUs />} />
     <Route path="/product/LuxTech Watch" element={<HFTWatch />} />
-    <Route path="/product/ericproduct" element={<EricProduct />} />
+    <Route path="/product/Nanobot" element={<EricProduct />} />
     <Route path="/product/davidproduct" element={<DavidProduct />} />
     <Route path="/product/BluviaBot" element={<BluviaBot />} />
   </Route>,
