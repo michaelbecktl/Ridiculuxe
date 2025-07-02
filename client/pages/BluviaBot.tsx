@@ -26,7 +26,7 @@ function BluviaBot() {
           <ambientLight intensity={2.0} />
           <directionalLight position={[10, 50, 5]} />
           <Suspense fallback={null}>
-            <ScrollControls pages={2} damping={0.5}>
+            <ScrollControls pages={2.5} damping={0.5}>
               <Scroll>
                 <Robot />
               </Scroll>
@@ -34,7 +34,7 @@ function BluviaBot() {
   {/* Your Buy Now Button */}
   <button
     onClick={handleClick}
-    className="buy-now-button ml-16 rounded-3xl bg-[#269460] px-5 text-xl text-white shadow-md transition-all duration-300 hover:opacity-80 active:opacity-100"
+    className="buy-now-button ml-16 rounded-3xl bg-[#387156] px-5 text-xl text-white shadow-md transition-all duration-300 hover:opacity-80 active:opacity-100"
   >
     Buy Now
   </button>

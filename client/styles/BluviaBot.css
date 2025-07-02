@@ -100,11 +100,19 @@ body.darkMode .glitter-layer {
 
 
 .darkMode .robot-text-bubble {
-  background-color: #1e1e1e;
+  background-color: #484848;
   color: #f5f5f5;
-  
-  box-shadow: 10px 10px 12px #740d89;
-} 
+  padding: 4rem 5rem;
+  max-width: 100%;
+  border-radius: 1.25rem;
+  margin: 2rem auto 2rem 0;
+  box-shadow: 20px 15px 20px rgba(199, 157, 208, 0.4);
+  font-size: 1rem;
+  line-height: 2;
+  position: relative;
+}
+
+
 
 canvas {
   z-index: 0;
@@ -120,7 +128,7 @@ canvas {
 .buy-now-button {
   position: absolute;
   top: 85vh; 
-  right: -20%;
+  right: -10%;
   z-index: 10;
   padding: 1rem 2rem;
   font-size: 1.25rem;

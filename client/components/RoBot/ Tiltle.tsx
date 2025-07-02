@@ -28,17 +28,22 @@ function Title() {
       <motion.p
   initial={{ opacity: 0, y: '100vh', x: 0 }}      
   animate={{ opacity: 1, y: 700, x: 0 }}             
-  transition={{ delay: 1.3, duration: 1.5, ease: 'easeOut' }}
+  transition={{ delay: 2.0, duration: 1.5, ease: 'easeOut' }}
   className="robot-text-bubble"
 >
-  Isn’t just a robot — it’s your personal lifestyle companion with a touch of luxury and high-tech AI, handling your daily tasks.
+  Isn’t just a robot,  it’s your personal lifestyle companion with a touch of luxury and high-tech AI, handling your daily tasks.
   <br /><br />
-  <strong>What BotBluvia Can Do:</strong><br />
+  <strong>What BotBluvia Can Do</strong><br />
   • Finds your charger before your soul leaves your body <br />
   • Brings snacks, no judgment <br />
   • Turns off lights like a lazy legend <br />
+  • Joins meetings for you and leaves your camera “accidentally” off <br />
   • Reminds you of things your brain refuses to <br />
   • Pretends to listen (better than most humans) <br />
+  • Responds “lol” to texts you’re too tired to deal with <br />
+  • Makes your bed (while you’re still in it) <br />
+  • Replaces your toilet paper roll without starting a war <br />
+  • Brings the cereal and the spoon (no questions asked)<br />
   • Cooks simple stuff (not Gordon Ramsay, but better than you)
 </motion.p>
 
