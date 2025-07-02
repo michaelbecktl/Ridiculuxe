@@ -19,19 +19,19 @@ a {
 }
 
 .header {
-  @apply sticky top-0 flex h-[16vh] w-full flex-col items-center bg-plain4;
+  @apply bg-plain4/50 sticky top-0 z-50 flex h-[12vh] w-full flex-col items-center;
 }
 
 .footer {
-  @apply fixed bottom-0 flex w-full justify-center bg-plain4 p-[20px];
+  @apply bg-plain4 fixed bottom-0 flex w-full justify-center p-[20px];
 }
 
 main {
-  min-height: 84vh;
+  min-height: 88vh;
 }
 
 .homepageProduct {
-  @apply m-0 flex flex-col items-center justify-center;
+  @apply m-0 flex flex-col items-center justify-center p-0;
   display: grid;
   place-items: center;
   align-content: center;
@@ -41,11 +41,19 @@ main {
 }
 
 .navbar {
-  padding: 20px;
-  border-top: solid white 1px;
   * {
     margin: 0 10px;
   }
+}
+
+.luxevision-adjustment-name {
+  transform: translate(-50%, -50%);
+  border-top: var(--text-color) solid 1px;
+  border-bottom: var(--text-color) solid 1px;
+}
+
+.luxevision-adjustment-button {
+  transform: translate(-50%, -50%);
 }
 
 :root {

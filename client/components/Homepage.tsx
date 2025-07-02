@@ -80,7 +80,7 @@ export default function Homepage() {
             <motion.img
               src={e.image}
               alt={e.name}
-              style={{ height: '60%' }}
+              style={{ height: '50%' }}
               variants={{
                 hidden: { opacity: 0 },
                 visible: { opacity: 1 },
@@ -91,6 +91,7 @@ export default function Homepage() {
             />
             <Link to={`/product/${e.name}`}>
               <motion.p
+                className="mb-10 text-[48px]"
                 variants={{
                   hidden: { opacity: 0 },
                   visible: { opacity: 1 },
@@ -116,8 +117,6 @@ export default function Homepage() {
           </div>
         )
       })}
-
-      <Footer />
     </div>
   )
 }

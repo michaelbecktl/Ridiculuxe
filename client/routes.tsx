@@ -11,7 +11,7 @@ import Confirmation from './components/Confirmation.tsx'
 import AboutUs from './pages/AboutUs.tsx'
 import HFTWatch from './pages/HFTWatch.tsx'
 import EricProduct from './pages/EricProduct.tsx'
-import DavidProduct from './pages/DavidProduct.tsx'
+import LuxeVision from './pages/LuxeVision.tsx'
 import BluviaBot from './pages/BluviaBot.tsx'
 
 export default createRoutesFromElements(
@@ -25,8 +25,8 @@ export default createRoutesFromElements(
     <Route path="/contact" element={<ContactUs />} />
     <Route path="/aboutus" element={<AboutUs />} />
     <Route path="/product/LuxTech Watch" element={<HFTWatch />} />
+    <Route path="/product/LuxeVision" element={<LuxeVision />} />
     <Route path="/product/Nanobot" element={<EricProduct />} />
-    <Route path="/product/davidproduct" element={<DavidProduct />} />
     <Route path="/product/BluviaBot" element={<BluviaBot />} />
   </Route>,
 )
