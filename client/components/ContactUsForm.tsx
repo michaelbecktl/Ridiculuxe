@@ -36,7 +36,7 @@ function ContactUsForm() {
                 type="text"
                 id="name"
                 value={form.name}
-                className="mb-2 w-[100%] p-2"
+                className="mb-2 w-[100%] rounded-md p-2 text-[black] shadow-sm shadow-gray-400"
                 required
                 onChange={handleChange}
               />
@@ -48,7 +48,7 @@ function ContactUsForm() {
                 type="text"
                 id="email"
                 value={form.email}
-                className="mb-2 w-[100%] p-2"
+                className="mb-2 w-[100%] rounded-md p-2 text-[black] shadow-sm shadow-gray-400"
                 required
                 onChange={handleChange}
               />
@@ -57,7 +57,7 @@ function ContactUsForm() {
                 Subject
               </label>
               <select
-                className="mb-2 w-[100%] p-2"
+                className="mb-2 w-[100%] rounded-md p-2 text-[black] shadow-sm shadow-gray-400"
                 id="subject"
                 value={form.subject}
                 onChange={handleChange}
@@ -87,18 +87,25 @@ function ContactUsForm() {
               <textarea
                 id="message"
                 value={form.message}
-                className="mb-2 h-[128px] w-[100%] resize-none p-2"
+                className="mb-2 h-[128px] w-[100%] resize-none rounded-md p-2 text-[black] shadow-sm shadow-gray-400"
                 required
                 onChange={handleChange}
               />
-              <button type="submit">Send</button>
+              <button
+                type="submit"
+                className="rounded-xl bg-[#424242] px-8 py-2 text-[white] shadow-sm shadow-gray-400 hover:opacity-80 active:opacity-100"
+              >
+                Send
+              </button>
             </form>
           </div>
         </>
       ) : (
         <div className="relative h-[425px] w-[40%] justify-items-center text-justify">
-          <div className="absolute top-[50%] -translate-y-1/2">
-            <h1 className="text-center text-xl">Email Sent!</h1>
+          <div className="absolute top-[50%] -translate-y-1/2 justify-center">
+            <h1 className="border-b-1 mb-4 border-b border-current pb-4 text-center text-2xl">
+              Email Sent!
+            </h1>
             <p>
               Thanks for contacting us! Our customer service team will be with
               you as soon as possible. If you did not get a response from our
