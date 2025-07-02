@@ -53,8 +53,11 @@ main {
   --bg-color: white;
   --secondary-bg: rgb(250, 250, 250);
   --secondary-color: #569bdbdc;
-  --shadow-color: #56dbb3cb;
+  --shadow-color: #797979;
   --basic-shadow: #9e9e9e;
+  --text-field: rgb(252, 252, 252);
+  --order-bg: #e0e0e0;
+  --card-bg: #dcdcdc;
 }
 
 body {
@@ -67,8 +70,11 @@ body {
   --text-color: rgb(255, 255, 255);
   --bg-color: rgb(39, 39, 39);
   --secondary-bg: rgb(22, 22, 22);
-  --shadow-color: #56dbb3cb;
+  --shadow-color: #569bdbdc;
   --basic-shadow: #0c0c0c;
+  --text-field: rgb(247, 247, 247);
+  --order-bg: rgb(39, 39, 39);
+  --card-bg: #161b22;
 }
 
 .activeTheme {
@@ -576,4 +582,11 @@ ul {
   background: url('/image/starrybackground.webp');
   background-color: rgb(6, 0, 22);
   background-blend-mode: lighten;
+}
+
+.darkMode .aboutUs-title {
+  color: #58a6ff;
+  text-shadow:
+    0 0 6px rgba(88, 166, 255, 0.4),
+    0 0 12px rgba(88, 166, 255, 0.2);
 }
