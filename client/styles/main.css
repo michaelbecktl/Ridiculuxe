@@ -19,11 +19,11 @@ a {
 }
 
 .header {
-  @apply sticky top-0 flex w-full flex-col items-center bg-plain4;
+  @apply bg-plain4 absolute top-0 z-50 flex w-full flex-col items-center;
 }
 
 .footer {
-  @apply fixed bottom-0 flex w-full justify-center bg-plain4 p-[20px];
+  @apply bg-plain4 fixed bottom-0 flex w-full justify-center p-[20px];
 }
 
 .homepageProduct {
