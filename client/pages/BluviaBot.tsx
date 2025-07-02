@@ -13,7 +13,7 @@ function Robot() {
 
 function BluviaBot() {
   const navigate = useNavigate()
-  const handleClick = () => navigate('/shop/LuxTech Watch')
+  const handleClick = () => navigate('/shop/BluviaBot')
   return (
     <div className="robot-wrapper">
   
@@ -31,6 +31,16 @@ function BluviaBot() {
                 <Robot />
               </Scroll>
               <Scroll html>
+  {/* Your Buy Now Button */}
+  <button
+    onClick={handleClick}
+    className="buy-now-button ml-16 rounded-3xl bg-[#269460] px-5 text-xl text-white shadow-md transition-all duration-300 hover:opacity-80 active:opacity-100"
+  >
+    Buy Now
+  </button>
+
+  {/* Your title section */}
+  
                 <Title />
               </Scroll>
             </ScrollControls>

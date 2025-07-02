@@ -102,6 +102,30 @@ body.darkMode .glitter-layer {
 .darkMode .robot-text-bubble {
   background-color: #1e1e1e;
   color: #f5f5f5;
-  box-shadow: 0 0 12px #0AEAF1;
+  
+  box-shadow: 10px 10px 12px #740d89;
 } 
 
+canvas {
+  z-index: 0;
+  position: relative;
+}
+
+.robot-canvas-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.buy-now-button {
+  position: absolute;
+  top: 85vh; 
+  right: -20%;
+  z-index: 10;
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  background-color: #FDEB27;
+  color: #424242;
+  border-radius: 100px;
+  box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.5);
+}
