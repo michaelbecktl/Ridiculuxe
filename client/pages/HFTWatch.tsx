@@ -22,7 +22,7 @@ function HFTWatch() {
 
   return (
     <>
-      <div className="h-[84vh] w-screen">
+      <div className="hftwatch h-[84vh] w-screen">
         <Canvas
           gl={{ alpha: true }}
           style={{
