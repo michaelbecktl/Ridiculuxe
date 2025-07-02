@@ -2,10 +2,12 @@ import { FBXLoader } from 'three/examples/jsm/Addons.js'
 import * as THREE from 'three'
 import { useEffect, useRef } from 'react'
 import { useFrame, useLoader } from '@react-three/fiber'
+import { OrbitControls } from '@react-three/drei'
 
 function ObjModel({ url, loaded }) {
   const obj = useLoader(FBXLoader, url)
   const groupRef = useRef<THREE.Group>(null!)
+  Math.PI / 2
 
   useEffect(() => {
     obj.traverse((child) => {
@@ -46,8 +48,17 @@ function ObjModel({ url, loaded }) {
   })
 
   return (
-    <group ref={groupRef} scale={[0, 0, 0]} position={[0, -50, -50]}>
-      <primitive object={obj} rotation={[0.5, 0.5, 0]} />
+    <group
+      ref={groupRef}
+      scale={[0, 0, 0]}
+      position={[0, -50, -50]}
+      rotation={[0.5, 0.5, 0]}
+    >
+      <mesh position={[0, 0, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+        <planeGeometry args={[500, 500]} />
+        <meshBasicMaterial color={0x2b2b2b} />
+      </mesh>
+      <primitive object={obj} />
     </group>
   )
 

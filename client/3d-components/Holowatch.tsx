@@ -56,7 +56,7 @@ function FbxModel({ url, bandColor, frameColor, popUp, setPopUp }: Props) {
         if (child.material.opacity < 1) child.material.opacity += 0.005
       })
       if (modelRef.current.position.x > 0) modelRef.current.position.x -= 0.32
-      if (modelRef.current.position.y < -15) modelRef.current.position.y += 0.15
+      if (modelRef.current.position.y < -19) modelRef.current.position.y += 0.15
       if (modelRef.current.position.z < -5) modelRef.current.position.z += 0.2
       if (modelRef.current.rotation.x > 0) modelRef.current.rotation.x -= 0.02
       if (modelRef.current.rotation.y > 0) modelRef.current.rotation.y -= 0.02
@@ -64,7 +64,7 @@ function FbxModel({ url, bandColor, frameColor, popUp, setPopUp }: Props) {
 
       if (
         modelRef.current.position.x <= 0 &&
-        modelRef.current.position.y >= -15 &&
+        modelRef.current.position.y >= -19 &&
         modelRef.current.position.z >= -5 &&
         modelRef.current.rotation.x <= 0 &&
         modelRef.current.rotation.y <= 0 &&
@@ -91,7 +91,7 @@ function FbxModel({ url, bandColor, frameColor, popUp, setPopUp }: Props) {
   return (
     <group
       ref={modelRef}
-      position={[40, -35, -25]}
+      position={[40, -39, -25]}
       scale={[0.05, 0.05, 0.05]}
       rotation={[2.5, 2.5, 2.5]}
     >
