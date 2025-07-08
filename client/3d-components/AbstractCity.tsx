@@ -2,7 +2,6 @@ import { FBXLoader } from 'three/examples/jsm/Addons.js'
 import * as THREE from 'three'
 import { useEffect, useRef } from 'react'
 import { useFrame, useLoader } from '@react-three/fiber'
-import { OrbitControls } from '@react-three/drei'
 
 function ObjModel({ url, loaded }) {
   const obj = useLoader(FBXLoader, url)
