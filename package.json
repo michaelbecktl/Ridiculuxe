@@ -38,9 +38,12 @@
     "jsonwebtoken": "^9.0.2",
     "jwks-rsa": "^2.1.5",
     "knex": "^2.5.1",
+    "pg": "^8.16.3",
     "sqlite3": "^5.1.7",
     "superagent": "^8.1.2",
-    "three": "^0.178.0"
+    "three": "^0.178.0",
+    "render:build": "npm install && npm run build && npm prune --omit=dev && NODE_ENV='production' npm run knex migrate:latest",
+    "render:start": "node dist/server.js"
   },
   "devDependencies": {
     "@devacademy/eslint-config": "^1.10.1",
