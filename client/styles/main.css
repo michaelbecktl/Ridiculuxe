@@ -245,7 +245,7 @@ body {
 .darkMode .checkout-container {
   background:
     linear-gradient(rgba(13, 17, 23, 0.85), rgba(13, 17, 23, 0.85)),
-    url('/public/image/BGcheckout/neon.avif') no-repeat center center fixed;
+    url('/image/BGcheckout/neon.avif') no-repeat center center fixed;
   background-size: cover;
   color: #b4b5b6;
 }
@@ -480,7 +480,7 @@ ul {
 .darkMode .confirmation-container {
   background:
     linear-gradient(rgba(13, 17, 23, 0.85), rgba(13, 17, 23, 0.85)),
-    url('/public/image/BGcheckout/neon.avif') no-repeat center center fixed;
+    url('/image/BGcheckout/neon.avif') no-repeat center center fixed;
   background-size: cover;
   font-family: 'Orbitron', 'Segoe UI', sans-serif;
   color: #b4b5b6;

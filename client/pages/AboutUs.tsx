@@ -1,15 +1,15 @@
 function AboutUs() {
   const members = ['David Kim', 'Eric Oh', 'Michael Beck', 'Oranee Kasem']
   const technologies = [
-    { name: 'HTML5', image: '/public/image/HTML5.svg' },
-    { name: 'CSS', image: '/public/image/CSS3.svg' },
-    { name: 'React JS', image: '/public/image/React.svg' },
-    { name: 'Node JS', image: '/public/image/Node_JS.svg' },
-    { name: 'Knex JS', image: '/public/image/Knex_JS.png' },
-    { name: 'Auth0', image: '/public/image/Auth0.svg' },
-    { name: 'Tailwind CSS', image: '/public/image/Tailwind_CSS.svg' },
-    { name: 'Three JS', image: '/public/image/Threejs.svg' },
-    { name: 'Framer Motion', image: '/public/image/Framer-Motion.webp' },
+    { name: 'HTML5', image: '/image/HTML5.svg' },
+    { name: 'CSS', image: '/image/CSS3.svg' },
+    { name: 'React JS', image: '/image/React.svg' },
+    { name: 'Node JS', image: '/image/Node_JS.svg' },
+    { name: 'Knex JS', image: '/image/Knex_JS.png' },
+    { name: 'Auth0', image: '/image/Auth0.svg' },
+    { name: 'Tailwind CSS', image: '/image/Tailwind_CSS.svg' },
+    { name: 'Three JS', image: '/image/Threejs.svg' },
+    { name: 'Framer Motion', image: '/image/Framer-Motion.webp' },
   ]
 
   return (
