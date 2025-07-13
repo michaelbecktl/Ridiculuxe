@@ -16,7 +16,20 @@ export default function Header() {
 
   const scrollToProduct = (index: number) => {
     if (location.pathname !== '/') {
-      navigate('/')
+      switch (index) {
+        case 1:
+          navigate('/product/Luxtech Watch')
+          break
+        case 2:
+          navigate('/product/Nanobot')
+          break
+        case 3:
+          navigate('/product/BluviaBot')
+          break
+        case 4:
+          navigate('/product/LuxeVision')
+          break
+      }
     }
     const element = document.getElementById(`product-${index}`)
     if (element) {
@@ -81,10 +94,10 @@ export default function Header() {
       </div>
       <div className="navbar flex -translate-x-10 flex-row">
         <div>
-          <button onClick={() => scrollToProduct(0)}>LuxTech Watch</button>
-          <button onClick={() => scrollToProduct(1)}>Nanobot</button>
-          <button onClick={() => scrollToProduct(2)}>BluviaBot</button>
-          <button onClick={() => scrollToProduct(3)}>LuxeVision</button>
+          <button onClick={() => scrollToProduct(1)}>LuxTech Watch</button>
+          <button onClick={() => scrollToProduct(2)}>Nanobot</button>
+          <button onClick={() => scrollToProduct(3)}>BluviaBot</button>
+          <button onClick={() => scrollToProduct(4)}>LuxeVision</button>
         </div>
         <div>
           <Link to="/aboutus">About Us</Link>
