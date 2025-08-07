@@ -18,7 +18,7 @@ This project is the final group project that's a part of our Software Developmen
 
 ## Our Team
 
-**Product Owner:** David
-**Scrum Master:** Michael
-**Git Keeper:** Eric
-**Vibes Watcher:** Oranee
+**Product Owner:** David  
+**Scrum Master:** Michael  
+**Git Keeper:** Eric  
+**Vibes Watcher:** Oranee  
