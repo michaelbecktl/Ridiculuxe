@@ -8,6 +8,8 @@ export default function Homepage() {
   if (isPending) return <>Loading...</>
   if (isError) return <p>An error has occured</p>
 
+  console.log(products)
+
   return (
     <>
       <motion.img
